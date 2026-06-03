@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>India Briefing | newAgg</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-left">
+        <p class="eyebrow">newAgg</p>
+        <h1>India Briefing</h1>
+        <p class="subtitle">Source-linked India headlines for news-aware aspirants</p>
+      </div>
+      <div class="mode-switcher" role="group" aria-label="Reading mode">
+          <button class="mode-btn" data-mode="upsc">UPSC Prep</button>
+          <button class="mode-btn" data-mode="informed">Stay Informed</button>
+          <button class="mode-btn" data-mode="explorer">Explorer</button>
+        </div>
+      <div class="topbar-right">
+        <nav class="archive-nav" aria-label="Browse editions">
+          <button id="prevEditionBtn" class="edition-nav-btn" title="Older edition" aria-label="Older edition">&#8249;</button>
+          <select id="editionSelect" class="edition-select" aria-label="Select edition"></select>
+          <button id="nextEditionBtn" class="edition-nav-btn" title="Newer edition" aria-label="Newer edition">&#8250;</button>
+        </nav>
+        <p id="timestamp" class="timestamp"></p>
+        <div id="statusBadge" class="status-badge ready">Ready</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="summary-band" aria-label="Daily insight summary">
+        <div id="dailyInsightSummary" class="stat-tiles"></div>
+      </section>
+
+      <section class="toolbar" aria-label="Filters">
+        <div class="filter-group">
+          <div id="topicChips" class="chip-group"></div>
+        </div>
+        <div class="search-group">
+          <input id="searchInput" type="search" placeholder="Search headlines, topics, sources…" aria-label="Search headlines" />
+        </div>
+      </section>
+
+      <section class="must-know-section" aria-label="Today's Must-Know Headlines">
+        <div class="section-heading">
+          <h2>Today's Must-Know <span id="mustKnowCount" class="section-count"></span></h2>
+        </div>
+        <div id="mustKnowGrid" class="must-know-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="all-headlines-section" aria-label="All Collected Headlines">
+        <div class="section-heading">
+          <h2>All Headlines <span id="allHeadlinesCount" class="section-count"></span></h2>
+        </div>
+        <div id="headlineGrid" class="headline-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="source-health-section" aria-label="Source Health">
+        <details class="source-health-disclosure">
+          <summary id="sourceHealthSummaryDisclosure">Source health: ...</summary>
+          <div class="source-health-content">
+            <div id="sourceHealthList" class="source-health-list"></div>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <script>
+      document.write(`<script src="../assets/data/india-headlines.js?v=${Date.now()}"><\/script>`);
+    </script>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- Unique label — must match the filename in ~/Library/LaunchAgents/ -->
+  <key>Label</key>
+  <string>com.newagg.daily-fetch</string>
+
+  <!-- Absolute path to run-daily.sh — replace PROJECT_DIR with the real path -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>PROJECT_DIR/scripts/run-daily.sh</string>
+  </array>
+
+  <!-- Runs at 6:30 AM in the Mac's local timezone.
+       If your Mac is set to IST (Asia/Kolkata), this fires at 6:30 AM IST.
+       Adjust Hour/Minute if your system timezone differs. -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>6</integer>
+    <key>Minute</key>
+    <integer>30</integer>
+  </dict>
+
+  <!-- If the Mac was asleep at trigger time, run immediately on wake -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <!-- launchd log files — replace PROJECT_DIR -->
+  <key>StandardOutPath</key>
+  <string>PROJECT_DIR/logs/launchd-stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>PROJECT_DIR/logs/launchd-stderr.log</string>
+</dict>
+</plist>

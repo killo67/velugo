@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      # Mount source dirs so local edits are reflected without rebuild
+      - ./src:/app/src
+      - ./assets:/app/assets
+      - ./scripts:/app/scripts
+    environment:
+      PORT: "80"
+      ENRICH_MODE: "mock"        # use 'api' + ANTHROPIC_API_KEY for real enrichment
+      TELEGRAM_BOT_TOKEN: ""     # leave empty to skip posting; brief still saved locally
+      TELEGRAM_CHANNEL_ID: ""

@@ -1,0 +1,11 @@
+_bmad/
+_bmad-output/
+docs/
+newAgg.rtf
+.git/
+.DS_Store
+README.md
+AGENTS.md
+scripts/.env
+logs/
+

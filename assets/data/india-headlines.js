@@ -1,0 +1,2574 @@
+window.__INDIA_HEADLINES__ = {
+  "generatedAt": "2026-06-03T21:08:55+05:30",
+  "editionDate": "2026-06-03",
+  "region": "India",
+  "note": "Generated from public RSS feeds; verify source links before editorial use.",
+  "fetchStatus": {
+    "status": "complete",
+    "sourcesConfigured": 9,
+    "sourcesSucceeded": 9,
+    "sourcesFailed": 0,
+    "fetched": 575,
+    "accepted": 100,
+    "skipped": 469,
+    "duplicates": 2,
+    "errors": 0
+  },
+  "sourceStatus": [
+    {
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "status": "ok",
+      "feedUrl": "https://indianexpress.com/section/india/feed/",
+      "sourceType": "newspaper",
+      "section": "India",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Indian newspaper; official public India section RSS feed.",
+      "fetched": 200,
+      "accepted": 19,
+      "skipped": 185,
+      "duplicates": 0,
+      "error": null
+    },
+    {
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "status": "ok",
+      "feedUrl": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms",
+      "sourceType": "newspaper",
+      "section": "India",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Indian newspaper; public India RSS feed. Feed omits pubDate — items assumed current.",
+      "fetched": 20,
+      "accepted": 20,
+      "skipped": 5,
+      "duplicates": 0,
+      "error": null
+    },
+    {
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "status": "ok",
+      "feedUrl": "https://feeds.feedburner.com/ndtvnews-india-news",
+      "sourceType": "digital_news_publisher",
+      "section": "India",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Free public India news feed; included as online source data but not a strict newspaper source.",
+      "fetched": 20,
+      "accepted": 20,
+      "skipped": 5,
+      "duplicates": 0,
+      "error": null
+    },
+    {
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "status": "ok",
+      "feedUrl": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml",
+      "sourceType": "newspaper",
+      "section": "India",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Indian newspaper; official public India news RSS feed.",
+      "fetched": 100,
+      "accepted": 99,
+      "skipped": 85,
+      "duplicates": 0,
+      "error": null
+    },
+    {
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "status": "ok",
+      "feedUrl": "https://www.thehindu.com/news/national/feeder/default.rss",
+      "sourceType": "newspaper",
+      "section": "National",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Indian newspaper; official public national news RSS feed.",
+      "fetched": 60,
+      "accepted": 60,
+      "skipped": 45,
+      "duplicates": 0,
+      "error": null
+    },
+    {
+      "sourceId": "the-hindu-environment",
+      "source": "The Hindu – Environment",
+      "status": "ok",
+      "feedUrl": "https://www.thehindu.com/sci-tech/energy-and-environment/feeder/default.rss",
+      "sourceType": "newspaper",
+      "section": "Environment",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Indian newspaper; official public environment section RSS feed. Includes international environment news relevant to GS3.",
+      "fetched": 60,
+      "accepted": 8,
+      "skipped": 52,
+      "duplicates": 0,
+      "error": null
+    },
+    {
+      "sourceId": "the-hindu-science",
+      "source": "The Hindu – Science & Tech",
+      "status": "ok",
+      "feedUrl": "https://www.thehindu.com/sci-tech/science/feeder/default.rss",
+      "sourceType": "newspaper",
+      "section": "Science",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Indian newspaper; official public science and technology RSS feed. Includes international science news relevant to GS3.",
+      "fetched": 60,
+      "accepted": 2,
+      "skipped": 58,
+      "duplicates": 0,
+      "error": null
+    },
+    {
+      "sourceId": "livemint",
+      "source": "Mint",
+      "status": "ok",
+      "feedUrl": "https://www.livemint.com/rss/economy",
+      "sourceType": "newspaper",
+      "section": "Economy",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Indian business newspaper; official public economy section RSS feed.",
+      "fetched": 35,
+      "accepted": 4,
+      "skipped": 31,
+      "duplicates": 0,
+      "error": null
+    },
+    {
+      "sourceId": "pib",
+      "source": "PIB",
+      "status": "ok",
+      "feedUrl": "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3",
+      "sourceType": "pib",
+      "section": "Government",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Press Information Bureau — official Government of India press releases. RSS is Hindi-only; fetches English companion releases via two-step PRID resolution.",
+      "fetched": 20,
+      "accepted": 20,
+      "skipped": 3,
+      "duplicates": 2,
+      "error": null
+    }
+  ],
+  "sources": [
+    {
+      "id": "indian-express",
+      "name": "The Indian Express",
+      "url": "https://indianexpress.com/section/india/",
+      "feedUrl": "https://indianexpress.com/section/india/feed/",
+      "sourceType": "newspaper",
+      "section": "India",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Indian newspaper; official public India section RSS feed."
+    },
+    {
+      "id": "times-of-india",
+      "name": "The Times of India",
+      "url": "https://timesofindia.indiatimes.com/india",
+      "feedUrl": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms",
+      "sourceType": "newspaper",
+      "section": "India",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Indian newspaper; public India RSS feed. Feed omits pubDate — items assumed current."
+    },
+    {
+      "id": "ndtv",
+      "name": "NDTV",
+      "url": "https://www.ndtv.com/india-news",
+      "feedUrl": "https://feeds.feedburner.com/ndtvnews-india-news",
+      "sourceType": "digital_news_publisher",
+      "section": "India",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Free public India news feed; included as online source data but not a strict newspaper source."
+    },
+    {
+      "id": "hindustan-times",
+      "name": "Hindustan Times",
+      "url": "https://www.hindustantimes.com/india-news",
+      "feedUrl": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml",
+      "sourceType": "newspaper",
+      "section": "India",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Indian newspaper; official public India news RSS feed."
+    },
+    {
+      "id": "the-hindu",
+      "name": "The Hindu",
+      "url": "https://www.thehindu.com/news/national/",
+      "feedUrl": "https://www.thehindu.com/news/national/feeder/default.rss",
+      "sourceType": "newspaper",
+      "section": "National",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Indian newspaper; official public national news RSS feed."
+    },
+    {
+      "id": "the-hindu-environment",
+      "name": "The Hindu – Environment",
+      "url": "https://www.thehindu.com/sci-tech/energy-and-environment/",
+      "feedUrl": "https://www.thehindu.com/sci-tech/energy-and-environment/feeder/default.rss",
+      "sourceType": "newspaper",
+      "section": "Environment",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Indian newspaper; official public environment section RSS feed. Includes international environment news relevant to GS3."
+    },
+    {
+      "id": "the-hindu-science",
+      "name": "The Hindu – Science & Tech",
+      "url": "https://www.thehindu.com/sci-tech/science/",
+      "feedUrl": "https://www.thehindu.com/sci-tech/science/feeder/default.rss",
+      "sourceType": "newspaper",
+      "section": "Science",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Indian newspaper; official public science and technology RSS feed. Includes international science news relevant to GS3."
+    },
+    {
+      "id": "livemint",
+      "name": "Mint",
+      "url": "https://www.livemint.com/economy",
+      "feedUrl": "https://www.livemint.com/rss/economy",
+      "sourceType": "newspaper",
+      "section": "Economy",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Indian business newspaper; official public economy section RSS feed."
+    },
+    {
+      "id": "pib",
+      "name": "PIB",
+      "url": "https://pib.gov.in/",
+      "feedUrl": "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3",
+      "sourceType": "pib",
+      "section": "Government",
+      "countryScope": "India",
+      "isFreeToRead": true,
+      "policyNotes": "Press Information Bureau — official Government of India press releases. RSS is Hindi-only; fetches English companion releases via two-step PRID resolution."
+    }
+  ],
+  "headlines": [
+    {
+      "id": "the-hindu-karnataka-cm-swearing-in-live-d-k-shivakumar-takes-oath-in-the-name-of-late-seer",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "Karnataka CM swearing-in LIVE: D.K. Shivakumar takes oath in the name of late seer Gangadhar Ajjayya",
+      "excerpt": "In stark contrast, senior Congress leader and fomer Home Minister Dr. G. Parameshwar took oath in the name of Dr. B.R. Ambedkar.",
+      "category": "India",
+      "priority": "Lead",
+      "url": "https://www.thehindu.com/news/national/karnataka/karnataka-cm-dks-dk-shivakumar-oath-taking-swearing-in-ceremony-live-updates-june-3-2026/article71053881.ece",
+      "publishedAt": "2026-06-03T21:03:30+05:30",
+      "clusterId": "the-hindu-karnataka-cm-swearing-in-live-d-k-shivak",
+      "clusterSize": 13,
+      "isClusterLead": true,
+      "articleText": "Ahead of D.K. Shivakumar’s swearing-in as Chief Minister of Karnataka, Kanakapura was seen drowning in flexes and banners. With orders overflowing, flex shop owners seemed to be making a bounty. Floating helium balloons with Mr. Shivakumar’s face dotted the skyscape of Kanakapura as far as the eye could see. For the oath-taking ceremony, around 200 people from the Doddalahalli, Kodihalli and other villages in Kanakapura, his home turf and constituency, are heading to Bengaluru in three buses. Several others are also going to the city in their own vehicles, so close to 400 people are on their way, villagers tell The Hindu . “We have been asked not to go to Bengaluru but such is our respect and admiration for our leader. He is our bande (rock). We are elated that he has been elevated to the post of CM. We want to celebrate this moment with him,” said a supporter. “We will travel from here to Thalaghattapura in the buses we have arranged. From there, we will take a metro to Vidhana Soudha. We have taken metro passes for all the villagers who are travelling with us. We will be happy just to get a glimpse of him from afar and watch him take oath,” the supporter said. - Chetan B.C. reports",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Understanding political leadership transitions is crucial for governance."
+      }
+    },
+    {
+      "id": "the-hindu-nimhans-mercuri-foundation-propose-national-centre-on-music-brain-and-mental-hea",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "NIMHANS, Mercuri Foundation propose national centre on music, brain and mental health under Ilaiyaraaja’s patronage",
+      "excerpt": "In a move aimed at advancing research and innovation at the intersection of music, neuroscience and mental health, the National Institute of Mental Health and Neurosciences (NIMHANS), in association with Mercuri Foundation, a philanthropic and research-oriented foundation, has proposed setting up a…",
+      "category": "India",
+      "priority": "Lead",
+      "url": "https://www.thehindu.com/news/national/karnataka/nimhans-mercuri-foundation-propose-national-centre-on-music-brain-and-mental-health-under-ilaiyaraajas-patronage/article71057944.ece",
+      "publishedAt": "2026-06-03T21:03:29+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "In a move aimed at advancing research and innovation at the intersection of music, neuroscience and mental health, the National Institute of Mental Health and Neurosciences (NIMHANS), in association with Mercuri Foundation, a philanthropic and research-oriented foundation, has proposed setting up a National Centre for Music, Brain, Mind and Health under the patronage of composer Ilaiyaraaja. The proposed centre seeks to bring together experts in neuroscience, psychiatry, psychology, music, cognition, rehabilitation and technology to explore the role of music in human wellbeing. According to an official statement from NIMHANS, the centre is envisaged as India’s first interdisciplinary national facility integrating neuroscience, mental health, music, cognition, rehabilitation and technology. It aims to promote research, clinical innovation, education and public engagement in understanding how music influences the brain, emotions, cognition and overall health.",
+      "facts": []
+    },
+    {
+      "id": "the-hindu-a-p-bjp-president-urges-cadres-to-prepare-for-local-body-polls",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "A.P. BJP president urges cadres to prepare for local body polls",
+      "excerpt": "Bharatiya Janata Party (BJP) State president P.V.N. Madhav urged the district-level workers to prepare for the upcoming local body elections and remain grounded in the wards. Addressing a meeting of party leaders as part of his two-day visit to combined Chittoor district on Wednesday, Mr. Madhav…",
+      "category": "India",
+      "priority": "Lead",
+      "url": "https://www.thehindu.com/news/national/andhra-pradesh/ap-bjp-president-urges-cadres-to-prepare-for-local-body-polls/article71057743.ece",
+      "publishedAt": "2026-06-03T21:02:22+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "Bharatiya Janata Party (BJP) State president P.V.N. Madhav urged the district-level workers to prepare for the upcoming local body elections and remain grounded in the wards. Addressing a meeting of party leaders as part of his two-day visit to combined Chittoor district on Wednesday, Mr. Madhav asked the cadres to take the polls seriously. He also called upon the cadres to carry the message of the 12-year-old Narendra Modi rule at the Centre, highlighting the success achieved in governance, welfare schemes, public outreach and others. He specifically asked the field-level workers to reach out to the beneficiaries and convey to them the welfare schemes launched by the Union government. Regarding the Special Intensive Revision (SIR), Mr. Madhav directed the party workers to thoroughly scan the voters list to avoid any form of tampering. Meanwhile, BJP Tirupati district president Samanchi Srinivas informed him that booth level agents would take proactive measures to identify fake voters enrolled during the previous YSRCP regime and remove them from the list.",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Knowledge of local body elections is essential for state-level governance."
+      }
+    },
+    {
+      "id": "the-hindu-cabinet-approves-10-000-crore-atf-price-stabilisation-fund-to-shield-airlines-je",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "Cabinet approves ₹10,000 crore ATF price stabilisation fund to shield airlines, jet fuel prices",
+      "excerpt": "Air India, along with its low-cost subsidiary Air India Express, and Indigo, together cut down 250 daily domestic flights from June amid rising prices of jet fuel. The move was expected to further escalate airfares.",
+      "category": "India",
+      "priority": "Lead",
+      "url": "https://www.thehindu.com/business/Industry/cabinet-approves-10000-crore-atf-price-stabilisation-fund-to-shield-airlines-jet-fuel-prices/article71056863.ece",
+      "publishedAt": "2026-06-03T21:01:14+05:30",
+      "clusterId": "the-hindu-cabinet-approves-10-000-crore-atf-price-",
+      "clusterSize": 3,
+      "isClusterLead": true,
+      "articleText": "Seeking to cushion India’s airlines in the backdrop of escalating jet fuel prices because of the conflict in West Asia, the Union Cabinet on Wednesday (June 3, 2026) approved a one-time budgetary support of ₹10,000 crore to oil-marketing companies (OMCs) towards a price stabilisation fund. The budgetary support would be made available to scheduled airlines in India for both domestic and international operations and would be provided in the form of interest-free advances to OMCs. Hardeep Singh Puri, Union Petroleum Minister, held that the price stabilisation fund would help stabilise ATF prices in the backdrop of the West Asia conflict. Cabinet approves construction of new coastal Rameshwar-Paradeep highway in Odisha",
+      "facts": [
+        {
+          "type": "money",
+          "text": "₹10,000 Crore"
+        }
+      ],
+      "enrichment": {
+        "topic": "Economy > Fiscal Policy / Economy > Monetary Policy (indirect impact on fiscal policy)",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Awareness of airline subsidy schemes is important for economic policies."
+      }
+    },
+    {
+      "id": "the-hindu-woman-found-dead-in-shamshabad",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "Woman found dead in Shamshabad",
+      "excerpt": "A 36-year-old woman was found dead at her residence in Gollapally village in Shamshabad on Tuesday evening allegedly distressed over not having children. The deceased was identified as Adedla Sukkapuri Swapna, a home-maker. According to the police, Swapna was married to A.S. Srikanth alias Shiva on…",
+      "category": "India",
+      "priority": "Lead",
+      "url": "https://www.thehindu.com/news/cities/Hyderabad/woman-found-dead-in-shamshabad/article71057868.ece",
+      "publishedAt": "2026-06-03T20:59:47+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "A 36-year-old woman was found dead at her residence in Gollapally village in Shamshabad on Tuesday evening allegedly distressed over not having children. The deceased was identified as Adedla Sukkapuri Swapna, a home-maker. According to the police, Swapna was married to A.S. Srikanth alias Shiva on October 24, 2021. The couple lived with his family in Gollapally village. About two years ago, Srikanth moved to Dubai for work along with his elder brother due to financial difficulties, while Swapna continued to stay with her in-laws. In a complaint lodged by her mother, Gudepu Madunamma, police were informed that Swapna had often expressed sadness over not having children. On the morning of June 2, she was on a WhatsApp video call with her husband and younger sister. During the conversation, she allegedly wept while speaking about her childlessness. At around 8 p.m., Swapna’s mother-in-law went upstairs to check on her. After receiving no response despite repeated knocks, family members forced open the door and found Swapna hanging. Based on the complaint, Shamshabad police registered a case of unnatural death and launched an investigation. Preliminary enquiries indicate that Swapna may have taken the extreme step while in a state of emotional distress linked to her inability to conceive, police said. Further investigation is under way. (Roshini suicide prevention helpline numbers: 8142020033/44.)",
+      "facts": [],
+      "enrichment": {
+        "topic": "Social Issues > Women & Children / Social Issues > Health (indirect link to mental health)",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Awareness of social issues like distress over infertility is relevant for women's studies."
+      }
+    },
+    {
+      "id": "the-hindu-theranym-biologics-opens-1-200-crore-manufacturing-facility-near-hyderabad",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "TheraNyM Biologics opens ₹1,200 crore manufacturing facility near Hyderabad",
+      "excerpt": "Telangana Industries Minister D. Sridhar Babu inaugurates the new facility of the Aurobindo Pharma subsidiary that is expected to generate job opportunities for more than 1,500 local youth",
+      "category": "India",
+      "priority": "High",
+      "url": "https://www.thehindu.com/news/national/telangana/theranym-biologics-opens-1200-crore-manufacturing-facility-near-hyderabad/article71056688.ece",
+      "publishedAt": "2026-06-03T20:59:25+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "A ₹1,200 crore manufacturing facility of generic drugmaker Aurobindo Pharma’s subsidiary TheraNyM Biologics near Hyderabad, with a potential to generate more than 1,500 jobs for the local youth, was opened on Wednesday (June 3). Telangana IT and Industries Minister D. Sridhar Babu formally inaugurated the facility that will manufacture medicines used in the treatment of cancer and other life-threatening diseases. The products will be exported to several international markets, including the U.S., the Minister’s office said after the event in which Health Minister Damodar Rajanarasimha and others participated. The facility has been established at Borpatla village in Hathnoora Mandal of neighbouring Sangareddy district. It is expected to create employment opportunities for more than 1,500 local youth, Mr. Sridhar Babu’s office said. With the arrival of TheraNyM Biologics, the global reputation and value of the Made in Telangana brand in the Life Sciences sector are expected to become even stronger, it said. The State government has been reiterating its focus on consolidating Telangana’s position as a preferred destination for Life Sciences companies. Two years ago, Aurobindo Pharma had announced the signing of a master service agreement between TheraNym and global pharma major Merck Sharpe & Dohme Singapore Trading Pte. Ltd. (MSD) for contract manufacturing of biologicals. TheraNym, the parent company said, will manufacture the products and supply to MSD and intends to invest…",
+      "facts": [
+        {
+          "type": "money",
+          "text": "₹1,200 Crore"
+        }
+      ],
+      "enrichment": {
+        "topic": "Economy > Industry & Manufacturing",
+        "upscRelevance": "Medium",
+        "examAngle": "Mains GS2: Industrial policy and its impact on economic development.",
+        "whyItMatters": "Understanding the role of large-scale industries in India's economy is crucial for industrial policies."
+      }
+    },
+    {
+      "id": "the-hindu-tiger-in-polavaram-dist-attacks-cattle-yet-again-kills-14-calves",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "Tiger in Polavaram dist. attacks cattle yet again, kills 14 calves",
+      "excerpt": "At least 200 personnel have been deployed to tranquillise the male tiger at any moment in Polavaram district.",
+      "category": "India",
+      "priority": "High",
+      "url": "https://www.thehindu.com/news/national/andhra-pradesh/tiger-in-polavaram-dist-attacks-cattle-yet-again-kills-14-calves/article71057625.ece",
+      "publishedAt": "2026-06-03T20:57:16+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "In a yet another attack on cattle, a male tiger, Explorer , killed 14 calves in Indukuru village in Polavaram district in the early hours of Wednesday. Earlier on May 29, the tiger, which was rehabilitated in the Papikonda National Park from native landscape of Tadoba-Andhari Tiger Reserve in Maharashtra, reportedly killed nine cattle. The tiger resorted to the attack on the day when the Forest Department personnel were prepared to tranquillise the big cat. “The tiger has attacked 14 calves of cows that were tied in a shed by the tribals of Indukuru village in Devipatnam mandal. However, it did not attack on any personnel guarding their cattle,” Rampachodavaram Divisional Forest Officer N. Ramachandra Rao told The Hindu. In the village, which falls in the submergence area of the Polavaram irrigation project, only dairy farmers are rearing their cattle during the summer as the entire village was rehabilitated to the Resettlement and Rehabilitation (R&R) colony of the Polavaram project. “We have deployed nearly 200 personnel drawn from various wings of the forest department to tranquillise the tiger. Six Rapid Response Teams, four teams of frontline personnel who actually tranquillise the tiger and drones are being deployed for the tranquillisation of the tiger,” Mr. Rao said. Principal Chief Conservator of Forests (Wildlife) N. Nageswara Rao and Chief Conservator of Forest in Rajahmundry, Jyothi rushed on Wednesday assured the cattle owners of providing compensation.",
+      "facts": [],
+      "enrichment": {
+        "topic": "Security > Border Issues | Security > Internal Security",
+        "upscRelevance": "High",
+        "examAngle": "Prelims: Wildlife protection. Mains GS2: Biodiversity conservation.",
+        "whyItMatters": "Tiger attacks highlight the importance of wildlife preservation and human-animal conflict management."
+      }
+    },
+    {
+      "id": "the-hindu-water-must-be-a-fundamental-human-right-not-a-commodity-sainath",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "Water must be a fundamental human right, not a commodity: Sainath",
+      "excerpt": "He was addressing a seminar organised by M.P. Veerendrakumar Memorial Trust here to commemorate the water struggles led by the late M.P., particularly the Plachimada agitation against Coca-Cola",
+      "category": "India",
+      "priority": "High",
+      "url": "https://www.thehindu.com/news/national/kerala/water-must-be-a-fundamental-human-right-not-a-commodity-sainath/article71057795.ece",
+      "publishedAt": "2026-06-03T20:54:12+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "Veteran journalist and author P. Sainath has called for water to be recognised as a fundamental human right, arguing that it should never be treated as a commodity. Addressing a seminar organised by the M.P. Veerendrakumar Memorial Trust here to commemorate the water struggles led by the late M.P., particularly the Plachimada agitation against Coca-Cola, Mr. Sainath said access to water should be inseparable from the right to life. “Water must be declared a fundamental human right. It cannot be treated as a commodity, just as oxygen cannot be commodified,” he said. Citing Uruguay, which recognised water as a fundamental right years ago, Mr. Sainath said India could do the same. “If a country of just over three million people can do it, India can certainly do it. We are a stronger and healthier country,” he said. Calling for a clear order of priorities in water use, he said community needs must come first. “Schools, hospitals, colleges and community wells should be at the top of the priority list, while indoor swimming pools should be at the very bottom,” he said. Mr. Sainath also urged a rethink of policies that shift water from livelihood needs to lifestyle consumption. Recalling Veerendrakumar’s slogan during water struggles, he said the fight for water was ultimately a fight for survival. On data centres Mr. Sainath also raised concerns over the rapid expansion of data centres in India, warning that they posed a growing threat to water security. “India has 18% of the…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Environment > Pollution & Waste | Environment > Climate Change",
+        "upscRelevance": "High",
+        "examAngle": "Prelims: Right to livelihood. Mains GS2: Sustainable development and human rights.",
+        "whyItMatters": "Water as a fundamental right is crucial for sustainable environmental policies."
+      }
+    },
+    {
+      "id": "the-hindu-b-k-hariprasad-named-kpcc-president",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "B.K. Hariprasad named KPCC president",
+      "excerpt": "Mr. Hariprasad is known as a vocal critic of the Narendra Modi-led government, the BJP, and the RSS. He has also served as a Rajya Sabha member and held several positions within the AICC.",
+      "category": "India",
+      "priority": "High",
+      "url": "https://www.thehindu.com/news/national/karnataka/bk-hariprasad-likely-to-become-kpcc-president/article71055645.ece",
+      "publishedAt": "2026-06-03T20:54:10+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "Veteran Congress leader and MLC B.K. Hariprasad, 72, has been appointed the next president of the Karnataka Pradesh Congress Committee (KPCC), the All India Congress Committee (AICC) said in an official announcement. If appointed, Mr. Hariprasad will succeed D.K. Shivakumar , who is set to assume office as Karnataka’s new Chief Minister on Wednesday (June 3, 2026) evening at Lok Bhavan. Reports suggest that MPs Sonia Gandhi and Rahul Gandhi spoke to Mr. Hariprasad and proposed his name for the post. Karnataka: Search for new KPCC chief has begun, says All India Congress Committee president Mallikarjun Kharge",
+      "facts": [
+        {
+          "type": "appointment",
+          "text": "Appointment: President"
+        }
+      ],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance | Polity > Judiciary",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "Less relevant to UPSC syllabus."
+      }
+    },
+    {
+      "id": "the-hindu-delhi-hotel-fire-live-police-files-culpable-homicide-fir-at-least-21-people-kill",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "Delhi hotel fire LIVE: Police files culpable homicide FIR; at least 21 people killed",
+      "excerpt": "Delhi Police files culpable homicide FIR; PM Modi condoles loss of lives, announces ex-gratia",
+      "category": "India",
+      "priority": "High",
+      "url": "https://www.thehindu.com/news/cities/Delhi/delhi-malviya-nagar-restaurant-fire-live-updates-june-3-2026/article71056012.ece",
+      "publishedAt": "2026-06-03T20:53:35+05:30",
+      "clusterId": "the-hindu-karnataka-cm-swearing-in-live-d-k-shivak",
+      "clusterSize": 13,
+      "isClusterLead": false,
+      "articleText": "Leader of the Opposition in the Lok Sabha Rahul Gandhi on Wednesday (June 3, 2026) expressed grief over the Malviya Nagar fire tragedy in Delhi that claimed 21 lives, describing the incident as “extremely heartbreaking” and urging Congress workers to assist in relief and rescue efforts. In a post on X, Mr. Gandhi said, “The news of the deaths of several people in the fire in Malviya Nagar, Delhi, is extremely heartbreaking. I express my deepest condolences to all the bereaved families. I urge all Congress workers to contribute in every possible way to the relief and rescue operations. I hope for the swift recovery of the injured.” Congress MP Priyanka Gandhi Vadra also condoled the loss of lives and prayed for the speedy recovery of those injured in the incident. “The heart is deeply distressed by the tragic incident of a fire breaking out in a hotel located in Malviya Nagar, Delhi. My profound condolences go out to the families who have lost their loved ones in this heart-wrenching event. I pray to God that the departed souls may find a place at His divine feet and that He grant strength to the bereaved families to bear this immense sorrow. At the same time, I wish for the swift and complete recovery of all the injured,” she said on X. - ANI",
+      "facts": [],
+      "enrichment": {
+        "topic": "Security > Internal Security | Current Events > Crime & Courts",
+        "upscRelevance": "High",
+        "examAngle": "Prelims: Culpable homicide. Mains GS2: Police accountability and judicial process.",
+        "whyItMatters": "Hotel fire case underscores the importance of police investigation procedures."
+      }
+    },
+    {
+      "id": "the-hindu-brs-will-return-to-power-with-over-90-seats-ktr",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "BRS will return to power with over 90 seats: KTR",
+      "excerpt": "Bharat Rashtra Samithi (BRS) working president K.T. Rama Rao expressed confidence that the Bharat Rashtra Samiti (BRS) would win more than 90 seats if elections were held today, and challenged Chief Minister A. Revanth Reddy to seek fresh public approval if he was confident of his government’s…",
+      "category": "India",
+      "priority": "High",
+      "url": "https://www.thehindu.com/news/national/telangana/brs-will-return-to-power-with-over-90-seats-ktr/article71057594.ece",
+      "publishedAt": "2026-06-03T20:52:58+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "Bharat Rashtra Samithi (BRS) working president K.T. Rama Rao expressed confidence that the Bharat Rashtra Samiti (BRS) would win more than 90 seats if elections were held today, and challenged Chief Minister A. Revanth Reddy to seek fresh public approval if he was confident of his government’s performance. Mr Rama Rao said Telangana people would hold the Congress government accountable for its unfulfilled promises and the ‘disastrous’ governance that has cost Telangana’s growth prospects. Speaking at the ‘Meet the Press’ programme organised by Press Club Hyderabad, he alleged that the Congress administration has pushed Telangana into decline after a decade of rapid progress under former Chief Minister K. Chandrashekhar Rao. The former Minister termed Congress as ‘the first enemy of Telangana’, claiming that it has undermined the remarkable progress achieved under Mr. Chandrashekhar Rao’s leadership in agriculture, irrigation, drinking water, education, healthcare, welfare, and industrial growth. “It is now suffering from ‘policy paralysis.’ The lack of coordination in the Cabinet is reflected in the different figures claimed by the Ministers on paddy procurement,” he said. He claimed that the recent RBI data exposed Congress’s allegations regarding the previous government’s debt. The CAG report, apart from the RBI reports and the Central government’s figures placed in the Parliament, reflected the falsehood of the Congress. Mr. Rama Rao alleged that CM Revanth Reddy is…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance",
+        "upscRelevance": "High",
+        "examAngle": "Mains GS2: Political dynamics and electoral outcomes in state politics.",
+        "whyItMatters": "Understanding of recent election results is essential for Polity-related questions."
+      }
+    },
+    {
+      "id": "the-hindu-gujarat-launches-massive-anti-infiltration-drive-362-detained-in-operation-delta",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "Gujarat launches massive anti-infiltration drive; 362 detained in Operation Delta Hunt",
+      "excerpt": "Officials say it is an ongoing operation with more raids in the offing; the development comes days after Union Home Minister Amit Shah announced in Gandhinagar that illegal infiltrators would be identified and deported.",
+      "category": "India",
+      "priority": "High",
+      "url": "https://www.thehindu.com/news/national/gujarat/gujarat-launches-massive-anti-infiltration-drive-362-detained-in-operation-delta-hunt/article71057532.ece",
+      "publishedAt": "2026-06-03T20:52:05+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "The Gujarat Police detained 362 undocumented Bangladeshi immigrants and questioned more than 782 suspected foreign nationals during a State-wide crackdown under “Operation Delta Hunt” launched on Tuesday (June 2, 2026) night and continued into early Wednesday. The development comes days after Union Home Minister Amit Shah announced in Gandhinagar that illegal infiltrators would be identified and deported. The operation was carried out across Ahmedabad, Surat, Rajkot, Vadodara and several other parts of the State. Officials said it is an ongoing operation with more raids in the offing. According to the State government, those detained so far include 103 men, 188 women and 71 children. In Ahmedabad alone, around 300 suspected Bangladeshi nationals were rounded up during the drive. Of them, 155 have so far been confirmed as Bangladeshi nationals residing illegally in India, including 41 men, 95 women and 30 children. Surat accounted for 84 detentions, followed by Ahmedabad Rural with 34, East Kutch-Gandhidham with 13 and Bharuch with 12. Speaking to The Hindu , Ahmedabad Crime Branch Joint Commissioner of Police Sharad Singhal said the operation was planned following a high-level meeting chaired by Deputy Chief Minister and Home Minister Harsh Sanghavi, during which officials reviewed inputs regarding illegal Bangladeshi immigration into Gujarat. Police said more than 30 teams comprising personnel from the Crime Branch, the Special Operations Group (SOG) and local police…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Security > Border Issues | Security > Internal Security",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Knowledge of border security operations and internal measures against infiltration is crucial for Civil Services."
+      }
+    },
+    {
+      "id": "the-hindu-two-killed-after-being-hit-by-vehicle-in-kadapa-district",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "Two killed after being hit by vehicle in Kadapa district",
+      "excerpt": "Two youth were killed in a road accident while they were reportedly out for their morning walk at Mydukur mandal in Kadapa district early on Wednesday. The deceased were identified as Madan Gopal and Vanipenta Sumanth of G.V. Satram village. The duo, along with their friend Vijay, was taking an…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.thehindu.com/news/national/andhra-pradesh/two-killed-after-being-hit-by-vehicle-in-kadapa-district/article71057794.ece",
+      "publishedAt": "2026-06-03T20:52:01+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "Two youth were killed in a road accident while they were reportedly out for their morning walk at Mydukur mandal in Kadapa district early on Wednesday. The deceased were identified as Madan Gopal and Vanipenta Sumanth of G.V. Satram village. The duo, along with their friend Vijay, was taking an early morning stroll on the Hubli-Krishnapatnam national highway when an unidentified vehicle knocked them down from behind. Vijay sustained grievous injuries and was rushed to the government hospital in Proddatur. Mydukur police rushed to the spot, removed the bodies and registered a case.",
+      "facts": [],
+      "enrichment": {
+        "topic": "Current Events > Crime & Courts | Social Issues > Health",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Awareness of recent criminal incidents is important for Civil Services, though not directly linked to UPSC syllabus."
+      }
+    },
+    {
+      "id": "the-hindu-sulur-sexual-assault-cum-murder-police-get-three-day-custody-of-two-accused",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "Sulur sexual assault-cum-murder: police get three-day custody of two accused",
+      "excerpt": "The Special Court for POCSO Act cases in Coimbatore on Wednesday (June 3) granted the police a three-day custody of the two accused in the case pertaining to the alleged sexual assault-cum-murder of a 10-year-old girl near Sulur on the city outskirts recently. The two, K. Karthi (35) and R. Mohan…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.thehindu.com/news/national/tamil-nadu/sulur-sexual-assault-cum-murder-casepolice-get-three-days-custody-of-two-accused/article71057836.ece",
+      "publishedAt": "2026-06-03T20:49:38+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "The Special Court for POCSO Act cases in Coimbatore on Wednesday (June 3) granted the police a three-day custody of the two accused in the case pertaining to the alleged sexual assault-cum-murder of a 10-year-old girl near Sulur on the city outskirts recently. The two, K. Karthi (35) and R. Mohan (31) of Pallapalayam , were produced before the court amid tight security by the police. The Sulur horror story of child sexual assault and murder",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Judiciary | Social Issues > Women & Children",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Awareness of recent judicial decisions related to POCSO cases is crucial for Polity and Society questions."
+      }
+    },
+    {
+      "id": "the-hindu-sale-of-the-famed-tirumala-laddu-peaks-in-may-this-year",
+      "sourceId": "the-hindu",
+      "source": "The Hindu",
+      "title": "Sale of the famed Tirumala laddu peaks in May this year",
+      "excerpt": "TTD registers the highest-ever sale of 1.21 crore laddus in the month, surpassing the 1.10 crore sold in the corresponding month the previous year, which also reflects a sharp rise in pilgrim footfalls at the hill temple of Lord Venkateswara",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.thehindu.com/news/national/andhra-pradesh/sale-of-the-famed-tirumala-laddu-peaks-in-may-this-year/article71057412.ece",
+      "publishedAt": "2026-06-03T20:48:59+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "The famed Tirumala laddu, which has great demand among the pilgrim fraternity, registered its highest-ever monthly sales in May this year, reflecting a sharp rise in pilgrim footfall at the hill temple of Lord Venkateswara. Every day, tens of thousands of devotees carry home the laddu prasadam after offering prayers at the hill shrine. Behind the making of the laddus lies a massive round-the-clock operation at the temple ‘Potu’ (kitchen) - where centuries-old tradition is complemented by modern infrastructure to ensure uninterrupted supply of the prasadam to the devotees. Around 700 Sri Vaishnava Brahmins, assisted by TTD personnel and supervisors, work in shifts throughout the day to prepare them with unwavering devotion, strictly adhering to the traditional “Dittam” standards approved by TTD in 1950-51. The globally acclaimed laddu, which enjoys Geographical Indication (GI) tag and is backed by an FSSAI licence, is produced under stringent quality-control measures. Raw materials procured for the preparation of prasadam undergo laboratory testing before use, while two AI-powered colour-sorting machines installed in the Potu help remove impurities and ensure that only high-quality ingredients are used in the production process. The scale of the operation is also equally remarkable. The TTD consumes more than 68 tonnes of raw materials every day, including sugar, gram flour, ghee, cashew nuts, raisins, cardamom and ‘kalkand’, required in the making of the prasadam. The temple…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance | Economy > Tourism",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Knowledge of pilgrimage trends can be relevant for understanding regional economy and tourism policies."
+      }
+    },
+    {
+      "id": "hindustan-times-benefits-on-ev-purchase-fuel-vouchers-centre-approves-scheme-to-cut-pollut",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "Benefits on EV purchase, fuel vouchers: Centre approves scheme to cut pollution levels in Delhi",
+      "excerpt": "The scheme will be funded through the National Capital Region Planning Board (NCRPB) under the Ministry of Housing and Urban Affairs (MoHUA).",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/union-cabinet-two-year-scheme-cut-delhi-pollution-bs-iv-vehicles-all-you-need-to-know-101780498222808.html",
+      "publishedAt": "2026-06-03T20:39:23+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "Prime Minister Narendra Modi on Wednesday announced that the Union Cabinet has approved a scheme aimed at reducing pollution levels in Delhi–NCR. He added that the initiative will improve air quality, promote cleaner transport, and benefit vehicle owners by supporting the shift to less polluting vehicles. The two-year scheme is designed to cut air pollution in the Delhi–NCR region and promote cleaner mobility. It will be funded through the National Capital Region Planning Board (NCRPB) under the Ministry of Housing and Urban Affairs (MoHUA). The scheme will be implemented by the Ministry of Road Transport and Highways (MoRTH) and the Ministry of Petroleum and Natural Gas (MoPNG), in coordination with the governments of Delhi, Haryana, Rajasthan, and Uttar Pradesh. The total financial outlay for the scheme is ₹ 9,585 crore, which includes ₹ 5,041 crore from the Central Government and additional support through tax concessions from participating states. The scheme is expected to benefit around 2.07 lakh vehicle owners, including about 1.91 lakh truck owners and over 16,000 bus owners. The scheme will be overseen by an Empowered Committee chaired by the Cabinet Secretary, with members including the CEO of NITI Aayog, Secretaries of MoHUA, MoRTH, MoPNG, DFS, and Chief Secretaries of participating NCR states, while the Member Secretary of NCRPB will serve as the member convenor. At the district level, implementation and monitoring will be carried out by District Collectors and…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Economy > Trade & External Sector, Economy > Infrastructure",
+        "upscRelevance": "Medium",
+        "examAngle": "Mains GS2: Renewable energy initiatives can affect industrial policies.",
+        "whyItMatters": "Understanding renewable incentives is vital for India's sustainable economic development."
+      }
+    },
+    {
+      "id": "hindustan-times-a-mix-of-old-and-new-guard-who-are-the-leaders-in-cm-shivakumar-s-new-cabi",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "A mix of old and new guard: Who are the leaders in CM Shivakumar's new Cabinet?",
+      "excerpt": "Along with chief minister DK Shivakumar, thirteen legislators were sworn in as ministers in his Cabinet.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/a-mix-of-old-and-new-guard-who-are-the-leaders-in-cm-shivakumars-new-cabinet-101780494819069.html",
+      "publishedAt": "2026-06-03T20:35:38+05:30",
+      "clusterId": "the-hindu-karnataka-cm-swearing-in-live-d-k-shivak",
+      "clusterSize": 13,
+      "isClusterLead": false,
+      "articleText": "Congress' DK Shivakumar on Wednesday took oath as the 18th chief minister of Karnataka at Lok Bhavan in Bengaluru at around 4 pm. Along with him, thirteen legislators were sworn in as ministers in his Cabinet. A trusted organisational hand of the Congress and one of its most prominent Dalit faces in Karnataka, Parameshwara returned to the post of Deputy Chief Minister, marking yet another milestone in a political career spanning more than three decades. The 74-year-old leader, who has spent years strengthening the Congress party's grassroots network in Karnataka, has long been regarded as one of the party's most disciplined and dependable administrators. His elevation as Deputy CM in the D K Shivakumar-led government is widely seen as recognition of his enduring contribution to the organisation and governance. He represents Koratagere assembly segment in Tumakuru district. A six-time MLA, he was the Public Works Minister in the previous Siddaramaiah government. Hailing from the Valmiki tribal community, the 64-year-old Jarkiholi belongs to a politico-business family, which owns a sugar factory. He represents Yamakanamaradi in Belagavi. The 47-year-old Congress leader is the son of AICC chief Mallikarjun Kharge. The Dalit leader had held Information Technology, Bio Technology, and Rural Development and Panchayat Raj portfolio in the Siddaramaiah government. The Chittapur MLA is known for his fiery stand against the BJP and the RSS. Having served as the Assembly Speaker during…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance, Polity > Judiciary",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "This is more of a political news item with no direct UPSC exam relevance."
+      }
+    },
+    {
+      "id": "hindustan-times-prez-murmu-inaugurates-tribal-innovation-initiatives-at-national-itda-conc",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "Prez Murmu inaugurates tribal innovation initiatives at national ITDA conclave",
+      "excerpt": "President Murmu reaffirmed the government’s commitment to ensure inclusive development and said tribal communities must remain central to India’s journey",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/prez-murmu-inaugurates-tribal-innovation-initiatives-at-national-itda-conclave-101780499023587.html",
+      "publishedAt": "2026-06-03T20:33:43+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "President Droupadi Murmu on Wednesday virtually inaugurated a series of tribal development initiatives, including 75 space labs in Eklavya Model Residential Schools (EMRSs) and a specialised training fab at the Indian Institute of Science (IISc), Bengaluru, as the Centre unveiled an ambitious roadmap to strengthen tribal governance institutions across the country. The initiatives were launched during the National Conclave on Strengthening Integrated Tribal Development Agencies and Projects (ITDAs/ITDPs), organised by the Union ministry of tribal affairs at Vigyan Bhawan in New Delhi. The conclave brought together senior officials from tribal development agencies, state governments and the Centre to discuss institutional reforms aimed at improving service delivery in tribal areas. In her address, President Murmu reaffirmed the government’s commitment to ensure inclusive development and said tribal communities must remain central to India’s journey towards becoming a developed nation. She also inaugurated a documentary film titled Sabse Door Sabse Pehle . Also Read: Prez Murmu urges healthcare institutions to prioritise social responsibility The ministry said the 75 space labs, spread across 18 states, have been established with financial support of about ₹ 12 crore from Bharat Petroleum Corporation Limited (BPCL) under its corporate social responsibility programme. Developed under the guidance of ISRO-recognised agencies, the laboratories are expected to benefit around 50,000…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance, Polity > Judiciary",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "This is more of a political news item with no direct UPSC exam relevance."
+      }
+    },
+    {
+      "id": "hindustan-times-india-becomes-2nd-largest-solar-growth-market-surpassing-us-mnre",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "India becomes 2nd largest solar growth market, surpassing US: MNRE",
+      "excerpt": "On April 9, HT reported that India ranks third globally in renewable energy installed capacity, after China and the US",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/india-becomes-2nd-largest-solar-growth-market-surpassing-us-mnre-101780499023011.html",
+      "publishedAt": "2026-06-03T20:33:42+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "India has become the second largest solar growth market, surpassing the US, Pralhad Joshi, minister for new and renewable energy said on Wednesday. “India’s solar growth story is setting global benchmarks. In 2025, India surpassed the USA in annual solar capacity additions to become the world’s 2nd largest solar growth market. As the fastest-growing major solar market, India is driving record capacity additions through strong policy support, innovation and world-class infrastructure,” he wrote on X. “Under the visionary leadership of Hon’ble PM Shri @narendramodi Ji, India’s #CleanEnergy transition is accelerating, strengthening energy security, advancing sustainable development and reinforcing India’s position as a global leader in #RenewableEnergy. #IndiaRanks2InSolar,” he added. As per latest International Renewable Energy Agency (IRENA) report, India clocked over 37GW+, compared to USA’s 34GW in 2025, helping it race ahead of the USA to the second position globally, officials said. “India has emerged as the world’s 2nd-largest solar market, overtaking the US in annual solar capacity additions in 2025. This achievement reflects the nation’s rapid clean energy growth helping ensure efficient, reliable, and sustainable solar infrastructure,” Bhupender Yadav, union environment minister wrote on X. On April 9, HT reported that India ranks third globally in renewable energy installed capacity, after China and the US, according to Renewable Energy Statistics 2026, Joshi said.…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Economy > Fiscal Policy, Economy > Trade & External Sector",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "India's rapid solar growth impacts national economic policies and international trade relations."
+      }
+    },
+    {
+      "id": "hindustan-times-ed-summons-tmc-s-abhishek-banerjee-on-june-15-in-bengal-recruitment-case",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "ED summons TMC’s Abhishek Banerjee on June 15 in Bengal recruitment case",
+      "excerpt": "The summons, which require the former chief minister’s nephew to turn up at ED’s Kolkata zonal office, were delivered at Banerjee’s Kalighat area residence.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/ed-summons-tmc-s-abhishek-banerjee-on-june-15-in-bengal-recruitment-case-101780498602532.html",
+      "publishedAt": "2026-06-03T20:26:42+05:30",
+      "clusterId": "hindustan-times-ed-summons-tmc-s-abhishek-banerjee",
+      "clusterSize": 2,
+      "isClusterLead": true,
+      "articleText": "The Enforcement Directorate (ED) on Wednesday summoned Trinamool Congress general secretary Abhishek Banerjee to appear before the agency on June 15 in connection with its money laundering probe linked to irregularities in West Bengal’s primary teachers’ recruitment case, people familiar with the development said. The summons, which require the former chief minister’s nephew to turn up at ED’s Kolkata zonal office, were delivered at Banerjee’s Kalighat area residence. The ED probe under the Prevention of Money Laundering Act (PMLA), which started in 2022, is based on first information report (FIR) registered by the Central Bureau of Investigation (CBI) pertaining to illegal appointment of primary teachers, offering appointment to the undeserving, non-listed and below ranked candidates and depriving the deserving and genuine candidates. In May 2022, high court judge Abhijit Gangopadhyay, who later joined the BJP and represents Tamluk seat in the Lok Sabha, ordered CBI to probe the appointment of non-teaching staff (Group C and D) and teaching staff by the West Bengal School Service Commission and West Bengal Board of Secondary Education between 2014 and 2021. ED has already filed multiple charge sheets against several TMC leaders and former ministers including Chandranath Sinha and Partha Chatterjee and carried out multiple raids. Charges have also been framed against 54 persons and entities including Partha Chatterjee and trial is undergoing before a special court in West…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Security > Internal Security, Current Events > State Politics",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Understanding the judicial process is important for India's internal security and governance."
+      }
+    },
+    {
+      "id": "hindustan-times-malviya-nagar-hotel-hub-serving-medical-tourists-under-spotlight-after-dea",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "Malviya Nagar hotel hub serving medical tourists under spotlight after deadly fire",
+      "excerpt": "Locals estimate that more than 35 hotels and guest houses operate in the neighbourhood, with many offering budget accommodation for patients and attendants.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/malviya-nagar-hotel-hub-serving-medical-tourists-under-spotlight-after-deadly-fire-101780497850352.html",
+      "publishedAt": "2026-06-03T20:16:35+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "New Delhi: The Press Enclave Road area in south Delhi's Malviya Nagar, a densely packed cluster of hotels, inns and guest houses catering largely to patients visiting the nearby Max Hospital, has come under scrutiny after a fire at a local bed and breakfast hotel claimed 21 lives on Wednesday. Just a short walk from the Max Hospital, the locality has evolved into a preferred hub for foreign and domestic patients seeking affordable lodging during their treatment period. A walk through the area revealed dozens of hotels and guest houses operating in close proximity, many from narrow multi-storey buildings squeezed between restaurants and commercial establishments. Several of the establishments have more than 30 rooms, while some even offer accommodation in basements and on rooftops. The area is dotted with narrow passages, in some places barely wide enough to allow a person through, adjoining buildings and connecting hotels, restaurants and service areas. Locals estimate that more than 35 hotels and guest houses operate in the neighbourhood, with many offering budget accommodation for patients and their attendants. Among those staying in the area is Musa Okoro, a foreign national undergoing treatment at Max Hospital. Recounting the events of Wednesday, Okoro said he returned from the hospital to find a large crowd outside a neighbouring hotel. \"I have been at the hospital since morning. When I came back, I saw many people standing outside and realised that something serious…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Social Issues > Health",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Highlights the role of accommodations in health tourism, significant for understanding regional economic and social issues."
+      }
+    },
+    {
+      "id": "hindustan-times-from-student-activist-to-karnataka-chief-minister-the-rise-of-dk-shivakuma",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "From student activist to Karnataka chief minister: The rise of DK Shivakumar",
+      "excerpt": "For Shivakumar, popularly known as 'Kanakapura Bande' (the Rock of Kanakapura), patience had become a political necessity.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/from-student-activist-to-karnataka-chief-minister-the-rise-of-dk-shivakumar-101780496606289.html",
+      "publishedAt": "2026-06-03T20:06:39+05:30",
+      "clusterId": "the-hindu-karnataka-cm-swearing-in-live-d-k-shivak",
+      "clusterSize": 13,
+      "isClusterLead": false,
+      "articleText": "From a student activist in Kanakapura in Bengaluru South district to becoming Karnataka's 25th Chief Minister, D K Shivakumar 's four-decade-long journey is marked by turbulence, triumphs and unflinching loyalty to the Congress party. From the dusty lanes of Dodda Alahalli village, the 64-year-old leader survived electoral setbacks, imprisonment and endured a protracted struggle to reach the top post, he had long coveted. The diehard Congressman had spent years building his image as an efficient organiser capable of delivering victories and protecting the party during its most difficult moments. After the Congress swept the 2023 Assembly elections with 134 seats, Shivakumar emerged as a leading contender for the chief minister's post. However, the party leadership eventually chose Siddaramaiah , appointing Shivakumar as Deputy Chief Minister while entrusting him with key portfolios and allowing him to continue as Karnataka Pradesh Congress Committee president. Almost immediately, reports surfaced of a power-sharing arrangement in which Siddaramaiah would lead the government during the first half of the term before making way for Shivakumar. While neither leader publicly acknowledged such an understanding, speculation persisted throughout the government's tenure. The debate intensified after the Congress government completed two-and-a-half years in office in November 2025, triggering renewed discussions over succession and exposing competing power centres within the state…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Illustrates political ascent, relevant for studying election dynamics and governance topics."
+      },
+      "storyId": "pib-chief-minister-of-rajasthan-meets-prime-minist",
+      "storyEditions": [
+        {
+          "date": "2026-06-01",
+          "title": "Chief Minister of Rajasthan meets Prime Minister",
+          "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2267633"
+        }
+      ],
+      "storyDayCount": 2
+    },
+    {
+      "id": "indian-express-journalist-iit-ian-among-spokespersons-named-by-cockroach-party-ahead-of-sa",
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "title": "Journalist, IIT-ian among spokespersons named by Cockroach Party ahead of Saturday’s protest",
+      "excerpt": "An investigative journalist, an author and an IIT-ian have been named as spokespersons by the Cockroach Janta Party (CJP), the youth-led protest movement founded by Abhijeet Dipke , ahead of its planned demonstration in Delhi on Saturday, June 6. Investigative journalist Saurav Das has been…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://indianexpress.com/article/india/cockroach-cjp-spokespersons-saurav-das-abhijeet-dipke-jantar-mantar-protest-10722635",
+      "publishedAt": "2026-06-03T19:56:27+05:30",
+      "clusterId": "indian-express-journalist-iit-ian-among-spokespers",
+      "clusterSize": 2,
+      "isClusterLead": true,
+      "articleText": "An investigative journalist, an author and an IIT-ian have been named as spokespersons by the Cockroach Janta Party (CJP), the youth-led protest movement founded by Abhijeet Dipke , ahead of its planned demonstration in Delhi on Saturday, June 6. Investigative journalist Saurav Das has been appointed chief spokesperson, while political researcher, author and filmmaker Vijeta Dahiya and former McKinsey consultant and IIT Kanpur alumnus Ashutosh Ranka will also represent the movement, the group said in a statement on Wednesday. In a statement on X, the party said they will represent the movement before the public and media as it seeks to “change the political discourse of India” through a new generation of leaders. Cockroach Janta Party announces three spokespersons who will speak on behalf of the protest movement to the public and the media. Investigative journalist Saurav Das will take on the role of Chief Spokesperson. Political researcher, author and filmmaker Vijeta Dahiya, and an… — Cockroach is Back (@Cockroachisback) June 3, 2026 The planned protest centres on a demand for the resignation of Union Education Minister Dharmendra Pradhan over issues including the NEET paper leak controversy. Dipke, currently based in Boston, had told The Indian Express earlier that he intends to stage a peaceful sit-in at Jantar Mantar and is prepared for possible police action, including detention. Details of the “plan of action” were announced in Das’s address in a press conference on…",
+      "facts": [
+        {
+          "type": "appointment",
+          "text": "Appointment: Chief"
+        }
+      ],
+      "enrichment": {
+        "topic": "Social Issues > Health",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "Journalistic influence on public discourse, less relevant for UPSC preparation."
+      }
+    },
+    {
+      "id": "hindustan-times-irctc-sets-new-records-in-online-ticket-booking-blocks-3-crore-suspicious-",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "IRCTC sets new records in online ticket booking, blocks 3 crore suspicious IDs in 2025-26",
+      "excerpt": "As part of these efforts, IRCTC informed that the corporation deactivated 3.03 crore suspicious user IDs in 2025.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/irctc-sets-new-records-in-online-ticket-booking-blocks-3-crore-suspicious-ids-in-202526-101780495882583.html",
+      "publishedAt": "2026-06-03T19:45:53+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "New Delhi: The Indian Railway Catering and Tourism Corporation (IRCTC) intensified its anti-fraud and cybersecurity initiatives during the year to ensure genuine passengers receive fair access to ticket bookings and to curb misuse of the system. As part of these efforts, IRCTC informed that the corporation deactivated 3.03 crore suspicious user IDs in 2025. It also intercepted substantial volumes of malicious online traffic on a regular basis, helping safeguard the integrity of the ticketing system. In its official data, IRCTC said that in coordination with law enforcement agencies, 501 complaints were lodged on the National Cyber Crime Portal pertaining to 4.18 lakh suspicious PNRs. Additionally, 6.05 crore suspicious user IDs were placed under revalidation to verify their authenticity and prevent misuse. IRCTC also took action against fraudulent digital identities by blocking 13,343 suspicious email domains during the year. It is informed that to provide a level playing field during high-traffic windows (such as Tatkal bookings), IRCTC uses AI/ML to detect and neutralise fraudulent accounts. The AI tracks and deactivates bulk booking agents and users exploiting disposable email addresses. It is also notable that IRCTC has achieved significant milestones in internet ticketing during 2025-26, registering record-breaking growth in online reservations while simultaneously strengthening its mechanisms to combat cyber fraud and unauthorised bookings. According to official data,…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Economy > Trade & External Sector | Economy > Digital & AI",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Shows IRCTC's role in digital transformation and combating fraud, important for economic governance."
+      }
+    },
+    {
+      "id": "indian-express-the-money-is-our-only-hope-in-odisha-the-elderly-wait-for-social-security-p",
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "title": "‘The money is our only hope’ – In Odisha, the elderly wait for social security pensions",
+      "excerpt": "",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://indianexpress.com/article/india/odisha-social-security-old-age-pension-delay-10722582",
+      "publishedAt": "2026-06-03T19:43:56+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Society > Social Security & Welfare | Economy > Fiscal Policy",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Demonstrates the impact of fiscal policies on social security, crucial for economic and governance studies."
+      }
+    },
+    {
+      "id": "hindustan-times-delhi-cm-gupta-seeks-report-from-dm-in-malviya-nagar-fire-tragedy-official",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "Delhi CM Gupta seeks report from DM in Malviya Nagar fire tragedy; officials probe alleged lapses",
+      "excerpt": "The tragedy claimed 21 lives at Flourish Stay Guest House in Hauz Rani area of Malviya Nagar.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/delhi-cm-gupta-seeks-report-from-dm-in-malviya-nagar-fire-tragedy-officials-probe-alleged-lapses-101780494373213.html",
+      "publishedAt": "2026-06-03T19:28:14+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "Delhi Chief Minister Rekha Gupta on Wednesday sought a detailed report from the South Delhi district magistrate on the Malviya Nagar fire tragedy, which claimed 21 lives, and warned of stern action if any lapses were found, officials said. According to the Delhi government officials, the emergency operations centre (EOC) of the District Disaster Management Authority (South) received information of a fire at Flourish Stay Guest House in Hauz Rani area of Malviya Nagar at 8.52 am. Immediately, emergency response agencies were alerted as per the standard operating procedure. The first responders found a fierce fire engulfing the guest house. Two medical teams, each comprising two doctors and six paramedics, were dispatched to the spot at 9.54 am, and they reached the spot at 10.05 AM, officials said. Also Read | Malviya Nagar fire: Delhi eatery had approval for 6 rooms, was operating 24 Forty-seven people affected by the fire incident were rushed to different hospitals. Out of these, 21 people lost their lives, while 17 people were found injured. The condition of nine individuals was stated to be critical, officials said. According to preliminary information, the fire started from a restaurant located on the ground floor of the guest house. The name of Lavkesh Bajaj has emerged as the owner of the guest house, they said. Fifteen fire tenders were deployed to control the fire, and personnel of various agencies, including Delhi Fire Service (DFS), Delhi Police, and DDMA, jointly…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Security > Internal Security",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Understanding internal security incidents is crucial for GS papers, but this specific incident may not appear in prelims or mains."
+      }
+    },
+    {
+      "id": "hindustan-times-why-cockroach-janata-party-has-no-woman-spokesperson-abhijeet-dipke-answer",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "Why Cockroach Janata Party has no woman spokesperson? Abhijeet Dipke answers",
+      "excerpt": "After the CJP announced 3 spokespersons ahead of its press conference on Wednesday, social media users pointed out that no female had been named for the roles.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/why-cockroach-janata-party-has-no-woman-spokesperson-abhijeet-dipke-answers-saurav-das-vijeta-dahiya-ashutosh-ranka-101780491434274.html",
+      "publishedAt": "2026-06-03T19:26:45+05:30",
+      "clusterId": "hindustan-times-why-cockroach-janata-party-has-no-",
+      "clusterSize": 2,
+      "isClusterLead": true,
+      "articleText": "The Cockroach Janata Party (CJP) announced three spokespersons for the movement ahead of its planned protest at Delhi's Jantar Mantar. The names included journalist Saurav Das, filmmaker Vijeta Dahiya and former management consultant Ashutosh Ranka. However, social media users soon pointed out that no female had been named in the roles, with one saying, “Include some female spokesperson names before others label it male only party.” Another user questioned the “non-inclusivity” of members of from the Dalit and Adivasi communities. They also highlighted no representation from among women, Muslims or the LGBTQ community. Now, CJP founder Abhijeet Dipke has addressed the allegations, answering why the movement had not announced any woman spokesperson yet. Dipke said that the role had been offered to the outfit's female team members, but they had chosen to be involved without being in the forefront owing to online attacks and threats. Also Read | Teens and the 'Cockroach': Online anger hits the ground with CJP's Delhi protest plan, Dipke says ‘meet me at airport’ “Why is there no woman spokesperson in the CJP? We did offered the role to our female team members, but many told us they would prefer to be actively involved without being at the forefront due to the constant online attacks and threats we are receiving. We respect their decision,” Dipke said in a post on X. The CJP founder further invited women who would be willing to join the movement and become a spokesperson to join…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Social Issues > Women & Children",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "While gender representation is a social issue, this article's context may not directly relate to UPSC exams."
+      },
+      "storyId": "indian-express-cockroach-party-s-abhijeet-dipke-to",
+      "storyEditions": [
+        {
+          "date": "2026-06-01",
+          "title": "Cockroach party’s Abhijeet Dipke to return to India, demand Dharmendra Pradhan’s resignation",
+          "url": "https://indianexpress.com/article/india/cjp-founder-abhijeet-dipke-to-return-to-india-on-june-6-launch-protest-seeking-dharmendra-pradhans-resignation-10717982"
+        },
+        {
+          "date": "2026-06-02",
+          "title": "Cockroach Janta Party now transitioning into a movement: Abhijeet Dipke",
+          "url": "https://www.thehindu.com/news/national/cjp-founder-abhijeet-dipke-interview-cockroach-janta-party-now-transitioning-into-a-movement/article71048435.ece"
+        }
+      ],
+      "storyDayCount": 3
+    },
+    {
+      "id": "hindustan-times-cities-of-future-cannot-be-hotter-versions-of-today-s-cities-undp-india-he",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "‘Cities of future cannot be hotter versions of today’s cities’: UNDP India head",
+      "excerpt": "As India continues its rapid development journey and invests in new infrastructure, the key will be to integrate climate and biodiversity considerations",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/cities-of-future-cannot-be-hotter-versions-of-today-s-cities-undp-india-head-101780494458200.html",
+      "publishedAt": "2026-06-03T19:17:37+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "“The cities of the future cannot simply be hotter versions of today’s cities with more cooling systems added. They need to be designed differently, with greater emphasis on walkability, green and blue spaces, mixed land use, climate-sensitive architecture, and public spaces that reduce heat exposure while improving quality of life,” Angela Lusigi, resident representative, United Nations Development Programme (UNDP), India, said. She also stressed that as exposure to extreme heat increases in India, focus should be on practical solutions, with localised delivery of climate finance. UNDP has worked with India to develop its national adaptation plan which incorporates some of these strategies. We are seeing a brutal heat extremes crisis in parts of India. What kind of infrastructure interventions can help address that and protect the most vulnerable populations? India’s heat crisis is no longer just a public health challenge. It is increasingly an infrastructure, development, and equity challenge. As extreme heat becomes more frequent and intense, the priority must be to reduce exposure, protect essential services, and target investments towards the communities most at risk. Particularly those living in informal settlements, densely populated urban areas, schools, health facilities, and workplaces that depend on outdoor labour. Many of the most effective solutions are practical and place-based, including cool roofs, shaded public spaces, reflective surfaces, urban forests,…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Economy > Infrastructure",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Future city planning with climate considerations is relevant for GS questions on sustainable development and urban infrastructure."
+      }
+    },
+    {
+      "id": "hindustan-times-tortured-trapped-starved-by-in-laws-for-a-year-dehradun-woman-freed-by-par",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "Tortured, trapped, starved by in-laws for a year: Dehradun woman freed by parents",
+      "excerpt": "Woman Kept Prisoner in Toilet, Tortured and Starved by Husband and In-Laws",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/tortured-trapped-starved-by-in-laws-for-a-year-dehradun-woman-freed-by-parents-101780492224302.html",
+      "publishedAt": "2026-06-03T19:12:51+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "For nearly a year, her husband and in-laws locked her in a toilet, giving her barely any food, torturing her with iron rods and whips and cutting her off from not just her family but also her newborn twins. Sakshi's plight came to light earlier this week when her father managed to access her home in Bhauwala Sainik Colony here and rescued her with the help of the pradhan and panchayat representatives, police said. Following a complaint lodged by Sakshi's father, Sanjeev Bahuguna, the Selakui police filed an FIR on Monday. According to the complaint, Sakshi's confinement began in July 2025, just months after she gave birth to twins in February. From the day of their birth, her children were taken away from her by her husband, Rahul Khandudi, and her parents-in-law. She was denied even the touch or hold of her infants. Her father told the police that Sakshi was locked up from 9 am or 10 am every day and kept confined through the day and night. During these ten months, she starved and was given only raw rice, an onion, salt, and a green chilli to eat. Bahuguna alleged that his daughter was beaten with iron pipes, rods, chairs, and whips, leaving her with severe injuries across her body. The accused also caused injuries to her private parts using a bottle and sticks, and her hair was repeatedly pulled out during the assaults. The father alleged that the family was completely cut off from Sakshi for ten months, as the accused refused to let them meet her or speak to her over the…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Social Issues > Women & Children",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Cases of domestic violence against women are crucial topics in GS papers and may come up during mains. Also relevant for Prelims if it involves notable figures or recent cases."
+      }
+    },
+    {
+      "id": "pib-deputy-prime-minister-and-foreign-minister-of-lao-pdr-calls-on-the-president-of-india",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "DEPUTY PRIME MINISTER AND FOREIGN MINISTER OF LAO PDR CALLS ON THE PRESIDENT OF INDIA",
+      "excerpt": "Deputy Prime Minister and Foreign Minister of Lao PDR, H.E. Mr. Thongsavan Phomvihane, called on the President of India, Smt. Droupadi Murmu at Rashtrapati Bhavan today (June 3, 2026). Welcoming Mr Phomvihane on his first visit to India, the President said that India and Lao PDR share close…",
+      "articleText": "Deputy Prime Minister and Foreign Minister of Lao PDR, H.E. Mr. Thongsavan Phomvihane, called on the President of India, Smt. Droupadi Murmu at Rashtrapati Bhavan today (June 3, 2026). Welcoming Mr Phomvihane on his first visit to India, the President said that India and Lao PDR share close civilizational ties, reflected in our common heritage of Buddhism and the Ramayana. This year, we are celebrating the 70th anniversary of the establishment of diplomatic relations between the two countries, which is a significant milestone in the bilateral relationship. The President noted that in October 2024, Prime Minister Shri Narendra Modi visited Lao PDR to participate in the ASEAN-related Summits. During that visit, several agreements were concluded, giving fresh momentum to our cooperation. The President said that bilateral trade between India and Lao PDR has grown, but there remains considerable scope for us to make further progress together in both trade and investment. The President said that India would be happy to expand cooperation with Lao PDR in areas such as information and communication technology (ICT), health, medicine, agriculture, irrigation, manufacturing, renewable energy, and electricity. We are also keen to share our experiences in the fields of innovation and the knowledge-based economy. The President was happy to note that the development partnership between the two countries has become even stronger, and is aligned with the aspirations of Lao youth and the coun",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268585",
+      "publishedAt": "2026-06-03T19:11:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "International Relations > Bilateral Relations | International Relations > Multilateral Forums",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "This event is not directly relevant to UPSC exam topics. However, it may help in understanding India's foreign relations."
+      }
+    },
+    {
+      "id": "pib-dr-mansukh-mandaviya-marks-world-bicycle-day-2026-with-cycling-ride-at-jln-stadium",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "Dr. Mansukh Mandaviya marks World Bicycle Day 2026 with Cycling Ride at JLN Stadium",
+      "excerpt": "Smt. Raksha Khadse also graces event at the Sports Authority of India ahead of mega Fit India Sundays on Cycle event on June 7 Union Minister for Youth Affairs & Sports and Labour & Employment Dr. Mansukh Mandaviya today marked World Bicycle Day 2026 by cycling alongside around 30 officers and…",
+      "articleText": "Smt. Raksha Khadse also graces event at the Sports Authority of India ahead of mega Fit India Sundays on Cycle event on June 7 Union Minister for Youth Affairs & Sports and Labour & Employment Dr. Mansukh Mandaviya today marked World Bicycle Day 2026 by cycling alongside around 30 officers and staff members of the Ministry of Youth Affairs & Sports and the Sports Authority of India (SAI) at the Jawaharlal Nehru Stadium in New Delhi. Hon’ble Minister of State for Youth Affairs & Sports Smt. Raksha Khadse also graced the occasion. Participants who joined the commemorative ride completed a full lap of the stadium, reinforcing the message of fitness, sustainability and environmental responsibility. Addressing citizens through a special World Bicycle Day message, Dr. Mandaviya reiterated that cycling is far more than a recreational activity. \"Cycling is not merely an exercise or a hobby; it is a symbol of a healthy and empowered lifestyle. It should become a daily habit because it keeps us fit, protects the environment, reduces pollution and contributes to building a Fit, Healthy and Viksit Bharat,\" he said. Observed globally on June 3, this year's World Bicycle Day carries the theme \"Cycling for a Greener Future\", highlighting the bicycle's role in reducing carbon emissions, combating climate change and promoting healthy, sustainable mobility. The occasion resonated strongly with the vision championed by Dr. Mandaviya through the Fit India Movement and the rapidly growing Fit Ind",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268582",
+      "publishedAt": "2026-06-03T19:04:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance | Polity > Youth Affairs and Sports",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "While related to sports, this event does not directly influence UPSC exam preparation."
+      }
+    },
+    {
+      "id": "hindustan-times-stop-hitting-civilians-india-tells-iran-after-deadly-kuwait-strike-kills-c",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "‘Stop hitting civilians’: India tells Iran after deadly Kuwait strike kills citizen",
+      "excerpt": "The dead Indian was a worker at the airport. Kuwait is home to more than one million Indians, the country’s largest expatriate community",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/india-condemns-iran-s-kuwait-airport-attack-after-another-citizen-is-killed-101780493497615.html",
+      "publishedAt": "2026-06-03T19:01:37+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "India on Wednesday condemned an Iranian attack on Kuwait international airport that left an Indian national dead and called for an end to the targeting of civilian infrastructure, even as the total number of Indians killed in the region since the start of the West Asia conflict rose to 10. The death of the Indian national was initially confirmed by the Indian embassy in Kuwait City. In a social media post, the mission expressed its “deepest condolences at the tragic demise of an Indian national due to an attack on the airport in Kuwait” and said it is coordinating with Kuwaiti authorities to provide assistance to the bereaved family and those injured in the incident. A subsequent statement from the external affairs ministry condemned the attack on Kuwait international airport and said several Indians were among the injured. “Since the onset of the conflict in West Asia, we have strongly urged that civilian population and civilian infrastructure must not be targeted. We again call upon parties to cease such attacks,” the statement said. “We remain in close contact with local authorities for the welfare of Indian nationals,” the statement said, adding that Indian missions and posts across the region are “on alert and continue to proactively support our community”. People familiar with the matter said the dead Indian was a worker at the airport. Kuwait is home to more than one million Indians, the country’s largest expatriate community. Kuwait’s foreign ministry said Iranian…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Security > Internal Security | International Relations > Bilateral Relations",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Shows India's stance in international diplomacy and internal security, relevant for UPSC's GS Paper II (International Relations & Strategic Studies)."
+      }
+    },
+    {
+      "id": "indian-express-neet-ug-leak-accused-wants-to-prep-for-retest-court-allows-books-in-custody",
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "title": "NEET UG leak accused wants to prep for retest, court allows books in custody",
+      "excerpt": "",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://indianexpress.com/article/india/neet-ug-leak-accused-retest-court-books-custody-10722514",
+      "publishedAt": "2026-06-03T18:50:16+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Current Events > Crime & Courts | Education",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "Specific to NEET UG leak case, not broadly relevant for UPSC syllabus."
+      }
+    },
+    {
+      "id": "livemint-cabinet-clears-20-000-cr-schemes-for-jet-fuel-support-cleaner-delhi-vehicles",
+      "sourceId": "livemint",
+      "source": "Mint",
+      "title": "Cabinet clears ₹20,000 cr schemes for jet fuel support, cleaner Delhi vehicles",
+      "excerpt": "One-time budgetary support of up to ₹10,000 crore for OMCs to provide ATF price stabilization amid high crude prices. The budgetary support will be in the form of interest-free advances to OMCs.",
+      "category": "Business",
+      "priority": "Medium",
+      "url": "https://www.livemint.com/economy/atf-price-stabilization-upgrading-truck-bus-fleet-delhi-ncr-oil-marketing-companies-11780487966414.html",
+      "publishedAt": "2026-06-03T18:48:36+05:30",
+      "clusterId": "the-hindu-cabinet-approves-10-000-crore-atf-price-",
+      "clusterSize": 3,
+      "isClusterLead": false,
+      "articleText": "New Delhi: To insulate the economy from the ripple effects of the West Asia conflict, the Union cabinet on Wednesday approved two major interventions worth nearly ₹ 20,000 crore—a ₹ 10,000-crore fuel price stabilization fund (PSF) for the aviation sector, and a ₹ 9,585-crore clean transport scheme for Delhi-NCR. Mint had reported earlier this year that the government is planning a PSF for petroleum products. The PSF for aviation will offer interest-free advances to oil marketing companies (OMCs), which will help them offer aviation turbine fuel (ATF) at steady prices to Indian airlines, reducing the impact of soaring global jet fuel costs, which is their most significant expense head. Separately, the clean mobility scheme will encourage the replacement of older commercial vehicles with cleaner BS-VI and electric alternatives, helping tackle pollution in the national capital region while lowering fuel consumption and oil imports. At a media briefing on Wednesday, India’s information and broadcasting, IT and railway minister Ashwini Vaishnaw said that due to the West Asia crisis, international ATF prices have sharply risen from ₹ 60.5 a litre in March to ₹ 142 a litre in May, and the PSF would aim to manage this volatility. The West Asia war broke on 28 February. Vaishnaw said the scheme would reduce the pass-through of fuel price shocks to passengers by moderating fare volatility, while also shielding OMCs from losses arising from costly ATF prices. Under the scheme, OMCs…",
+      "facts": [
+        {
+          "type": "money",
+          "text": "₹10,000 Crore"
+        },
+        {
+          "type": "money",
+          "text": "₹20,000 Crore"
+        }
+      ],
+      "enrichment": {
+        "topic": "Economy > Fiscal Policy | Economy > Infrastructure",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Reflects government's fiscal measures and policies on infrastructure, relevant for UPSC's GS Paper II (Economic Development)."
+      }
+    },
+    {
+      "id": "the-hindu-environment-on-the-critically-endangered-white-bellied-heron-green-humour-by-roh",
+      "sourceId": "the-hindu-environment",
+      "source": "The Hindu – Environment",
+      "title": "On the critically endangered white-bellied heron | Green Humour by Rohan Chakravarty",
+      "excerpt": "Account subscription benefits alongside Premium Stories, Editorials, Opinions and more. Unlock these with Subscription Rohan Chakravarty is a cartoonist and illustrator from Nagpur. His series, ‘Green Humour’, consists of cartoons and comics on wildlife, nature conservation, environmental issues,…",
+      "category": "Environment",
+      "priority": "Medium",
+      "url": "https://www.thehindu.com/society/green-humour-cartoon-white-bellied-heron-bhutan-india-rohan-chakravarty/article71047506.ece",
+      "publishedAt": "2026-06-03T18:47:01+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "Account subscription benefits alongside Premium Stories, Editorials, Opinions and more. Unlock these with Subscription Rohan Chakravarty is a cartoonist and illustrator from Nagpur. His series, ‘Green Humour’, consists of cartoons and comics on wildlife, nature conservation, environmental issues, sustainability, and all things green. The Hindu Sunday Magazine / Green Humour / environmental issues / wildlife / wildlife / nature and wildlife / flora and fauna Terms & conditions | Institutional Subscriber Comments have to be in English, and in full sentences. They cannot be abusive or personal. Please abide by our community guidelines for posting your comments. We have migrated to a new commenting platform. If you are already a registered user of The Hindu and logged in, you may continue to engage with our articles. If you do not have an account please register and login to post comments. Users can access their older comments by logging into their accounts on Vuukle.",
+      "facts": [],
+      "enrichment": {
+        "topic": "Environment > Biodiversity | Environment > Climate Change",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Highlights biodiversity issues, important for UPSC's GS Paper II (Environmental Science & Policy)."
+      }
+    },
+    {
+      "id": "pib-prime-minister-congratulates-ms-mette-frederiksen-on-assuming-office-as-the-prime-mini",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "Prime Minister congratulates Ms. Mette Frederiksen on assuming office as the Prime Minister of Denmark",
+      "excerpt": "Prime Minister Shri Narendra Modi today congratulated Ms. Mette Frederiksen on assuming office as the Prime Minister of Denmark for a remarkable third consecutive term. The Prime Minister noted that India and Denmark share an enduring partnership founded on mutual trust, shared values, and a common…",
+      "articleText": "Prime Minister Shri Narendra Modi today congratulated Ms. Mette Frederiksen on assuming office as the Prime Minister of Denmark for a remarkable third consecutive term. The Prime Minister noted that India and Denmark share an enduring partnership founded on mutual trust, shared values, and a common commitment to a sustainable future. Shri Modi stated that he looks forward to working closely with Prime Minister Frederiksen to further strengthen the India-Denmark Green Strategic Partnership and take this cooperation to new heights for the benefit of the people. \"Congratulations to my friend Ms. Mette Frederiksen on assuming office as the Prime Minister of Denmark for a remarkable third consecutive term. India and Denmark share an enduring partnership founded on mutual trust, shared values and a common commitment to a sustainable future. I look forward to working closely with Prime Minister Frederiksen to further strengthen the India-Denmark Green Strategic Partnership and take our cooperation to new heights for the benefit of our peoples. Congratulations to my friend Ms. Mette Frederiksen on assuming office as the Prime Minister of Denmark for a remarkable third consecutive term. India and Denmark share an enduring partnership founded on mutual trust, shared values and a common commitment to a sustainable future.… — Narendra Modi (@narendramodi) June 3, 2026",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268573",
+      "publishedAt": "2026-06-03T18:45:00+05:30",
+      "clusterId": "the-hindu-karnataka-cm-swearing-in-live-d-k-shivak",
+      "clusterSize": 13,
+      "isClusterLead": false,
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > International Relations > Bilateral Relations",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "Involves India's relations with Denmark, less relevant to UPSC exam."
+      }
+    },
+    {
+      "id": "pib-prime-minister-congratulates-shri-dk-shivakumar-ji-on-taking-oath-as-chief-minister-of",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "Prime Minister congratulates Shri DK Shivakumar Ji on taking oath as Chief Minister of Karnataka",
+      "excerpt": "Prime Minister Shri Narendra Modi today congratulated Shri DK Shivakumar Ji on taking oath as the Chief Minister of Karnataka. He conveyed his best wishes for his tenure. The Prime Minister affirmed that the Centre will work closely with the Karnataka Government for the welfare of the people.…",
+      "articleText": "Prime Minister Shri Narendra Modi today congratulated Shri DK Shivakumar Ji on taking oath as the Chief Minister of Karnataka. He conveyed his best wishes for his tenure. The Prime Minister affirmed that the Centre will work closely with the Karnataka Government for the welfare of the people. \"Congratulations to Shri DK Shivakumar Ji on taking oath as Chief Minister of Karnataka. Best wishes for his tenure. The Centre will work closely with the Karnataka Government for the welfare of the people. Congratulations to Shri DK Shivakumar Ji on taking oath as Chief Minister of Karnataka. Best wishes for his tenure. The Centre will work closely with the Karnataka Government for the welfare of the people. @DKShivakumar — Narendra Modi (@narendramodi) June 3, 2026",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268569",
+      "publishedAt": "2026-06-03T18:42:00+05:30",
+      "clusterId": "the-hindu-karnataka-cm-swearing-in-live-d-k-shivak",
+      "clusterSize": 13,
+      "isClusterLead": false,
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > State Politics",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "States are important for UPSC, but this is a specific event with limited relevance."
+      },
+      "storyId": "pib-chief-minister-of-rajasthan-meets-prime-minist",
+      "storyEditions": [
+        {
+          "date": "2026-06-01",
+          "title": "Chief Minister of Rajasthan meets Prime Minister",
+          "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2267633"
+        }
+      ],
+      "storyDayCount": 2
+    },
+    {
+      "id": "pib-vice-president-releases-book-when-audit-matters-edited-by-former-cag-shri-vinod-rai",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "Vice-President Releases Book When Audit Matters Edited by Former CAG Shri Vinod Rai",
+      "excerpt": "“Audit Strengthens Democracy by Reinforcing Trust Between the State and Citizens”: Vice-President “Ethics and Audit Together Can Be Transformative for Governance”: Vice-President “Auditors themselves must be subject to the highest standards of integrity and ethical conduct”: Vice President The…",
+      "articleText": "“Audit Strengthens Democracy by Reinforcing Trust Between the State and Citizens”: Vice-President “Ethics and Audit Together Can Be Transformative for Governance”: Vice-President “Auditors themselves must be subject to the highest standards of integrity and ethical conduct”: Vice President The Vice-President of India, Shri C. P. Radhakrishnan, today released the book When Audit Matters: CAG Interventions That Made a Difference , edited by former Comptroller and Auditor General of India, Shri Vinod Rai, at a function held at Uprashtrapati Bhawan. Vice-President Shri C. P. Radhakrishnan released the book 'When Audit Matters: CAG Interventions That Made a Difference', edited by former CAG Shri Vinod Rai, at Uprashtrapati Bhavan today. Speaking on the occasion, the Vice-President said that audit is a vital instrument for… pic.twitter.com/oE8x86ChpV — Vice-President of India (@VPIndia) June 3, 2026 Speaking on the occasion, the Vice-President described audit as “a vital instrument for strengthening democracy” and said that it assures citizens that public money is being used for public good in accordance with law, efficiency and fairness. He observed that audit not only helps governments improve systems and correct deficiencies, but also reinforces trust between the state and the citizens. Highlighting the importance of ethics in public life, the Vice President said that the combination of ethics and audit can be transformative, leading to improved public services, efficient utilis",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268547",
+      "publishedAt": "2026-06-03T18:22:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Judiciary",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "Involves Indian Vice-President and former CAG, but not directly relevant to UPSC exam."
+      }
+    },
+    {
+      "id": "pib-ministry-of-skill-development-entrepreneurship-holds-industry-interaction-on-pm-setu-s",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "Ministry of Skill Development & Entrepreneurship Holds Industry Interaction on PM-SETU Scheme for Rajasthan Cluster",
+      "excerpt": "Ministry of Skill Development and Entrepreneurship (MSDE) organized an Industry Interaction on the PM-SETU (Pradhan Mantri Skilling and Employability through upgraded ITIs) for the Rajasthan cluster on June 3, 2026, in the Ministry of Environment, Forest and Climate change. The programme comprised…",
+      "articleText": "Ministry of Skill Development and Entrepreneurship (MSDE) organized an Industry Interaction on the PM-SETU (Pradhan Mantri Skilling and Employability through upgraded ITIs) for the Rajasthan cluster on June 3, 2026, in the Ministry of Environment, Forest and Climate change. The programme comprised a detailed presentation on the PM-SETU Scheme, followed by industry deliberations and consultations to identify actionable pathways for its effective implementation in the Bhiwadi industrial Hub of Rajasthan. The cluster is among North India’s fastest-growing manufacturing regions, with strong presence in automotive, engineering, electronics, logistics and emerging green industries. The interaction brought together key industry stakeholders, policymakers, and leaders from the skill development ecosystem with the objective of strengthening industry participation in skilling initiatives, aligning training with workforce requirements, and creating sustainable employment opportunities for local youth. The consultation was chaired by Shri Bhupendra Yadav, Union Minister for Environment, Forest and Climate Change, who addressed the gathering and underscored the importance of integrating skill development with sustainable industrial growth. He highlighted the significant opportunities emerging in the different sectors and emphasized that skill development in these sectors will play a critical role in boosting employment. Shri Jayant Chaudhary, Minister of State (Independent Charge), Minist",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268537",
+      "publishedAt": "2026-06-03T18:14:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Economy > Industry & Manufacturing",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Skill development and entrepreneurship are part of UPSC syllabus but this is a specific instance."
+      }
+    },
+    {
+      "id": "hindustan-times-tmc-leader-firhad-hakim-will-resign-as-kolkata-mayor-says-kunal-ghosh-offi",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "TMC leader Firhad Hakim will resign as Kolkata mayor, says Kunal Ghosh; official confirmation awaited",
+      "excerpt": "TMC MLA Firhad Hakim resigned as Kolkata mayor after being granted permission by ex-CM Mamata Banerjee.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/tmc-mla-firhad-hakim-resigns-as-kolkata-mayor-after-mamatas-nod-says-kunal-ghosh-101780490345349.html",
+      "publishedAt": "2026-06-03T18:11:23+05:30",
+      "clusterId": "hindustan-times-tmc-leader-firhad-hakim-will-resig",
+      "clusterSize": 2,
+      "isClusterLead": true,
+      "articleText": "Senior TMC leader Kunal Ghosh on Wednesday said party leader Firhad Hakim will resign as Kolkata mayor after Mamata Banerjee accepted his request, PTI news agency reported. Hakim had earlier sought permission from the TMC chief to resign from the post, citing difficulties in functioning after the BJP came to power in West Bengal, according to PTI. However, an official confirmation of the resignation is yet to be received. “At that time, he was asked not to resign. However, he again requested Mamata Banerjee today to allow him to step down, following which she agreed,” Ghosh told reporters. Hakim has served as Kolkata Mayor since 2018 and has held several key ministerial portfolios in the state government over the years. The development comes at a time when the TMC is witnessing internal rifts, with several councillors at the municipal level either resigning or skipping work. As per a PTI report, TMC councillors in several municipalities have resigned in groups, while many elected representatives have reportedly stopped attending office. Reports suggest that over 100 councillors have stepped down. At least 58 of the 80 MLAs elected in the recently concluded polls on Wednesday unanimously supported and appointed expelled TMC leader Ritabrata Banerjee as Leader of Opposition (LoP) in the West Bengal Assembly. The West Bengal Speaker has accepted a letter signed by the 58 MLAs. Two other MLAs are also part of the group, but they are currently outside the state, HT has learnt.…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > State Politics",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "States are important for UPSC, but this is a specific event with limited relevance."
+      }
+    },
+    {
+      "id": "hindustan-times-rival-coaching-director-among-3-held-for-attack-on-khan-sir-s-patna-instit",
+      "sourceId": "hindustan-times",
+      "source": "Hindustan Times",
+      "title": "Rival coaching director among 3 held for attack on ‘Khan Sir’s’ Patna institute",
+      "excerpt": "Police identified the three suspects as Roshan Anand, director of a coaching institute, Prince Gaurav, and Abhishek",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.hindustantimes.com/india-news/patna-rival-coaching-director-among-3-held-for-attack-on-khan-sir-s-institute-101780490074323.html",
+      "publishedAt": "2026-06-03T18:04:33+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "Three people, including the director of a coaching institute, have been arrested after a violent clash outside the coaching centre of educator Faisal Khan, popularly known as “Khan Sir”, in Patna’s Kadamkuan area on Tuesday night, police said. The attack left a security guard injured, prompted large student protests and sparked an ongoing probe into possible rivalry between coaching centres, police added. The three arrested were identified as Roshan Anand, director of Gyan Bindu coaching institute; Prince Gaurav; and Abhishek. They were produced before a local court and remanded in judicial custody on Wednesday. “We were inside while teachers were taking classes. The guard said he could not understand what was happening,” Khan said. He said the attackers vandalised property, assaulted the security guard and “fired 8-10 rounds.” Police, however, deny any shooting. They say the guard’s injury was caused by brick-batting. Patna senior superintendent of police (SSP) K Sharma said: “It was a case of physical assault in which a guard was injured. He is currently undergoing treatment. Further action is being taken after recording statements from the victim and local residents.” Patna City SP Diksha said CCTV footage was being examined. “It appears rivalry among coaching institutes triggered the clash. So far, 10 to 12 suspects have been identified,” she said. Several angry students gathered outside the coaching centre, raising slogans and demanding justice and better security after…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Current Events > State Politics",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Understanding state-level politics and incidents can help in the context of governance."
+      }
+    },
+    {
+      "id": "pib-next-generation-nanomedicine-can-silence-key-cancer-drivers",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "Next-generation nanomedicine can silence key cancer drivers",
+      "excerpt": "Scientists from Pune have reported a gene-silencing strategy that can drive effective tumor inhibition in breast cancer, highlighting its potential as next-generation precision nanomedicine. Advances in cancer nanomedicine are increasingly shifting toward precision strategies that directly silence…",
+      "articleText": "Scientists from Pune have reported a gene-silencing strategy that can drive effective tumor inhibition in breast cancer, highlighting its potential as next-generation precision nanomedicine. Advances in cancer nanomedicine are increasingly shifting toward precision strategies that directly silence disease-driving genes while minimizing systemic toxicity. Scientists from from the Agharkar Research Institute (ARI), Pune, an autonomous institute under the Department of Science and Technology (DST), Government of India, have presemted an innovative biodegradable nanocarrier platform engineered for targeted gene therapy in breast cancer. The research, recently published in Advanced Healthcare Materials , provides new insights into targeted gene silencing of key survival pathways in breast cancer, enabling efficient tumor targeting and suppression, and offering a promising strategy for developing more effective and safer nanomedicine-based therapies. The system is built on biodegradable mesoporous silica nanoparticles—well known for their high loading capacity and tunable surface chemistry—which enable efficient delivery of small interfering RNA (siRNA) molecules. By functionalizing the nanocarrier with a protamine biopolymer and an MUC1-specific aptamer, the researchers achieved precise tumor targeting, leveraging the overexpression of MUC1 receptors on breast cancer cells. This targeting strategy significantly enhances cellular uptake while reducing off-target effects, a key limi",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268513",
+      "publishedAt": "2026-06-03T17:50:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Science & Technology > Health & Biotech",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Knowledge on advances in cancer nanomedicine is relevant for Mains GS2 as it involves public health and technology."
+      }
+    },
+    {
+      "id": "ndtv-adani-group-partners-with-anushkaa-foundation-to-treat-clubfoot-in-5-states",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "Adani Group Partners With Anushkaa Foundation To Treat Clubfoot In 5 States",
+      "excerpt": "The programme was formally launched at Manyavar Kanshiram Samyukth Chikitsalay and Trauma Centre in Kanpur, Uttar Pradesh, one of the states carrying the highest burden of clubfoot cases in India.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/india-news/adani-group-partners-with-anushkaa-foundation-to-treat-clubfoot-in-5-states-11586130",
+      "publishedAt": "2026-06-03T17:30:10+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Social Issues > Health",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Awareness of public-private partnerships in health initiatives is important for Social Issue topics."
+      }
+    },
+    {
+      "id": "ndtv-expelled-trinamool-rebel-ritabrata-banerjee-becomes-leader-of-opposition-in-bengal",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "Expelled Trinamool Rebel Ritabrata Banerjee Becomes Leader Of Opposition In Bengal",
+      "excerpt": "",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/india-news/expelled-trinamool-rebel-ritabrata-banerjee-becomes-leader-of-opposition-in-bengal-11586086",
+      "publishedAt": "2026-06-03T17:28:57+05:30",
+      "clusterId": "ndtv-expelled-trinamool-rebel-ritabrata-banerjee-b",
+      "clusterSize": 4,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Current Events > State Politics",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "State political dynamics are important for Prelims and Mains preparation, especially related to governance."
+      },
+      "storyId": "ndtv-maharashtra-model-in-bengal-buzz-over-new-tri",
+      "storyEditions": [
+        {
+          "date": "2026-06-02",
+          "title": "'Maharashtra Model' In Bengal? Buzz Over New Trinamool Congress Without Mamata Banerjee",
+          "url": "https://www.ndtv.com/india-news/maharashtra-model-in-west-bengal-buzz-over-new-trinamool-congress-without-mamata-banerjee-11577769"
+        }
+      ],
+      "storyDayCount": 2
+    },
+    {
+      "id": "the-hindu-environment-supreme-court-forms-high-powered-expert-panel-to-re-examine-aravalli",
+      "sourceId": "the-hindu-environment",
+      "source": "The Hindu – Environment",
+      "title": "Supreme Court forms high-powered expert panel to re-examine Aravalli definition",
+      "excerpt": "The committee will assess if the Aravalli hills over 100 metres high form a continuous ecological area despite exceeding the proposed 500-metre gap and whether mining should be allowed in those spaces",
+      "category": "Environment",
+      "priority": "Medium",
+      "url": "https://www.thehindu.com/news/national/supreme-court-forms-high-powered-expert-panel-to-re-examine-aravalli-definition/article71055709.ece",
+      "publishedAt": "2026-06-03T17:25:22+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "The Supreme Court has constituted a high-powered committee to conduct an independent review of the Centre’s report on the definition and delineation of the Aravalli hill range and directed the panel to address what it described as “critical ambiguities” in the findings. The committee headed by Kanchan Devi, Director General of the Indian Council of Forestry Research and Education (ICFRE), has been directed to submit a comprehensive report by August 31, 2026. How the Aravalli Hills formed and why they look the way they do",
+      "facts": [],
+      "enrichment": {
+        "topic": "Environment > Biodiversity",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Knowledge on Supreme Court's role in environmental issues is essential for the Polity and Environment topics."
+      }
+    },
+    {
+      "id": "the-hindu-environment-jairam-ramesh-presses-centre-over-great-nicobar-clearances",
+      "sourceId": "the-hindu-environment",
+      "source": "The Hindu – Environment",
+      "title": "Jairam Ramesh presses Centre over Great Nicobar clearances",
+      "excerpt": "Jairam Ramesh and Environment Minister Bhupender Yadav have exchanged several letters over the issue, with the former slamming the government over the project and claiming it would cause great ecological damage",
+      "category": "Environment",
+      "priority": "Medium",
+      "url": "https://www.thehindu.com/news/national/great-nicobar-project-a-commercial-enterprise-unique-biodiversity-being-endangered-jairam-ramesh-to-bhupender-yadav/article71055617.ece",
+      "publishedAt": "2026-06-03T17:17:08+05:30",
+      "clusterId": "the-hindu-environment-jairam-ramesh-presses-centre",
+      "clusterSize": 2,
+      "isClusterLead": true,
+      "articleText": "Congress MP Jairam Ramesh has renewed his objections to the Great Nicobar Island Project in a June 3 letter replying to Environment Minister Bhupender Yadav’s response of May 27. Mr. Ramesh said Mr. Yadav’s reply effectively conceded that the project’s environmental clearance was not based on comprehensive, three-season primary data but on a “single seasonal cycle.” He went further, contending that the underlying institutional studies rested on baseline surveys gathered over only a few weeks, and that historical secondary data held by bodies such as the Zoological Survey of India and the Wildlife Institute of India could not substitute for site-specific primary assessment. Great Nicobar project is purely commercial with no military infrastructure element: Congress",
+      "facts": [],
+      "enrichment": {
+        "topic": "Environment > Biodiversity",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Awareness of environmental issues and biodiversity is important for general knowledge."
+      },
+      "storyId": "indian-express-great-nicobar-project-bhupender-yad",
+      "storyEditions": [
+        {
+          "date": "2026-06-01",
+          "title": "Great Nicobar Project: Bhupender Yadav rejects Jairam Ramesh’s charges, defends environmental clearance",
+          "url": "https://indianexpress.com/article/india/great-nicobar-project-clearances-bhupender-yadav-jairam-ramesh-10718331"
+        }
+      ],
+      "storyDayCount": 2
+    },
+    {
+      "id": "livemint-how-have-crude-oil-prices-behaved-during-the-west-asia-war",
+      "sourceId": "livemint",
+      "source": "Mint",
+      "title": "How have crude oil prices behaved during the West Asia war?",
+      "excerpt": "The West Asia war pushed Brent crude from about $70 to a peak of $126 per barrel, raising fuel costs and inflation in India, which imports 90% of its oil. Prices have eased amid Iran-US peace talks but remain elevated, keeping pressure on growth, consumers and businesses.",
+      "category": "Business",
+      "priority": "Medium",
+      "url": "https://www.livemint.com/economy/how-have-crude-oil-prices-behaved-during-the-west-asia-war-11780481497551.html",
+      "publishedAt": "2026-06-03T17:13:10+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "New Delhi: International crude oil prices have remained elevated, ruling above $100 per barrel for most of the past three months since the West Asia war began on 28 February. Though prices have moderated since the benchmark Brent crude hit a four-year high of $126.41 a barrel on 30 April, volatility has remained pronounced.",
+      "facts": [
+        {
+          "type": "stat",
+          "text": "90%"
+        }
+      ],
+      "enrichment": {
+        "topic": "Economy > External Sector | Economy > Fiscal Policy",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Understanding the impact of international events on India's economy is crucial for economic assessments."
+      }
+    },
+    {
+      "id": "pib-union-minister-virendra-kumar-unveils-booklet-showcasing-success-stories-of-entreprene",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "Union Minister Virendra Kumar Unveils Booklet Showcasing Success Stories of Entrepreneurs Empowered Through Venture Capital Fund and ASIIM",
+      "excerpt": "‘From Aspiration to Achievement’: Ministry of Social Justice & Empowerment Highlights Transformative Impact of Entrepreneurship Support Initiatives The Union Minister for Social Justice & Empowerment, Dr. Virendra Kumar, today released the booklet “From Aspiration to Achievement: Success Stories of…",
+      "articleText": "‘From Aspiration to Achievement’: Ministry of Social Justice & Empowerment Highlights Transformative Impact of Entrepreneurship Support Initiatives The Union Minister for Social Justice & Empowerment, Dr. Virendra Kumar, today released the booklet “From Aspiration to Achievement: Success Stories of Entrepreneurs and Innovators”, highlighting the inspiring journeys of entrepreneurs who have emerged as role models through the support provided under the Venture Capital Fund for Scheduled Castes, Backward Classes and the Ambedkar Social Innovation and Incubation Mission (ASIIM). The event was attended by Shri Ramdas Athawale, Hon’ble Minister of State for Social Justice & Empowerment, the Secretary, Ministry of Social Justice & Empowerment, senior officials of the Ministry and representatives of IFCI Venture Capital Funds Ltd. Addressing the gathering, the Union Minister emphasized the Government’s commitment to fostering entrepreneurship, innovation and self-reliance among members of Scheduled Castes and Backward Classes. He stated that the success stories featured in this booklet reflect the transformative impact of targeted financial and institutional support in creating opportunities for aspirational communities and enabling them to become job creators rather than job seekers. The Minister noted that the Venture Capital Funds and ASIIM are important instruments in realizing the vision of social and economic empowerment through enterprise development. He highlighted that these",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268451",
+      "publishedAt": "2026-06-03T17:11:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Economy > Industry & Manufacturing | Economy > Fiscal Policy",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Knowledge of entrepreneurship and its impact on the economy is relevant for economic development topics."
+      }
+    },
+    {
+      "id": "ndtv-karnataka-chief-minister-dk-shivakumar-takes-oath-g-parameshwara-is-his-deputy",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "Karnataka Chief Minister DK Shivakumar Takes Oath, G Parameshwara Is His Deputy",
+      "excerpt": "",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/india-news/karnataka-chief-minister-dk-shivakumar-takes-oath-g-parameshwara-is-his-deputy-11585721",
+      "publishedAt": "2026-06-03T17:05:40+05:30",
+      "clusterId": "the-hindu-karnataka-cm-swearing-in-live-d-k-shivak",
+      "clusterSize": 13,
+      "isClusterLead": false,
+      "facts": [],
+      "enrichment": {
+        "topic": "",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": ""
+      },
+      "storyId": "ndtv-ex-house-help-kalita-majhi-takes-oath-as-beng",
+      "storyEditions": [
+        {
+          "date": "2026-06-01",
+          "title": "Ex-House Help Kalita Majhi Takes Oath As Bengal Minister Of State",
+          "url": "https://www.ndtv.com/india-news/ex-house-help-kalita-majhi-takes-oath-as-bengal-minister-of-state-11576391"
+        }
+      ],
+      "storyDayCount": 2
+    },
+    {
+      "id": "pib-union-minister-shri-jayant-chaudhary-launches-navachar-mantra-a-national-initiative-fo",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "Union Minister Shri Jayant Chaudhary Launches ‘Navachar Mantra’, a National Initiative for Grassroots Innovators and Entrepreneurs",
+      "excerpt": "Programme designed to support scalable innovations from Tier 2, Tier 3 and rural India through collaboration between government, academia and industry Applications Open till July 5, 2026; NIESBUD and FITT, IIT Delhi to Drive Programme Delivery The Ministry of Skill Development and Entrepreneurship…",
+      "articleText": "Programme designed to support scalable innovations from Tier 2, Tier 3 and rural India through collaboration between government, academia and industry Applications Open till July 5, 2026; NIESBUD and FITT, IIT Delhi to Drive Programme Delivery The Ministry of Skill Development and Entrepreneurship (MSDE), Government of India, today launched ‘Navachar Mantra’ - a national initiative focused on strengthening grassroots entrepreneurship and expanding opportunities for innovators across emerging India. The programme is being implemented by the National Institute for Entrepreneurship and Small Business Development (NIESBUD), with Foundation for Innovation and Technology Transfer (FITT), IIT Delhi serving as the Technical Knowledge Partner. The initiative was launched by Shri Jayant Chaudhary, Minister of State (Independent Charge) for Skill Development and Entrepreneurship and Minister of State for Education, Government of India at IIT Delhi in the presence of policymakers, startup ecosystem leaders, academic institutions, investors and young entrepreneurs. Addressing the gathering, Minister of State (Independent Charge) for Skill Development and Entrepreneurship and Minister of State for Education, Government of India, Shri Jayant Chaudhary said, “The world should not only use products made in India but should use technologies imagined in India, that is the true spirit of Navachar Mantra. Whether it is artificial intelligence, semiconductors, green energy, biotechnology, digital ",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268445",
+      "publishedAt": "2026-06-03T17:04:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": []
+    },
+    {
+      "id": "ndtv-long-wait-over-finally-dk-shivakumar-s-moment-under-the-sun",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "Long Wait Over, Finally DK Shivakumar's Moment Under The Sun",
+      "excerpt": "For DK Shivakumar, the elevation is a reward for years of loyalty, crisis management and electoral firefighting",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/india-news/karnataka-swearing-in-ceremony-long-wait-over-dk-shivakumars-moment-under-the-sun-11585912",
+      "publishedAt": "2026-06-03T17:01:33+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Understanding political party dynamics and leadership struggles is essential for grasping Indian politics."
+      }
+    },
+    {
+      "id": "ndtv-honey-trap-accused-found-hiv-sparks-major-health-scare-in-madhya-pradesh",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "Honey-Trap Accused Found HIV+ Sparks Major Health Scare In Madhya Pradesh",
+      "excerpt": "The development has sent shockwaves through the region, with investigators now racing to identify men who may have come into physical contact with the accused woman.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/india-news/honey-trap-accused-found-hiv-sparks-major-health-scare-in-madhya-pradesh-11585931",
+      "publishedAt": "2026-06-03T16:51:48+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Social Issues > Women & Children",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Awareness of health and safety issues related to women is crucial for social development."
+      }
+    },
+    {
+      "id": "ndtv-rajasthan-university-of-health-sciences-cuet-2026-result-out-check-direct-link",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "Rajasthan University of Health Sciences CUET 2026 Result Out: Check Direct Link",
+      "excerpt": "RUHS CUET 2026 Result has been released on the official website. Candidates can now download the scorecard online and check important admission details.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/education/rajasthan-university-of-health-sciences-cuet-2026-result-out-check-direct-link-11584100",
+      "publishedAt": "2026-06-03T16:40:51+05:30",
+      "clusterId": "ndtv-rajasthan-university-of-health-sciences-cuet-",
+      "clusterSize": 3,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Economy > Education",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Knowledge of educational exams and their outcomes is important for career progression."
+      },
+      "storyId": "ndtv-ap-eamcet-result-2026-declared-direct-link-to",
+      "storyEditions": [
+        {
+          "date": "2026-06-01",
+          "title": "AP EAMCET Result 2026 Declared? Direct Link To Check Merit List, Rank Card Here",
+          "url": "https://www.ndtv.com/education/ap-eamcet-result-2026-declared-direct-link-to-check-merit-list-rank-card-here-11576753"
+        }
+      ],
+      "storyDayCount": 2
+    },
+    {
+      "id": "ndtv-real-trinamool-backs-rebel-for-key-post-says-mamata-banerjee-our-leader",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "\"Real\" Trinamool Backs Rebel For Key Post, Says 'Mamata Banerjee Our Leader'",
+      "excerpt": "In Trinamool vs Trinamool, rebel claims 59 MLAs' support for key assembly post",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/india-news/mamata-banerjee-abhishek-banerjee-leader-of-opposition-ritabrata-banerjee-sandipan-saha-in-trinamool-vs-trinamool-rebel-claims-59-mlas-support-for-key-11584266",
+      "publishedAt": "2026-06-03T16:35:41+05:30",
+      "clusterId": "ndtv-expelled-trinamool-rebel-ritabrata-banerjee-b",
+      "clusterSize": 4,
+      "isClusterLead": false,
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Awareness of political party strategies and internal conflicts is crucial for understanding Indian politics."
+      },
+      "storyId": "ndtv-maharashtra-model-in-bengal-buzz-over-new-tri",
+      "storyEditions": [
+        {
+          "date": "2026-06-02",
+          "title": "'Maharashtra Model' In Bengal? Buzz Over New Trinamool Congress Without Mamata Banerjee",
+          "url": "https://www.ndtv.com/india-news/maharashtra-model-in-west-bengal-buzz-over-new-trinamool-congress-without-mamata-banerjee-11577769"
+        }
+      ],
+      "storyDayCount": 2
+    },
+    {
+      "id": "ndtv-cabinet-okays-rs-9-585-crore-scheme-to-replace-old-trucks-buses-in-delhi-ncr",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "Cabinet Okays Rs 9,585 Crore Scheme To Replace Old Trucks, Buses In Delhi-NCR",
+      "excerpt": "The scheme will benefit approximately 2.07 lakh (1.91 lakh trucks and 16,329 buses) vehicle owners in Delhi-NCR (comprising Delhi, Haryana, Rajasthan, and Uttar Pradesh), the statement said.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/india-news/cabinet-okays-rs-9-585-crore-scheme-to-replace-old-trucks-buses-in-delhi-ncr-11585828",
+      "publishedAt": "2026-06-03T16:35:41+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [
+        {
+          "type": "money",
+          "text": "₹9,585 Crore"
+        }
+      ],
+      "enrichment": {
+        "topic": "Economy > Infrastructure",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Understanding public sector projects and infrastructure development is essential for economic planning."
+      }
+    },
+    {
+      "id": "ndtv-national-institute-of-fashion-technology-result-2026-out-check-direct-link-here",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "National Institute Of Fashion Technology Result 2026 Out: Check Direct Link Here",
+      "excerpt": "NIFT Result 2026 declared on the official website. Check direct link, steps to download scorecard, exam dates, merit list, counselling, and admission updates.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/education/national-institute-of-fashion-technology-result-2026-out-check-direct-link-here-11585808",
+      "publishedAt": "2026-06-03T16:32:20+05:30",
+      "clusterId": "ndtv-rajasthan-university-of-health-sciences-cuet-",
+      "clusterSize": 3,
+      "isClusterLead": false,
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Education",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "NIFT is an educational institution, but not directly relevant to UPSC syllabus."
+      },
+      "storyId": "ndtv-ap-eamcet-result-2026-declared-direct-link-to",
+      "storyEditions": [
+        {
+          "date": "2026-06-01",
+          "title": "AP EAMCET Result 2026 Declared? Direct Link To Check Merit List, Rank Card Here",
+          "url": "https://www.ndtv.com/education/ap-eamcet-result-2026-declared-direct-link-to-check-merit-list-rank-card-here-11576753"
+        }
+      ],
+      "storyDayCount": 2
+    },
+    {
+      "id": "ndtv-dk-shivakumar-oath-ceremony-live-dk-shivakumar-takes-oath-after-a-week-long-power-tus",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "DK Shivakumar Oath Ceremony LIVE: DK Shivakumar Takes Oath After A Week-Long Power Tussle",
+      "excerpt": "DK Shivakumar Swearing-in Ceremony LIVE Updates:",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/india-news/dk-shivakumar-oath-ceremony-live-updates-karnataka-chief-minister-cabinet-ministers-swearing-in-siddaramaiah-yathindra-siddaramaiah-congress-rahul-gan-11583441",
+      "publishedAt": "2026-06-03T16:18:34+05:30",
+      "clusterId": "the-hindu-karnataka-cm-swearing-in-live-d-k-shivak",
+      "clusterSize": 13,
+      "isClusterLead": false,
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Shows the political processes and leadership dynamics in Karnataka which are relevant to UPSC's Polity syllabus."
+      }
+    },
+    {
+      "id": "pib-eci-organises-international-conference-on-global-best-practices-for-media-in-electoral",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "ECI Organises International Conference on Global Best Practices for Media in Electoral Campaigns",
+      "excerpt": "Election Commission of India (ECI) is organising a two-day international conference on Global Best Practices and Innovations for Media in Electoral Processes and Campaigns on June 3 – 4, 2026 at the India International Institute of Democracy and Election Management (IIIDEM), New Delhi. In his…",
+      "articleText": "Election Commission of India (ECI) is organising a two-day international conference on Global Best Practices and Innovations for Media in Electoral Processes and Campaigns on June 3 – 4, 2026 at the India International Institute of Democracy and Election Management (IIIDEM), New Delhi. In his keynote address at the conference, the Chief Election Commissioner Shri Gyanesh Kumar said, the Election Commission of India undertakes training of grassroots field functionaries including BLOs and BLAs to ensure a seamless connect with over 100 crore electors. He added that the trust of electors in the electoral process was reflected in their highest-ever participation in the recently held General Elections to the State Legislative Assemblies. Over 480 participants including DEOs, EROs, Thematic Experts, Academicians, Research Scholars and Electoral Literacy Club (ELC) members are taking part in the conference. The conference seeks to develop practitioner-oriented global knowledge resources that document international experiences, model standards, and best practices across various dimensions of election management, with a view to contributing to the final thematic report envisaged under the Delhi Declaration adopted on January 23, 2026 at the India International Conference on Democracy and Election Management. The discussions will focus on key issues in media campaigns, including misinformation and disinformation , AI-generated deepfakes and synthetic media, non-transparent digital poli",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268394",
+      "publishedAt": "2026-06-03T16:17:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Understanding ECI's role and initiatives like global best practices in media during electoral campaigns is crucial for UPSC preparation."
+      }
+    },
+    {
+      "id": "pib-national-dope-testing-laboratory-ndtl-new-delhi-and-shree-guru-govind-singh-tricentena",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "National Dope Testing Laboratory (NDTL), New Delhi and Shree Guru Govind Singh Tricentenary (SGT) University Signed MoU to Advance Sports Science, Anti-Doping Research, and Athlete Welfare",
+      "excerpt": "National Dope Testing Laboratory, New Delhi an Autonomous Body, Government of India on 3 rd June, 2026 today signed a Memorandum of Understanding (MoU) with the Shree Guru Govind Singh Tricentenary University, Gurugram, Haryana. This strategic partnership marks a significant milestone in advancing…",
+      "articleText": "National Dope Testing Laboratory, New Delhi an Autonomous Body, Government of India on 3 rd June, 2026 today signed a Memorandum of Understanding (MoU) with the Shree Guru Govind Singh Tricentenary University, Gurugram, Haryana. This strategic partnership marks a significant milestone in advancing sports science education, anti-doping research, and the broader mission of drug-free sports in India. The MoU was signed in the presence of senior officials from both institutions, underscoring the shared commitment to scientific excellence, ethical sportsmanship, and the holistic development of athletes across the country. The collaboration seeks to provide students and faculty members with opportunities for advanced training, internships, research projects, expert lectures, and exposure to state-of-the-art laboratory practices. The partnership will also facilitate joint research initiatives, knowledge exchange programmes, and capacity-building activities in areas related to analytical testing, anti-doping sciences, forensic analysis, and healthcare diagnostics. Director NDTL, Dr. P. L. Sahu expressed his enthusiasm for the collaboration and highlighted the importance of academic-industry partnerships in developing skilled professionals and advancing scientific research. He emphasized that the MoU will contribute to strengthening the ecosystem of scientific education and laboratory excellence in the country. \" NDTL's mission has always been to uphold the integrity of sport in India",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268397",
+      "publishedAt": "2026-06-03T16:17:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Security > Internal Security",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "While anti-doping in sports is important, it's not a direct focus of UPSC syllabus."
+      }
+    },
+    {
+      "id": "ndtv-exit-route-or-reconciliation-inside-k-annamalai-s-meeting-with-bjp-s-top-leadership",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "Exit Route Or Reconciliation? Inside K Annamalai's Meeting With BJP's Top Leadership",
+      "excerpt": "The BJP leadership is learnt to have assured K Annamalai of support for his proposed statewide public outreach programme, a campaign he believes could help strengthen the party's grassroots presence.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/india-news/exit-route-or-reconciliation-inside-k-annamalais-meeting-with-bjps-top-leadership-11585722",
+      "publishedAt": "2026-06-03T16:16:03+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Knowledge of intra-party dynamics and reconciliation efforts within political parties like the BJP is essential for UPSC aspirants."
+      }
+    },
+    {
+      "id": "indian-express-amid-internal-rumblings-omar-takes-nc-legislators-to-dachigam-for-offsite-r",
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "title": "Amid internal rumblings, Omar takes NC legislators to Dachigam for offsite ‘review’ huddle",
+      "excerpt": "",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://indianexpress.com/article/india/omar-abdullah-nc-mla-dachigam-review-meeting-10722013",
+      "publishedAt": "2026-06-03T16:14:42+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Understanding of political dynamics and governance is crucial."
+      }
+    },
+    {
+      "id": "ndtv-indian-comedian-returns-to-india-after-47-day-detention-in-dubai-over-harmless-reel-s",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "Indian Comedian Returns To India After 47-Day Detention In Dubai Over \"Harmless\" Reel, Shares Ordeal",
+      "excerpt": "Indian Comedian, Yash Bhardwaj, Dubai detention, Who is Yash Bhardwaj, Google Maps joke, Detention Over Comedy Reel, stand-up comedian, 47 days in Dubai, Middle East, US-Iran",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/india-news/indian-comedian-yash-bhardwaj-returns-to-india-after-47-day-detention-in-dubai-over-harmless-reel-shares-ordeal-11585632",
+      "publishedAt": "2026-06-03T16:09:35+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Current Events > Crime & Courts",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "Relates to freedom of expression and cultural diplomacy, less relevant for UPSC."
+      }
+    },
+    {
+      "id": "pib-iimc-begins-admission-process-for-ma-and-pg-diploma-programmes-registration-for-e-coun",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "IIMC Begins Admission Process for MA and PG Diploma Programmes; Registration for e-Counselling Open till June 7, 2026",
+      "excerpt": "Three New Specialised MA Programmes Strengthen IIMC's Academic Offerings across Six Campuses The e-counselling process for admission to six MA and four PG Diploma programmes at the country's most prestigious media education institute, the Indian Institute of Mass Communication (IIMC), has begun.…",
+      "articleText": "Three New Specialised MA Programmes Strengthen IIMC's Academic Offerings across Six Campuses The e-counselling process for admission to six MA and four PG Diploma programmes at the country's most prestigious media education institute, the Indian Institute of Mass Communication (IIMC), has begun. Admissions to all programmes – MA and PG Diploma – shall be done through an e-Counselling process only. Registrations for the same can be done at https://iimc.admissions.nic.in/ . The last date to register for e-Counselling is June 7, 2026. The first allotment will be declared on June 9. This year, IIMC has introduced three new MA programmes, which are MA in Health Communication, MA in Media and Communication Governance and MA in Corporate Communication and Brand Management. With this, IIMC now offers six MA programmes across its six campuses – New Delhi, Dhenkanal, Aizawl, Amravati, Jammu and Kottayam” said Prof. (Dr.) Rakesh Kumar Goswami, Admission Incharge and Controller of Examinations. Four PG Diploma programmes, which are the legacy programmes of IIMC, are also on offer. These are PG Diplomas in English, Hindi, Radio and Television Journalism, and Advertising and Public Relations. Indian nationals holding a Bachelor’s degree with at least 55% marks and a valid CUET-PG score in Mass Communication and Journalism (COQP17) are eligible for MA programmes. Graduates with a valid CUET-PG score in the same subject are eligible for PG Diploma programmes. The upper age limit for PG Diplo",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268390",
+      "publishedAt": "2026-06-03T16:09:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Economy > Education & Skill Development",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "Not directly relevant to UPSC syllabus."
+      }
+    },
+    {
+      "id": "ndtv-cabinet-approves-rs-10-000-crore-fund-amid-rising-jet-fuel-prices",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "Cabinet Approves Rs 10,000-Crore Fund Amid Rising Jet Fuel Prices",
+      "excerpt": "Cabinet Approves Rs 10,000-Crore Jet Fuel Price Stabilisation Fund",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/india-news/cabinet-approves-rs-10-000-crore-jet-fuel-price-stabilisation-fund-11585491",
+      "publishedAt": "2026-06-03T16:06:00+05:30",
+      "clusterId": "the-hindu-cabinet-approves-10-000-crore-atf-price-",
+      "clusterSize": 3,
+      "isClusterLead": false,
+      "facts": [],
+      "enrichment": {
+        "topic": "Economy > Fiscal Policy | Economy > External Sector",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Knowledge of fiscal measures and external sector management is beneficial."
+      }
+    },
+    {
+      "id": "ndtv-railway-recruitment-board-ntpc-city-intimation-slip-out-check-direct-link-revised-exa",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "Railway Recruitment Board NTPC City Intimation Slip Out: Check Direct Link, Revised Exam Schedule",
+      "excerpt": "RRB NTPC City Intimation Slip 2026 released for UG CBT 1 exam. Check revised exam dates, admit card release schedule, Aadhaar verification, and updates.",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/education/railway-recruitment-board-ntpc-city-intimation-slip-out-check-direct-link-revised-exam-schedule-11585399",
+      "publishedAt": "2026-06-03T16:02:13+05:30",
+      "clusterId": "ndtv-rajasthan-university-of-health-sciences-cuet-",
+      "clusterSize": 3,
+      "isClusterLead": false,
+      "facts": [],
+      "enrichment": {
+        "topic": "Current Events > State Politics | Economy > Infrastructure",
+        "upscRelevance": "Low to Medium",
+        "examAngle": "",
+        "whyItMatters": "Understanding of railway recruitment processes is not directly relevant."
+      }
+    },
+    {
+      "id": "ndtv-21-mostly-foreigners-killed-in-massive-fire-at-delhi-hotel",
+      "sourceId": "ndtv",
+      "source": "NDTV",
+      "title": "21, Mostly Foreigners, Killed In Massive Fire At Delhi Hotel",
+      "excerpt": "Lemon Green Restaurant: 10 Killed In Massive Fire At Delhi Restaurant",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://www.ndtv.com/india-news/micasa-inn-hotel-fire-20-killed-in-massive-fire-at-delhi-restaurant-in-malviya-nagar-11584430",
+      "publishedAt": "2026-06-03T16:02:03+05:30",
+      "clusterId": "the-hindu-karnataka-cm-swearing-in-live-d-k-shivak",
+      "clusterSize": 13,
+      "isClusterLead": false,
+      "facts": [],
+      "enrichment": {
+        "topic": "Current Events > Crime & Courts",
+        "upscRelevance": "High",
+        "examAngle": "Prelims: Current events. Mains GS2: Analyze the implications of crime trends on governance.",
+        "whyItMatters": "Awareness about recent incidents can be crucial for current affairs and general awareness."
+      }
+    },
+    {
+      "id": "pib-release-of-uniform-guideline-for-compilation-of-district-domestic-product-ddp-estimate",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "Release of Uniform Guideline for Compilation of District Domestic Product (DDP) Estimates with Base Year 2022-23",
+      "excerpt": "The National Statistics Office (NSO), Ministry of Statistics & Programme Implementation (MoSPI), Government of India, had uploaded the Draft Guideline for Compilation of District Domestic Product (DDP) Estimates with Base Year 2022-23 on the official website of MoSPI on 07.04.2026 for consultation…",
+      "articleText": "The National Statistics Office (NSO), Ministry of Statistics & Programme Implementation (MoSPI), Government of India, had uploaded the Draft Guideline for Compilation of District Domestic Product (DDP) Estimates with Base Year 2022-23 on the official website of MoSPI on 07.04.2026 for consultation and feedback from stakeholders, including States/UTs, academic institutions, researchers and other users of Sub-State level Statistics. After detailed examination of the comments and suggestions received from various stakeholders, the finalized “Guideline for Compilation of District Domestic Product (DDP) Estimates” are being released and uploaded on the official website of MoSPI. The guideline provides a comprehensive and uniform framework for compilation of District Domestic Product estimates across States and Union Territories with the objective of ensuring consistency, comparability and methodological standardization in district level economic estimates under the revised base year framework. The document elaborates the concepts, coverage, data sources, estimation procedures and methodologies for compilation of Gross District Domestic Product (GDDP), Net District Domestic Product (NDDP) and Per Capita Income at district level. The guideline primarily emphasizes the compilation of DDP estimates using the bottom-up approach, wherever feasible, based on availability of district-level data. In sectors where district-wise information is not adequately available, appropriate top-down a",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268392",
+      "publishedAt": "2026-06-03T16:00:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Economy > Fiscal Policy",
+        "upscRelevance": "Medium",
+        "examAngle": "Prelims: Statistical techniques. Mains GS2: Understanding the role of statistical measures in economic planning.",
+        "whyItMatters": "Knowledge on fiscal policy and data compilation is essential for understanding India’s economy."
+      }
+    },
+    {
+      "id": "livemint-india-us-trade-deal-weeks-away-as-negotiators-resolve-99-of-issues-says-us-ambass",
+      "sourceId": "livemint",
+      "source": "Mint",
+      "title": "India-US trade deal weeks away as negotiators resolve 99% of issues, says US Ambassador Sergio Gor",
+      "excerpt": "US Ambassador Sergio Gor said negotiators have resolved 99% of outstanding issues and expect an interim trade agreement within weeks, with only technical matters left to be finalized.",
+      "category": "Business",
+      "priority": "Medium",
+      "url": "https://www.livemint.com/economy/india-us-trade-deal-99-percent-issues-resolved-interim-agreement-weeks-away-sergio-gor-11780478995790.html",
+      "publishedAt": "2026-06-03T15:43:11+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "MUMBAI: India and the US have resolved 99% of the issues holding up an interim trade agreement and are likely to finalize the deal within weeks, US Ambassador Sergio Gor said on Wednesday. “We’re very hopeful that the deal will get accomplished over the next weeks, several weeks. But it’s not going to be years. We’re very close to getting that done,” Gor said in response to a question at Citi’s 2026 India Conference in Mumbai. On 7 February, India and the US issued a joint statement outlining the contours of the first phase of a bilateral trade agreement , or BTA. Both sides now need to convert that framework into a legally binding text. Gor's comments come even as trade frictions persist between the two countries. On Tuesday, the United States Trade Representative (USTR) proposed trade action against 60 economies, including India, following investigations conducted under Section 301 of the US Trade Act of 1974. In a statement, the USTR said it had concluded that the acts, policies and practices of the 60 economies are “unreasonable and burden or restrict US commerce”, making them actionable under US trade law. India is among 54 economies that, according to the USTR, have failed to impose and effectively enforce a prohibition on imports made with forced labour. The list also includes Australia, Bahrain, Bangladesh, China, Japan, Kuwait, Saudi Arabia, Singapore, the UK, and the United Arab Emirates. The development comes at a sensitive time in India-US economic relations,…",
+      "facts": [
+        {
+          "type": "stat",
+          "text": "99%"
+        }
+      ],
+      "enrichment": {
+        "topic": "Economy > Trade & External Sector",
+        "upscRelevance": "High",
+        "examAngle": "Prelims: International trade. Mains GS2: Discuss the impact of international agreements on India’s economy.",
+        "whyItMatters": "Trade relations with major economies are crucial for India's economic strategy."
+      },
+      "storyId": "indian-express-india-a-trusted-partner-only-1-of-t",
+      "storyEditions": [
+        {
+          "date": "2026-05-29",
+          "title": "India a trusted partner, only 1% of trade deal talks left: Sergio Gor",
+          "url": "https://indianexpress.com/article/india/us-india-trade-deal-final-negotiations-sergio-gor-marco-rubio-10714677"
+        }
+      ],
+      "storyDayCount": 2
+    },
+    {
+      "id": "pib-cabinet-approves-upgradation-of-the-existing-intermediate-lane-to-2-lane-with-paved-sh",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "Cabinet approves Upgradation of the existing intermediate lane to 2 Lane with Paved Shoulder Standard (125.01 kms) of Hiwarkhedi -Roshni-Ashapur-Rudhy Section of NH-347B and widening of existing 2 lane to 4 lane from Deshgaon-Julwaniya Section of NH-347B of length (108. 643 kms) in Madhya Pradesh on Hybrid Annuity Mode",
+      "excerpt": "Total Length-233.653 kms with cost of Rs. 4,415.60 Crore The Cabinet Committee on Economic Affairs, chaired by the Prime Minister Shri Narendra Modi, today has approved upgradation of the existing intermediate lane to 2 Lane with Paved Shoulder Standard (125.01 kms) of Hiwarkhedi…",
+      "articleText": "Total Length-233.653 kms with cost of Rs. 4,415.60 Crore The Cabinet Committee on Economic Affairs, chaired by the Prime Minister Shri Narendra Modi, today has approved upgradation of the existing intermediate lane to 2 Lane with Paved Shoulder Standard (125.01 kms) of Hiwarkhedi -Roshni-Ashapur-Rudhy Section of NH-347B and widening of existing 2 lane to 4 lanes from Deshgaon-Julwaniya Section of NH-347B of length (108. 643 kms) in the State of Madhya Pradesh on Hybrid Annuity Mode at a cost of Rs.4,415.60 Crore. The proposed upgradation of the Hiwarkhedi-Roshni-Ashapur-Rudhy & Deshgaon-Julwaniya Section of NH-347B in Madhya Pradesh will address severe geometric deficiencies, sharp curves, and congestion in built-up areas across Betul, Khandwa, Khargone & Barwani district. An extended Greenfield Bypass of Khargone district of 16.20 Km length will be developed as part of instant project. The project will increase average travel speeds, reduce travel time, and improve overall road safety, fuel efficiency, and vehicle operating costs, thereby enhancing regional mobility and socio-economic development. The project will provide seamless connectivity to key economic, social, and logistics nodes across Madhya Pradesh. The upgraded corridor will enhance multi-modal integration by connecting with 06 PM Gati-Shakti Economic Nodes (01 Textile Cluster, 02 Mega Food Park, 01 Industrial park, 02 Super Thermal Power Plants), 5 social nodes (02 Aspirational Districts- Khandwa & Barwani, 03 T",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268359",
+      "publishedAt": "2026-06-03T15:35:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [
+        {
+          "type": "money",
+          "text": "₹4,415.60 Crore"
+        }
+      ],
+      "enrichment": {
+        "topic": "Economy > Infrastructure",
+        "upscRelevance": "Medium",
+        "examAngle": "Prelims: Road transport and connectivity. Mains GS1: Discuss the role of infrastructure in economic development.",
+        "whyItMatters": "Infrastructure projects are key to improving national economy."
+      }
+    },
+    {
+      "id": "pib-cabinet-approves-the-widening-of-the-armoor-jagtial-mancherial-section-of-national-hig",
+      "sourceId": "pib",
+      "source": "PIB",
+      "title": "Cabinet approves the widening of the Armoor-Jagtial-Mancherial Section of National Highway (NH)-63 on Hybrid Annuity Model (HAM) and the Jagtial-Karimnagar Section of National Highway (NH)–563 on Build-Operate-Transfer (Toll) [BOT (Toll)] to the 4-Lane Standard in Telangana with a Total Project Length of 190.76 km and cost of Rs.7597.16 crore",
+      "excerpt": "The Cabinet Committee on Economic Affairs, chaired by the Prime Minister Shri Narendra Modi, today has approved the widening of the existing Armoor-Jagtial-Mancherial Section of National Highway (NH)-63 on Hybrid Annuity Model (HAM) and Jagtial-Karimnagar Section of National Highway (NH)-563 on…",
+      "articleText": "The Cabinet Committee on Economic Affairs, chaired by the Prime Minister Shri Narendra Modi, today has approved the widening of the existing Armoor-Jagtial-Mancherial Section of National Highway (NH)-63 on Hybrid Annuity Model (HAM) and Jagtial-Karimnagar Section of National Highway (NH)-563 on Build-Operate-Transfer (Toll) [BOT (Toll)] to the 4-lane standard under three work packages with a combined total length of 190.76 km and combined total capital cost of Rs.7597.16 crore. The project section of Armoor-Jagtial-Mancherial passes through Nizamabad, Jagtial, and Mancherial Districts of Telangana, facing severe congestion at present due to several built-up areas along the highway, such as, Anksapoor, Korutla, Jagtial, Dharmapuri, Lakshettipet and Mancherial. Similarly, the Jagtial- Karimnagar section passes through severely congested and heavily built-up places along the stretch, such as, Jagtial, Potharam, Gangadhara and Karimnagar. The instant projects are proposed to have a 4-lane configuration with bypasses to built-up areas with open tolling, ensuring design speed of 100 km/hour and improved travel efficiency across the Districts of Nizamabad, Jagtial, Mancherial and Karimnagar in the State of Telangana. The project will also enhance regional mobility and promote socio-economic development. The projects are in line with the PM GatiShakti principles and will connect five Economic Nodes, seven Social Nodes and ten Logistic Nodes. This will have a positive impact on the Lo",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2268358",
+      "publishedAt": "2026-06-03T15:34:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [
+        {
+          "type": "money",
+          "text": "₹7597.16 Crore"
+        }
+      ],
+      "enrichment": {
+        "topic": "Economy > Infrastructure",
+        "upscRelevance": "High",
+        "examAngle": "Prelims: Road transport and connectivity. Mains GS1: Discuss the role of infrastructure in economic development.",
+        "whyItMatters": "Infrastructure projects like road widening are crucial for improving national economy."
+      }
+    },
+    {
+      "id": "indian-express-as-el-ni-o-threatens-monsoon-farmer-groups-promote-millets-mulching-and-dri",
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "title": "As El Niño threatens monsoon, farmer groups promote millets, mulching and drip irrigation",
+      "excerpt": "",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://indianexpress.com/article/india/weak-monsoon-el-nino-fpos-promote-millets-climate-resilient-farming-india-10721736",
+      "publishedAt": "2026-06-03T15:20:34+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Economy > Agriculture & Food Security",
+        "upscRelevance": "Medium",
+        "examAngle": "Mains GS2: agricultural policies and farmer welfare programs.",
+        "whyItMatters": "Understanding the impact of climate change on agriculture is crucial for policymaking in economic sectors like food security."
+      }
+    },
+    {
+      "id": "the-hindu-environment-tourists-to-be-banned-in-tadoba-tiger-reserve-s-core-areas-for-3-mon",
+      "sourceId": "the-hindu-environment",
+      "source": "The Hindu – Environment",
+      "title": "Tourists to be banned in Tadoba tiger reserve’s core areas for 3 months with eye on monsoon",
+      "excerpt": "The move is aimed at wildlife conservation and the safety of visitors, said officials",
+      "category": "Environment",
+      "priority": "Medium",
+      "url": "https://www.thehindu.com/news/national/maharashtra/tourists-to-be-banned-in-tadoba-tiger-reserves-core-areas-for-3-months-with-eye-on-monsoon/article71055567.ece",
+      "publishedAt": "2026-06-03T15:17:15+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "Visitors will not be allowed inside the core areas of the Tadoba-Andhari Tiger Reserve (TATR) in Maharashtra from June 30 to September 30, with forest officials asserting that the annual monsoon closure is necessary for wildlife conservation and tourist safety. Why tiger enthusiasts should give Tadoba and Gothangaon a chance",
+      "facts": [],
+      "enrichment": {
+        "topic": "Environment > Biodiversity | Environment > Tourism & Travel",
+        "upscRelevance": "Medium",
+        "examAngle": "Current Events > State Politics.",
+        "whyItMatters": "Tourism policies impacting biodiversity are essential for sustainable development and environmental protection."
+      }
+    },
+    {
+      "id": "the-hindu-environment-india-s-uv-index-is-rising-are-our-sunscreens-keeping-up",
+      "sourceId": "the-hindu-environment",
+      "source": "The Hindu – Environment",
+      "title": "India’s UV Index is rising. Are our sunscreens keeping up?",
+      "excerpt": "As Indian cities record extreme UV Index levels, dermatologists are reporting rising cases of pigmentation, tanning and premature ageing. The shift is also reshaping the sunscreen market, with both global giants and homegrown brands racing to develop formulations tailored to Indian skin and climate",
+      "category": "Environment",
+      "priority": "Medium",
+      "url": "https://www.thehindu.com/life-and-style/indias-uv-index-is-rising-are-our-sunscreens-keeping-up/article70947726.ece",
+      "publishedAt": "2026-06-03T15:11:23+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "India has been in the grip of a hotter-than-normal summer, with a heatwave that caused temperatures to exceed 40°C to 45°C in many regions in April and May. You can feel it on your skin: fatigue, irritation and unexpected sensitivity. Why do Indian cities get polluted in summer? | Explained",
+      "facts": [],
+      "enrichment": {
+        "topic": "Environment > Climate Change | Environment > Pollution & Waste",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Awareness of climate change impacts and related health issues like skin aging can influence public policies."
+      }
+    },
+    {
+      "id": "indian-express-monsoon-knocks-on-kerala-s-door-imd-issues-heavy-rain-thunderstorm-alerts-a",
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "title": "Monsoon knocks on Kerala’s door; IMD issues heavy rain, thunderstorm alerts across India",
+      "excerpt": "",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://indianexpress.com/article/india/rain-weather-imd-kerala-delhi-india-thunderstorm-heatwave-10721440",
+      "publishedAt": "2026-06-03T14:20:57+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Environment > Climate Change",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Climate change and its effects on weather patterns are a key issue in UPSC's Geography section."
+      }
+    },
+    {
+      "id": "indian-express-journalist-filmmaker-iit-alumnus-cockroach-janta-party-names-3-spokesperson",
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "title": "Journalist, filmmaker, IIT alumnus: Cockroach Janta Party names 3 spokespersons",
+      "excerpt": "",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://indianexpress.com/article/india/cockroach-janta-party-spokespersons-saurav-das-vijeta-dahiya-ranka-10721873",
+      "publishedAt": "2026-06-03T14:08:06+05:30",
+      "clusterId": "indian-express-journalist-iit-ian-among-spokespers",
+      "clusterSize": 2,
+      "isClusterLead": false,
+      "facts": [],
+      "enrichment": {
+        "topic": "Current Events > State Politics | Social Issues > Health",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "Information on political parties and their campaigns can be part of current events but not central to UPSC exams."
+      },
+      "storyId": "the-hindu-cockroach-janta-party-now-transitioning-",
+      "storyEditions": [
+        {
+          "date": "2026-06-02",
+          "title": "Cockroach Janta Party now transitioning into a movement: Abhijeet Dipke",
+          "url": "https://www.thehindu.com/news/national/cjp-founder-abhijeet-dipke-interview-cockroach-janta-party-now-transitioning-into-a-movement/article71048435.ece"
+        }
+      ],
+      "storyDayCount": 2
+    },
+    {
+      "id": "indian-express-great-nicobar-island-project-jairam-ramesh-confronts-environment-minister-b",
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "title": "Great Nicobar Island Project: Jairam Ramesh confronts Environment Minister Bhupender Yadav again on green nod",
+      "excerpt": "",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://indianexpress.com/article/india/great-nicobar-island-project-jairam-ramesh-eia-environmental-clearance-concerns-10721656",
+      "publishedAt": "2026-06-03T12:42:38+05:30",
+      "clusterId": "the-hindu-environment-jairam-ramesh-presses-centre",
+      "clusterSize": 2,
+      "isClusterLead": false,
+      "facts": [],
+      "enrichment": {
+        "topic": "Environment > Biodiversity",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Understanding the impact of infrastructure projects on biodiversity is crucial for environmental policies."
+      },
+      "storyId": "indian-express-great-nicobar-project-bhupender-yad",
+      "storyEditions": [
+        {
+          "date": "2026-06-01",
+          "title": "Great Nicobar Project: Bhupender Yadav rejects Jairam Ramesh’s charges, defends environmental clearance",
+          "url": "https://indianexpress.com/article/india/great-nicobar-project-clearances-bhupender-yadav-jairam-ramesh-10718331"
+        }
+      ],
+      "storyDayCount": 2
+    },
+    {
+      "id": "livemint-india-s-services-sector-maintains-growth-momentum-in-may-as-output-expands-hsbc-i",
+      "sourceId": "livemint",
+      "source": "Mint",
+      "title": "India’s services sector maintains growth momentum in May as output expands: HSBC India Services PMI",
+      "excerpt": "The HSBC India Services Purchasing Managers’ Index, compiled by S&amp;P Global, rose to 59.8 in May from 58.8 in April. It has continued to grow since April, after registering its weakest growth in 14 months in March.",
+      "category": "Business",
+      "priority": "Medium",
+      "url": "https://www.livemint.com/economy/india-services-pmi-hsbc-india-pmi-11780464928267.html",
+      "publishedAt": "2026-06-03T12:01:18+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "India’s services sector maintained its growth momentum in May as new business intakes and output rose amid a demand push, particularly in the domestic market, a private survey showed on Wednesday. The HSBC India Services Purchasing Managers’ Index (PMI), compiled by S&P Global, rose to 59.8 in May from 58.8 in April. It has continued to grow since April, after registering its weakest growth in 14 months in March. Growth in May was the strongest since last November. Despite monthly swings, the index has remained above the 50-point threshold, which separates contraction from expansion, for more than four years, highlighting the sector’s resilience to headwinds. Input costs receded to their lowest in four months and selling prices rose at a more measured pace with firms staying optimistic about future prospects, the survey noted. The data showed input costs receded even though cost pressures remained historically high across India’s services economy. A great degree of cost absorption was highlighted by a relatively moderate rise in output charges, the softest since January, the survey said. Output growth in May was boosted by healthy demand conditions, new client wins and ongoing improvements in new business intakes, it added. New orders placed with Indian service providers rose to the greatest degree in six months halfway through the first fiscal quarter, moving further away from the slowdown in March, it added. New export business also rose, albeit to a lesser extent than…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Economy > Fiscal Policy | Economy > Trade & External Sector",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "The services sector's growth is vital for India's GDP and trade balance."
+      }
+    },
+    {
+      "id": "the-hindu-science-the-hindu-huddle-panel-to-throw-light-on-ai-and-its-impact",
+      "sourceId": "the-hindu-science",
+      "source": "The Hindu – Science & Tech",
+      "title": "The Hindu Huddle panel to throw light on AI and its impact",
+      "excerpt": "Secretary, MeitY, S. Krishnan; Chief Economic Advisor V. Anantha Nageswaran; and former CEO, Cognizant Lakshmi Narayanan will discuss how India should prepare for the emerging threat to employment",
+      "category": "Science",
+      "priority": "Medium",
+      "url": "https://www.thehindu.com/news/national/the-hindu-huddle-panel-to-throw-light-on-ai-and-its-impact/article71045452.ece",
+      "publishedAt": "2026-06-03T10:34:14+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "Artificial Intelligence is the flavour of the times. It is not the preserve of technology geeks anymore, and it is impacting all our lives in ways known and unknown. Many of us already use AI models in our jobs and in our homes. The likes of Google Gemini, Chat GPT, and Perplexity have transformed the way we surf for information on the Internet. But AI and its impact on us is much more than this. Will AI eat away jobs, especially in the technology domain, where India employs almost six million professionals? Will AI create new jobs? Where is India in the race to lead AI transformation in the world? Do we have the technology backbone and infrastructure to support AI development in India? What is the government doing to ensure India does not get left behind in the AI race? Business leaders to discuss navigating challenges at The Hindu Huddle 2026",
+      "facts": [],
+      "enrichment": {
+        "topic": "Science & Technology > Digital & AI | Economy > Fiscal Policy | Social Issues > Women & Children",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "AI impacts employment and society, important for economic policies."
+      }
+    },
+    {
+      "id": "indian-express-hours-long-traffic-jams-muddy-water-in-houses-cloudbursts-put-2-jammu-and-k",
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "title": "Hours-long traffic jams, muddy water in houses: Cloudbursts put 2 Jammu and Kashmir districts on alert",
+      "excerpt": "",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://indianexpress.com/article/india/hours-long-traffic-jams-muddy-water-in-houses-cloudbursts-put-2-jammu-and-kashmir-districts-on-alert-10721069",
+      "publishedAt": "2026-06-03T06:30:19+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": []
+    },
+    {
+      "id": "indian-express-days-after-social-media-post-flagged-vulnerabilities-cbse-chairman-secretar",
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "title": "Days after social media post flagged vulnerabilities, CBSE Chairman, Secretary moved out; probe ordered",
+      "excerpt": "",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://indianexpress.com/article/india/cbse-chairman-secretary-moved-out-osm-service-procurement-to-be-probed-10721083",
+      "publishedAt": "2026-06-03T06:01:30+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": []
+    },
+    {
+      "id": "times-of-india-shivakumar-era-begins-how-change-of-guard-in-karnataka-changes-political-dy",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "Shivakumar era begins: How change of guard in Karnataka changes political dynamics for BJP and JD(S)",
+      "excerpt": "Priyanka Mukherjee is an Assistant News Editor at The Times of India, where deadlines rarely slow down. Often juggling breaking news, long-form explainers and the everyday chaos of the newsroom, she is usually managing stress, chasing clarity and trying to log off on time (rarely successful). She…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/shivakumar-era-begins-how-change-of-guard-in-karnataka-changes-political-dynamics-for-bjp-and-jds/articleshow/131485686.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "Priyanka Mukherjee is an Assistant News Editor at The Times of India, where deadlines rarely slow down. Often juggling breaking news, long-form explainers and the everyday chaos of the newsroom, she is usually managing stress, chasing clarity and trying to log off on time (rarely successful). She also cares deeply about stories around women’s rights and social change, while two very opinionated dogs make sure she never truly switches off. Read More",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance | Polity > Judiciary",
+        "upscRelevance": "Medium",
+        "examAngle": "Mains GS2: Analyze the impact of leadership changes on political dynamics in Indian states.",
+        "whyItMatters": "Understanding state politics and governance is crucial for analyzing electoral outcomes."
+      }
+    },
+    {
+      "id": "times-of-india-from-tmc-insider-to-rebel-leader-who-is-ritabrata-banerjee-man-at-the-centr",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "From TMC insider to rebel leader: Who is Ritabrata Banerjee, man at the centre of turmoil",
+      "excerpt": "Expelled TMC leader Ritabrata Banerjee claims Speaker recognized him as opposition leader, signaling a major internal crisis. Fifty-eight rebel MLAs support this move, proposing a new leadership structure. This revolt, the party's biggest challenge, follows a significant election defeat and has…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/from-tmc-insider-to-rebel-leader-who-is-ritabrata-banerjee-man-at-the-centre-of-turmoil/articleshow/131485142.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": "ndtv-expelled-trinamool-rebel-ritabrata-banerjee-b",
+      "clusterSize": 4,
+      "isClusterLead": false,
+      "articleText": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the forefront of gathering, verifying, and presenting breaking news, in-depth analysis, and insightful reports on a wide range of topics. The TOI News Desk is your trusted source for staying informed and connected to the ever-evolving global landscape, ensuring that our readers are equipped with the latest developments that matter most.\" Read More",
+      "facts": []
+    },
+    {
+      "id": "times-of-india-he-wanted-dignified-exit-firhad-hakim-resigns-as-kolkata-mayor-tmc-says-mam",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "‘He wanted dignified exit’: Firhad Hakim resigns as Kolkata mayor, TMC says Mamata Banerjee 'permitted' him to step aside",
+      "excerpt": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/he-wanted-dignified-exit-firhad-hakim-resigns-as-kolkata-mayor-tmc-says-mamata-banerjee-permitted-him-to-step-aside/articleshow/131484612.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": "hindustan-times-tmc-leader-firhad-hakim-will-resig",
+      "clusterSize": 2,
+      "isClusterLead": false,
+      "articleText": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the forefront of gathering, verifying, and presenting breaking news, in-depth analysis, and insightful reports on a wide range of topics. The TOI News Desk is your trusted source for staying informed and connected to the ever-evolving global landscape, ensuring that our readers are equipped with the latest developments that matter most.\" Read More",
+      "facts": []
+    },
+    {
+      "id": "times-of-india-evening-news-wrap-delhi-hotel-fire-kills-21-including-17-foreigners-dk-shiv",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "Evening news wrap: Delhi hotel fire kills 21, including 17 foreigners; DK Shivakumar takes oath as Karnataka CM & more",
+      "excerpt": "A devastating Delhi hotel fire claimed 21 lives, including 17 foreign nationals, with investigations revealing safety lapses and illegal expansion. In West Bengal, a TMC leader claimed rebel status as opposition leader. Meanwhile, India condemned a Kuwait airport attack that killed an Indian…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/evening-news-wrap-delhi-hotel-fire-kills-21-including-17-foreigners-dk-shivakumar-takes-oath-as-karnataka-cm-more/articleshow/131484826.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": "the-hindu-karnataka-cm-swearing-in-live-d-k-shivak",
+      "clusterSize": 13,
+      "isClusterLead": false,
+      "articleText": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the forefront of gathering, verifying, and presenting breaking news, in-depth analysis, and insightful reports on a wide range of topics. The TOI News Desk is your trusted source for staying informed and connected to the ever-evolving global landscape, ensuring that our readers are equipped with the latest developments that matter most.\" Read More",
+      "facts": [],
+      "enrichment": {
+        "topic": "Current Events > Crime & Courts | Economy > Infrastructure",
+        "upscRelevance": "High",
+        "examAngle": "Prelims: Article 32, writ jurisdiction. Mains GS2: Analyze the impact of leadership changes on political dynamics in Indian states.",
+        "whyItMatters": "Understanding state politics and governance is crucial for analyzing electoral outcomes."
+      }
+    },
+    {
+      "id": "times-of-india-will-work-closely-with-karnataka-government-pm-modi-congratulates-dk-shivak",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "'Will work closely with Karnataka government': PM Modi congratulates DK Shivakumar for taking oath as CM",
+      "excerpt": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/will-work-closely-with-karnataka-government-pm-modi-congratulates-dk-shivakumar-for-taking-oath-as-cm/articleshow/131484694.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": "the-hindu-karnataka-cm-swearing-in-live-d-k-shivak",
+      "clusterSize": 13,
+      "isClusterLead": false,
+      "articleText": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the forefront of gathering, verifying, and presenting breaking news, in-depth analysis, and insightful reports on a wide range of topics. The TOI News Desk is your trusted source for staying informed and connected to the ever-evolving global landscape, ensuring that our readers are equipped with the latest developments that matter most.\" Read More",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance | Polity > Judiciary",
+        "upscRelevance": "Medium",
+        "examAngle": "Mains GS2: Discuss the role of internal party democracy and its impact on governance.",
+        "whyItMatters": "Examining political parties' structure helps in understanding federalism."
+      }
+    },
+    {
+      "id": "times-of-india-karnataka-cabinet-takes-shape-who-all-took-oath-with-new-cm-dk-shivakumar",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "Karnataka cabinet takes shape: Who all took oath with new CM DK Shivakumar",
+      "excerpt": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/karnataka-cabinet-takes-shape-who-all-took-oath-with-new-cm-dk-shivakumar/articleshow/131482714.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": "the-hindu-karnataka-cm-swearing-in-live-d-k-shivak",
+      "clusterSize": 13,
+      "isClusterLead": false,
+      "articleText": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the forefront of gathering, verifying, and presenting breaking news, in-depth analysis, and insightful reports on a wide range of topics. The TOI News Desk is your trusted source for staying informed and connected to the ever-evolving global landscape, ensuring that our readers are equipped with the latest developments that matter most.\" Read More",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance | Polity > Judiciary ",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "Covers state-level political developments."
+      }
+    },
+    {
+      "id": "times-of-india-cease-such-attacks-mea-condemns-kuwait-airport-attack-that-killed-indian-na",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "'Cease such attacks': MEA condemns Kuwait airport attack that killed Indian national",
+      "excerpt": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/cease-such-attacks-mea-condemns-kuwait-airport-attack-that-killed-indian-national/articleshow/131484113.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": "times-of-india-cease-such-attacks-mea-condemns-kuw",
+      "clusterSize": 2,
+      "isClusterLead": true,
+      "articleText": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the forefront of gathering, verifying, and presenting breaking news, in-depth analysis, and insightful reports on a wide range of topics. The TOI News Desk is your trusted source for staying informed and connected to the ever-evolving global landscape, ensuring that our readers are equipped with the latest developments that matter most.\" Read More",
+      "facts": [],
+      "enrichment": {
+        "topic": "International Relations > Multilateral Forums | International Relations > Security & Defence ",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Involves MEA's stance on international terrorism."
+      }
+    },
+    {
+      "id": "times-of-india-we-are-real-main-opposition-expelled-tmc-leader-ritabrata-banerjee-claims-s",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "'We are real & main opposition': Expelled TMC leader Ritabrata Banerjee claims speaker has accepted rebel group's status",
+      "excerpt": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/we-are-real-main-opposition-expelled-tmc-leader-ritabrata-banerjee-claims-speaker-has-accepted-rebel-groups-status/articleshow/131483808.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": "ndtv-expelled-trinamool-rebel-ritabrata-banerjee-b",
+      "clusterSize": 4,
+      "isClusterLead": false,
+      "articleText": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the forefront of gathering, verifying, and presenting breaking news, in-depth analysis, and insightful reports on a wide range of topics. The TOI News Desk is your trusted source for staying informed and connected to the ever-evolving global landscape, ensuring that our readers are equipped with the latest developments that matter most.\" Read More",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance | Polity > Judiciary ",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "Covers state-level political developments."
+      }
+    },
+    {
+      "id": "times-of-india-tvk-led-alliance-allots-tamil-nadu-rajya-sabha-seat-to-congress",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "TVK-led alliance allots Tamil Nadu Rajya Sabha seat to Congress",
+      "excerpt": "The Tamilaga Vettri Kazhagam-led alliance has allocated a Rajya Sabha seat from Tamil Nadu to its partner, the Indian National Congress. This decision comes ahead of the biennial elections scheduled for June 18. The Congress had previously requested the seat, which will now be filled by their…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/tvk-led-alliance-allots-tamil-nadu-rajya-sabha-seat-to-congress/articleshow/131483633.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the forefront of gathering, verifying, and presenting breaking news, in-depth analysis, and insightful reports on a wide range of topics. The TOI News Desk is your trusted source for staying informed and connected to the ever-evolving global landscape, ensuring that our readers are equipped with the latest developments that matter most.\" Read More",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance | Polity > Judiciary ",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "Covers state-level political developments."
+      }
+    },
+    {
+      "id": "times-of-india-indian-national-killed-in-iranian-drone-attack-on-kuwait-airport",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "Indian national killed in Iranian drone attack on Kuwait airport",
+      "excerpt": "An Indian national tragically died in an Iranian drone attack on Kuwait airport. The incident, which also caused significant damage to a passenger terminal, occurred amidst escalating regional tensions. The US military reported intercepting multiple drones targeting its forces in Kuwait and stated…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/indian-national-killed-in-iranian-drone-attack-on-kuwait-airport/articleshow/131482794.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": "times-of-india-cease-such-attacks-mea-condemns-kuw",
+      "clusterSize": 2,
+      "isClusterLead": false,
+      "articleText": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the forefront of gathering, verifying, and presenting breaking news, in-depth analysis, and insightful reports on a wide range of topics. The TOI News Desk is your trusted source for staying informed and connected to the ever-evolving global landscape, ensuring that our readers are equipped with the latest developments that matter most.\" Read More",
+      "facts": [],
+      "enrichment": {
+        "topic": "International Relations > Multilateral Forums | International Relations > Security & Defence ",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Involves an incident of international terrorism."
+      }
+    },
+    {
+      "id": "times-of-india-karnataka-gets-new-cm-congress-puts-up-united-front-as-dk-shivakumar-takes-",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "Karnataka gets new CM: Congress puts up united front as DK Shivakumar takes oath with Siddaramaiah on stage",
+      "excerpt": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/congress-puts-up-united-front-as-dk-shivakumar-takes-oath-as-karnataka-cm-shares-stage-with-siddaramaiah/articleshow/131482423.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": "the-hindu-karnataka-cm-swearing-in-live-d-k-shivak",
+      "clusterSize": 13,
+      "isClusterLead": false,
+      "articleText": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the forefront of gathering, verifying, and presenting breaking news, in-depth analysis, and insightful reports on a wide range of topics. The TOI News Desk is your trusted source for staying informed and connected to the ever-evolving global landscape, ensuring that our readers are equipped with the latest developments that matter most.\" Read More",
+      "facts": []
+    },
+    {
+      "id": "times-of-india-why-tmc-revolt-is-about-abhishek-banerjee-not-mamata",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "Why TMC revolt is about Abhishek Banerjee, not Mamata",
+      "excerpt": "A Trinamool Congress rebellion is deepening, with expelled leader Ritabrata Banerjee challenging Abhishek Banerjee's authority rather than Mamata Banerjee's leadership. This internal strife, fueled by disputes over decision-making and the leader of opposition appointment, signals a proxy battle…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/why-tmc-revolt-is-about-abhishek-banerjee-not-mamata-banerjee-west-bengal/articleshow/131482061.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": "hindustan-times-ed-summons-tmc-s-abhishek-banerjee",
+      "clusterSize": 2,
+      "isClusterLead": false,
+      "articleText": "<p>News desk journalist, digital, at The Times of India, with a focus on Indian politics. Over a decade of chasing stories, taming headlines and arguing with commas like they're part of the opposition. Tracks elections, policy pivots, party drama and the fine print of power, where every word can tilt the narrative. Believes good journalism is clarity under pressure, ideally filed before the next breaking alert crashes in. Powered by deadlines, context, sharp edits and a steady supply of strong tea.<br></p> Read More",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Insight into party dynamics and internal conflicts can be important for analyzing state politics in GS papers."
+      },
+      "storyId": "hindustan-times-tmc-to-go-ahead-with-sit-in-despit",
+      "storyEditions": [
+        {
+          "date": "2026-06-01",
+          "title": "TMC to go ahead with sit-in despite police denying permission: Mamata Banerjee",
+          "url": "https://www.hindustantimes.com/india-news/tmc-to-go-ahead-with-sit-in-despite-police-denying-permission-mamata-banerjee-101780323522010.html"
+        }
+      ],
+      "storyDayCount": 2
+    },
+    {
+      "id": "times-of-india-tmc-split-on-display-rebel-leaders-attend-cm-suvendu-adhikari-s-review-meet",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "TMC split on display: Rebel leaders attend CM Suvendu Adhikari's review meeting",
+      "excerpt": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/tmc-split-on-display-rebel-leaders-attend-cm-suvendu-adhikaris-review-meeting/articleshow/131480956.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the forefront of gathering, verifying, and presenting breaking news, in-depth analysis, and insightful reports on a wide range of topics. The TOI News Desk is your trusted source for staying informed and connected to the ever-evolving global landscape, ensuring that our readers are equipped with the latest developments that matter most.\" Read More",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Elections & Governance",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Knowledge of party splits and leadership meetings can help in understanding election processes."
+      }
+    },
+    {
+      "id": "times-of-india-paranoia-and-fear-owaisi-slams-centre-over-sir-alleges-exercise-may-create-",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "‘Paranoia and fear’: Owaisi slams Centre over SIR, alleges exercise may create ‘permanent class of excluded Indians’",
+      "excerpt": "AIMIM chief Asaduddin Owaisi criticizes the Election Commission's voter list revision, fearing it could disenfranchise Muslims, women, migrants, and the poor, creating \"excluded Indians.\" He alleges the exercise, which has already removed millions, is a precursor to identifying illegal immigrants.…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/paranoia-and-fear-owaisi-slams-centre-over-sir-alleges-exercise-may-create-permanent-class-of-excluded-indians/articleshow/131481348.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "The TOI News Desk comprises a dedicated and tireless team of journalists who operate around the clock to deliver the most current and comprehensive news and updates to the readers of The Times of India worldwide. With an unwavering commitment to excellence in journalism, our team is at the forefront of gathering, verifying, and presenting breaking news, in-depth analysis, and insightful reports on a wide range of topics. The TOI News Desk is your trusted source for staying informed and connected to the ever-evolving global landscape, ensuring that our readers are equipped with the latest developments that matter most.\" Read More",
+      "facts": []
+    },
+    {
+      "id": "times-of-india-baby-boom-over-india-s-population-test-begins-now",
+      "sourceId": "times-of-india",
+      "source": "The Times of India",
+      "title": "Baby boom over, India's population test begins now",
+      "excerpt": "India's birth rate has dropped below replacement levels. However, demographic trends vary significantly across the nation. While cities are seeing fewer births, some states like Bihar show different patterns. Families are having fewer children, impacting social structures. Infant mortality has…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://timesofindia.indiatimes.com/india/baby-boom-over-indias-population-test-begins-now/articleshow/131480751.cms",
+      "publishedAt": "2026-06-03T06:00:00+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": []
+    },
+    {
+      "id": "indian-express-2022-port-blair-case-key-witnesses-turn-hostile-in-gangrape-case-against-fo",
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "title": "2022 Port Blair case: Key witnesses turn hostile in gangrape case against former Andamans Chief Secretary",
+      "excerpt": "This is what the rape victim now says, four years after her police complaint against the then Chief Secretary of the Union Territory rocked Port Blair. She doesn’t want more details published, except that last September she got a job in the “security sector’’ for a monthly salary of Rs 25,000.…",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://indianexpress.com/article/india/andaman-gangrape-case-against-chief-secretary-jitendra-narain-witnesses-hostile-10721089",
+      "publishedAt": "2026-06-03T05:57:34+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "This is what the rape victim now says, four years after her police complaint against the then Chief Secretary of the Union Territory rocked Port Blair. She doesn’t want more details published, except that last September she got a job in the “security sector’’ for a monthly salary of Rs 25,000. Since the case was filed in 2022, life has been harsh for her. And has only got harsher. Her husband has left her and the case against the accused has “weakened” with four of the key witnesses, including the husband, turning hostile and denying their recorded statements, “Nobody, not even the lawyers, tell me what is going on in court. They don’t want to upset me. So I just wear my uniform every morning and go out for duty,” says the victim. On October 15, 2022, The Indian Express first reported how she, then a 21-year-old government job seeker from Port Blair, had filed a police complaint alleging gangrape by Jitendra Narain , IAS, who was then Chief Secretary of Andaman and Nicobar, and then Labour Commissioner R L Rishi. The woman was given police protection and the A & N police set up a Special Investigation Team (SIT) to probe into her allegations. By the time the FIR was registered, Narain was transferred from A & N and appointed Chairman and Managing Director of the Delhi Finance Corporation. A day after The Indian Express report, Narain was suspended via an order of the Home Ministry citing “grave misconduct.” The next day, an A&N police team raided his house in New Delhi and…",
+      "facts": [],
+      "enrichment": {
+        "topic": "Polity > Internal Security | Polity > Judiciary",
+        "upscRelevance": "High",
+        "examAngle": "Mains GS1: handling of sensitive cases in internal security. Prelims: Investigation procedures.",
+        "whyItMatters": "Understanding witness behavior and legal implications is crucial for UPSC's Mains syllabus."
+      }
+    },
+    {
+      "id": "the-hindu-environment-bhoomi-habba-returns-to-bengaluru",
+      "sourceId": "the-hindu-environment",
+      "source": "The Hindu – Environment",
+      "title": "Bhoomi Habba returns to Bengaluru",
+      "excerpt": "The 18th edition of Visthar’s annual environment and sustainability festival will offer an array of events and stalls that closely align with its core theme: Restore, Reclaim – Community Paths to Climate Action",
+      "category": "Environment",
+      "priority": "Medium",
+      "url": "https://www.thehindu.com/news/cities/bangalore/bhoomi-habba-returns-to-bengaluru/article71051093.ece",
+      "publishedAt": "2026-06-03T05:43:07+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "articleText": "Marginalised communities often have a more symbiotic relationship with the earth and environment, believes Mercy Kappen, Co-founder and Strategic Advisor at Visthar, a Bengaluru-based civil society organisation that works in areas of education, training and environmental issues. “They know how to make a living without ruining things. I think there is a lot we can learn from them.” In keeping with this idea, the 18th edition of Bhoomi Habba , Visthar’s annual environment and sustainability festival, will have Restore, Reclaim – Community Paths to Climate Action as its theme, which the event’s release describes as “a vital movement toward tangible stewardship across generations, asserting the agency of community-led initiatives in healing our shared ecosystems.” Organised in collaboration with GreenKraft, Elements Organics, the Fair Trade Alliance of Kerala (FTAK), and Abheek Academy, the festival will comprise an array of events and stalls that closely align with its core themes of sustainability and community-based climate action. Also read: Bengaluru-based natural history platform, Nature in Focus, introduces new category to its annual photography contest “We ground environmental care in practical earth wisdom — whether through reconstructing vanishing recipes or embracing zero-waste living,” Mercy says. “Bhoomi Habba uses the power of theatre, poetry, storytelling, games and movement to transform personal stories into collective calls for climate action.”",
+      "facts": [],
+      "enrichment": {
+        "topic": "Environment > Climate Change | Environment > Biodiversity",
+        "upscRelevance": "Medium",
+        "examAngle": "",
+        "whyItMatters": "Knowledge about environmental sustainability initiatives is essential for UPSC's Polity syllabus."
+      }
+    },
+    {
+      "id": "indian-express-1-5-crore-artificial-groundwater-recharge-storage-works-under-jsjb-initiati",
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "title": "1.5 crore artificial groundwater recharge, storage works under JSJB initiative: Minister C R Patil",
+      "excerpt": "",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://indianexpress.com/article/india/jal-sanchay-jan-bhagidari-groundwater-recharge-c-r-patil-10721159",
+      "publishedAt": "2026-06-03T05:40:55+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Economy > Infrastructure | Economy > Agriculture & Food Security",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Awareness of infrastructural projects like artificial groundwater recharge is important for UPSC's Polity and Economic syllabus."
+      }
+    },
+    {
+      "id": "indian-express-abhijeet-dipke-to-land-in-delhi-on-june-6-sonam-wangchuk-lends-support-to-c",
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "title": "Abhijeet Dipke to land in Delhi on June 6; Sonam Wangchuk lends support to Cockroach Janata Party",
+      "excerpt": "",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://indianexpress.com/article/india/neet-paper-leak-abhijeet-dipke-to-land-in-delhi-on-june-6-sonam-wangchuk-lends-support-to-cockroach-janata-party-10721153",
+      "publishedAt": "2026-06-03T05:30:35+05:30",
+      "clusterId": "hindustan-times-why-cockroach-janata-party-has-no-",
+      "clusterSize": 2,
+      "isClusterLead": false,
+      "facts": [],
+      "enrichment": {
+        "topic": "",
+        "upscRelevance": "Low",
+        "examAngle": "",
+        "whyItMatters": "General knowledge about political events is less relevant for UPSC preparation."
+      },
+      "storyId": "indian-express-cockroach-party-s-abhijeet-dipke-to",
+      "storyEditions": [
+        {
+          "date": "2026-06-01",
+          "title": "Cockroach party’s Abhijeet Dipke to return to India, demand Dharmendra Pradhan’s resignation",
+          "url": "https://indianexpress.com/article/india/cjp-founder-abhijeet-dipke-to-return-to-india-on-june-6-launch-protest-seeking-dharmendra-pradhans-resignation-10717982"
+        },
+        {
+          "date": "2026-06-02",
+          "title": "Cockroach Janta Party now transitioning into a movement: Abhijeet Dipke",
+          "url": "https://www.thehindu.com/news/national/cjp-founder-abhijeet-dipke-interview-cockroach-janta-party-now-transitioning-into-a-movement/article71048435.ece"
+        }
+      ],
+      "storyDayCount": 3
+    },
+    {
+      "id": "indian-express-latest-family-health-survey-rajasthan-sees-rise-in-teen-pregnancies-dip-in-",
+      "sourceId": "indian-express",
+      "source": "The Indian Express",
+      "title": "Latest family health survey: Rajasthan sees rise in teen pregnancies, dip in child nutrition indicators",
+      "excerpt": "",
+      "category": "India",
+      "priority": "Medium",
+      "url": "https://indianexpress.com/article/india/latest-family-health-survey-rajasthan-sees-rise-in-teen-pregnancies-dip-in-child-nutrition-indicators-10721064",
+      "publishedAt": "2026-06-03T05:30:19+05:30",
+      "clusterId": null,
+      "clusterSize": 1,
+      "isClusterLead": true,
+      "facts": [],
+      "enrichment": {
+        "topic": "Social Issues > Health | Social Issues > Education",
+        "upscRelevance": "High",
+        "examAngle": "",
+        "whyItMatters": "Data on health trends like teen pregnancies and child nutrition are crucial for UPSC's Polity syllabus."
+      }
+    }
+  ]
+};

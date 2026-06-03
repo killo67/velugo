@@ -1,0 +1,28 @@
+server {
+  listen ${PORT};
+  server_name _;
+
+  root /app;
+
+  location = /healthz {
+    access_log off;
+    return 204;
+  }
+
+  location = / {
+    try_files /src/index.html =404;
+  }
+
+  location /src/ {
+    try_files $uri =404;
+  }
+
+  location /assets/data/ {
+    add_header Cache-Control "no-store";
+    try_files $uri =404;
+  }
+
+  location /assets/ {
+    try_files $uri =404;
+  }
+}

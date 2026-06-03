@@ -1,0 +1,6 @@
+scripts/.env
+logs/
+.DS_Store
+*.pyc
+__pycache__/
+.docker-env
