@@ -264,11 +264,11 @@ const MODE_LABELS = {
   explorer: ['Headlines today', 'Deep dives',         'Story threads',    'Sources active'],
 };
 
-let currentMode = localStorage.getItem('newagg-mode') || 'upsc';
+let currentMode = localStorage.getItem('velugo-mode') || 'upsc';
 
 function setMode(mode) {
   currentMode = mode;
-  localStorage.setItem('newagg-mode', mode);
+  localStorage.setItem('velugo-mode', mode);
   document.body.classList.remove('mode-upsc', 'mode-informed', 'mode-explorer');
   document.body.classList.add(`mode-${mode}`);
   document.querySelectorAll('.mode-btn').forEach(btn => {
