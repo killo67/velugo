@@ -6,3 +6,6 @@ healthcheckPath = "/healthz"
 healthcheckTimeout = 30
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 3
+
+[deploy.envs]
+ENRICH_MODE = "mock"
