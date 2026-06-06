@@ -29,6 +29,22 @@
         </nav>
         <p id="timestamp" class="timestamp"></p>
         <div id="statusBadge" class="status-badge ready">Ready</div>
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -39,11 +55,23 @@
 
       <section class="toolbar" aria-label="Filters">
         <div class="filter-group">
+          <button id="storyMapBtn" class="story-map-btn" title="View story threads across time">🗺 Story Map</button>
           <div id="topicChips" class="chip-group"></div>
         </div>
         <div class="search-group">
           <input id="searchInput" type="search" placeholder="Search headlines, topics, sources…" aria-label="Search headlines" />
         </div>
+      </section>
+
+      <section id="storyMapSection" class="story-map-section hidden" aria-label="Story threads">
+        <div class="story-map-header">
+          <div>
+            <h3>Story Threads <span id="storyMapCount" class="section-count"></span></h3>
+            <p class="story-map-subtitle">How today's stories have evolved across past editions</p>
+          </div>
+        </div>
+        <div id="storyMapDateAxis" class="sm-date-axis"></div>
+        <div id="storyMapRows" class="sm-rows"></div>
       </section>
 
       <section class="must-know-section" aria-label="Today's Must-Know Headlines">
@@ -54,6 +82,7 @@
       </section>
 
       <section class="all-headlines-section" aria-label="All Collected Headlines">
+        <div class="section-rule">General Updates</div>
         <div class="section-heading">
           <h2>All Headlines <span id="allHeadlinesCount" class="section-count"></span></h2>
         </div>
@@ -70,9 +99,56 @@
       </section>
     </main>
 
+    <!-- Detailed Article Modal -->
+    <dialog id="articleModal" class="article-modal" aria-modal="true" tabindex="-1">
+      <div class="modal-wrapper">
+        <header class="modal-header">
+          <div class="modal-meta">
+            <span id="modalTopicPath" class="topic-path"></span>
+            <span class="modal-meta-divider">&middot;</span>
+            <span id="modalSource" class="modal-source"></span>
+            <span class="modal-meta-divider">&middot;</span>
+            <span id="modalDate" class="modal-date"></span>
+          </div>
+          <button id="closeModalBtn" class="close-modal-btn" aria-label="Close dialog" title="Close dialog">&times;</button>
+        </header>
+        <div class="modal-body">
+          <h2 id="modalTitle" class="modal-title"></h2>
+          <div id="modalBadges" class="modal-badges"></div>
+          <div id="modalExcerpt" class="modal-excerpt"></div>
+          
+          <div id="modalAnalysisSection" class="modal-analysis-section">
+            <div id="modalExamAngleContainer" class="modal-analysis-box exam-angle-box hidden">
+              <h3>Exam Angle</h3>
+              <p id="modalExamAngle"></p>
+            </div>
+            <div id="modalWhyStudyContainer" class="modal-analysis-box why-study-box hidden">
+              <h3>Why it matters</h3>
+              <p id="modalWhyStudy"></p>
+            </div>
+          </div>
+
+          <div id="modalFactsContainer" class="modal-facts-container hidden">
+            <h3>Key Facts</h3>
+            <div id="modalFacts" class="fact-chips"></div>
+          </div>
+
+          <div id="modalStoryThreadContainer" class="modal-story-thread-container hidden">
+            <h3>Story Timeline</h3>
+            <div id="modalStoryThread"></div>
+          </div>
+        </div>
+        <footer class="modal-footer">
+          <a id="modalSourceLink" href="#" target="_blank" rel="noreferrer" class="modal-action-btn primary-btn">Read Original Source &rarr;</a>
+          <button id="modalCloseBtn" class="modal-action-btn secondary-btn">Close</button>
+        </footer>
+      </div>
+    </dialog>
+
     <script>
       document.write(`<script src="../assets/data/india-headlines.js?v=${Date.now()}"><\/script>`);
     </script>
+    <script src="../assets/data/config.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

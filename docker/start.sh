@@ -14,6 +14,14 @@ for var in ENRICH_MODE LOCAL_MODEL ANTHROPIC_API_KEY TELEGRAM_BOT_TOKEN TELEGRAM
     [ -n "$val" ] && echo "export $var='$val'"
 done > /app/.docker-env
 
+# Write browser-facing Supabase config (anon key is safe to expose)
+cat > /app/assets/data/config.js <<EOF
+window.__VELUGO_CONFIG__ = {
+  supabaseUrl: "${SUPABASE_URL:-}",
+  supabaseAnonKey: "${SUPABASE_ANON_KEY:-}"
+};
+EOF
+
 # Start cron daemon
 service cron start
 

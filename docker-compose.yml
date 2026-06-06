@@ -13,3 +13,5 @@ services:
       ENRICH_MODE: "mock"        # use 'api' + ANTHROPIC_API_KEY for real enrichment
       TELEGRAM_BOT_TOKEN: ""     # leave empty to skip posting; brief still saved locally
       TELEGRAM_CHANNEL_ID: ""
+      SUPABASE_URL: ""           # set to enable Lens Wars crowd votes
+      SUPABASE_ANON_KEY: ""      # public anon key — safe to set here for local dev

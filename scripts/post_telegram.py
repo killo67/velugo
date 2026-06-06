@@ -386,8 +386,10 @@ def _load_edition(editions_dir: Path, date_str: str | None) -> dict:
         if not path.exists():
             raise FileNotFoundError(f"Edition not found: {path}")
     else:
+        import re as _re
+        _DATE_PAT = _re.compile(r"^\d{4}-\d{2}-\d{2}$")
         editions = sorted(
-            [p for p in editions_dir.glob("*.json") if p.stem != "index"],
+            [p for p in editions_dir.glob("*.json") if _DATE_PAT.match(p.stem)],
             reverse=True,
         )
         if not editions:

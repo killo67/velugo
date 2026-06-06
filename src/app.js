@@ -8,6 +8,7 @@ const elements = {
   mustKnowGrid: document.getElementById("mustKnowGrid"),
   mustKnowCount: document.getElementById("mustKnowCount"),
   allHeadlinesCount: document.getElementById("allHeadlinesCount"),
+  allHeadlinesSection: document.querySelector(".all-headlines-section"),
   headlineGrid: document.getElementById("headlineGrid"),
   topicChips: document.getElementById("topicChips"),
   searchInput: document.getElementById("searchInput"),
@@ -16,7 +17,48 @@ const elements = {
   editionSelect: document.getElementById("editionSelect"),
   prevEditionBtn: document.getElementById("prevEditionBtn"),
   nextEditionBtn: document.getElementById("nextEditionBtn"),
+  storyMapBtn: document.getElementById("storyMapBtn"),
+  storyMapSection: document.getElementById("storyMapSection"),
+  storyMapCount: document.getElementById("storyMapCount"),
+  storyMapDateAxis: document.getElementById("storyMapDateAxis"),
+  storyMapRows: document.getElementById("storyMapRows"),
 };
+
+// --- Theme Toggle & View Transitions ---
+const transitionView = (callback) => {
+  if (document.startViewTransition) {
+    document.startViewTransition(callback);
+  } else {
+    callback();
+  }
+};
+
+function initTheme() {
+  const toggleBtn = document.getElementById("themeToggleBtn");
+  const storedTheme = localStorage.getItem("velugo-theme");
+  
+  const setTheme = (theme) => {
+    if (theme === "dark") {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+    localStorage.setItem("velugo-theme", theme);
+  };
+
+  if (storedTheme) {
+    setTheme(storedTheme);
+  } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    setTheme("dark");
+  }
+
+  toggleBtn?.addEventListener("click", () => {
+    const isDark = document.body.classList.contains("dark");
+    transitionView(() => {
+      setTheme(isDark ? "light" : "dark");
+    });
+  });
+}
 
 // --- Utilities ---
 const formatDateTime = (value) =>
@@ -258,6 +300,29 @@ const TOPIC_EMOJI = {
   'History & Culture': '🏺',
 };
 
+const SOURCE_DOMAINS = {
+  'The Hindu':          'thehindu.com',
+  'The Indian Express': 'indianexpress.com',
+  'Times of India':     'timesofindia.com',
+  'NDTV':               'ndtv.com',
+  'Hindustan Times':    'hindustantimes.com',
+  'LiveMint':           'livemint.com',
+  'Mint':               'livemint.com',
+  'PIB':                'pib.gov.in',
+  'DD News':            'ddnews.gov.in',
+  'Business Standard':  'business-standard.com',
+  'The Wire':           'thewire.in',
+  'Scroll':             'scroll.in',
+  'The Print':          'theprint.in',
+  'News18':             'news18.com',
+};
+
+function faviconHTML(source) {
+  const domain = SOURCE_DOMAINS[source];
+  if (!domain) return '';
+  return `<img class="source-favicon" src="https://www.google.com/s2/favicons?domain=${domain}&sz=16" alt="" loading="lazy" width="14" height="14">`;
+}
+
 const MODE_LABELS = {
   upsc:     ['Headlines today', 'Must-Know for UPSC', 'Ongoing stories',  'Sources active'],
   informed: ['Headlines today', 'Essential reads',    'Running stories',  'Sources active'],
@@ -269,16 +334,367 @@ let currentMode = localStorage.getItem('velugo-mode') || 'upsc';
 function setMode(mode) {
   currentMode = mode;
   localStorage.setItem('velugo-mode', mode);
-  document.body.classList.remove('mode-upsc', 'mode-informed', 'mode-explorer');
-  document.body.classList.add(`mode-${mode}`);
-  document.querySelectorAll('.mode-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.mode === mode);
+  transitionView(() => {
+    document.body.classList.remove('mode-upsc', 'mode-informed', 'mode-explorer');
+    document.body.classList.add(`mode-${mode}`);
+    document.querySelectorAll('.mode-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.mode === mode);
+    });
+    renderHeaderAndSummary();
   });
-  renderHeaderAndSummary();
+}
+
+// --- Lens Wars ---
+// --- Story follow (localStorage) ---
+function getFollowedStories() {
+  try { return new Set(JSON.parse(localStorage.getItem('velugo-followed-stories') || '[]')); }
+  catch (_) { return new Set(); }
+}
+function followStory(key) {
+  const followed = getFollowedStories();
+  followed.add(key);
+  localStorage.setItem('velugo-followed-stories', JSON.stringify([...followed]));
+}
+function isFollowing(key) {
+  return !!key && getFollowedStories().has(key);
+}
+function followKeyFor(h) {
+  return h.storyId || h.id;
+}
+
+// --- Supabase config (written to config.js by start.sh at container boot) ---
+const SUPABASE_URL = window.__VELUGO_CONFIG__?.supabaseUrl || '';
+const SUPABASE_ANON_KEY = window.__VELUGO_CONFIG__?.supabaseAnonKey || '';
+
+async function submitVote(headlineId, editionDate, lens) {
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return;
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/lens_votes`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal',
+      },
+      body: JSON.stringify({ headline_id: headlineId, edition_date: editionDate, lens }),
+    });
+  } catch (_) { /* silent — local vote already saved */ }
+}
+
+async function fetchCounts(headlineId) {
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return null;
+  try {
+    const resp = await fetch(
+      `${SUPABASE_URL}/rest/v1/rpc/get_lens_counts`,
+      {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ p_headline_id: headlineId }),
+      }
+    );
+    if (!resp.ok) return null;
+    return await resp.json(); // { a: 42, b: 58 }
+  } catch (_) { return null; }
+}
+
+async function fetchAndDisplayCounts(el, headlineId) {
+  const counts = await fetchCounts(headlineId);
+  if (!counts) return;
+  const total = (counts.a || 0) + (counts.b || 0);
+  if (total === 0) return;
+
+  const pctA = Math.round((counts.a / total) * 100);
+  const pctB = 100 - pctA;
+
+  const btnA = el.querySelector('.lens-btn[data-lens="a"]');
+  const btnB = el.querySelector('.lens-btn[data-lens="b"]');
+  const pctSpanA = btnA?.querySelector('.lens-pct');
+  const pctSpanB = btnB?.querySelector('.lens-pct');
+  if (pctSpanA) pctSpanA.textContent = `${pctA}%`;
+  if (pctSpanB) pctSpanB.textContent = `${pctB}%`;
+
+  const crowd   = el.querySelector('.lens-crowd');
+  const fillA   = el.querySelector('.lens-crowd-fill-a');
+  const fillB   = el.querySelector('.lens-crowd-fill-b');
+  const labelA  = el.querySelector('.lens-crowd-label-a');
+  const labelB  = el.querySelector('.lens-crowd-label-b');
+  const caption = el.querySelector('.lens-crowd-caption');
+
+  if (crowd) crowd.classList.remove('hidden');
+
+  // Animate fills from both ends toward center (requestAnimationFrame ensures transition fires)
+  requestAnimationFrame(() => {
+    if (fillA)  fillA.style.width  = `${pctA}%`;
+    if (fillB)  fillB.style.width  = `${pctB}%`;
+    if (labelA) { labelA.style.width = `${pctA}%`; labelA.textContent = `${pctA}%`; }
+    if (labelB) labelB.textContent = `${pctB}%`;
+  });
+
+  if (caption) caption.textContent = `${total.toLocaleString()} readers weighed in`;
+}
+
+// Topic-level fallback pairs — used when API enrichment is unavailable.
+// Keys match upscTags[] values assigned by augmentData() keyword rules.
+const FALLBACK_LENS = {
+  'Economy':                 ['Opportunity', 'Risk'],
+  'Polity':                  ['Progress',    'Problem'],
+  'Governance':              ['Progress',    'Problem'],
+  'International Relations': ['Win',         'Gamble'],
+  'Environment':             ['Needed',      'Costly'],
+  'Internal Security':       ['Safety',      'Overreach'],
+  'Science & Technology':    ['Breakthrough','Concern'],
+  'Society':                 ['Help',        'Harm'],
+  'Social Justice':          ['Help',        'Harm'],
+  'History & Culture':       ['Preserve',    'Resist'],
+  'Disaster Management':     ['Prepared',    'Delayed'],
+};
+
+function renderLensWars(h) {
+  const fallback = FALLBACK_LENS[h.upscTags?.[0]];
+  const lensA = h.enrichment?.lensA || fallback?.[0];
+  const lensB = h.enrichment?.lensB || fallback?.[1];
+  if (!lensA || !lensB) return '';
+  return `
+    <div class="lens-wars">
+      <button class="lens-wars-trigger" type="button">Your take?</button>
+      <div class="lens-wars-panel hidden">
+        <p class="lens-sentence">
+          <button class="lens-btn" type="button" data-lens="a"><span class="lens-label">${escapeHtml(lensA)}</span><span class="lens-pct"></span></button>
+          or
+          <button class="lens-btn" type="button" data-lens="b"><span class="lens-label">${escapeHtml(lensB)}</span><span class="lens-pct"></span></button>?
+        </p>
+        <div class="lens-crowd hidden">
+          <div class="lens-crowd-labels">
+            <span class="lens-crowd-label-a"></span>
+            <span class="lens-crowd-label-b"></span>
+          </div>
+          <div class="lens-crowd-bar">
+            <div class="lens-crowd-fill-a"></div>
+            <div class="lens-crowd-fill-b"></div>
+          </div>
+          <p class="lens-crowd-caption"></p>
+        </div>
+        <div class="lens-track-prompt hidden">
+          <span class="lens-track-text">${h.storyId && (h.storyDayCount || 0) >= 2 ? `📌 This story is evolving` : `📌 Watch how this story unfolds`}</span>
+          <button class="lens-track-btn" type="button">Follow it</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function applyLensVote(el, choice) {
+  el.querySelectorAll('.lens-btn').forEach(btn => {
+    const isChosen = btn.dataset.lens === choice;
+    btn.classList.toggle('lens-btn--chosen', isChosen);
+    btn.classList.toggle('lens-btn--other', !isChosen);
+    btn.disabled = true;
+  });
+}
+
+function updateTrackPrompt(el, h) {
+  const prompt = el.querySelector('.lens-track-prompt');
+  if (!prompt) return;
+  prompt.classList.remove('hidden');
+
+  const btn = prompt.querySelector('.lens-track-btn');
+  if (!btn) return;
+
+  const key = followKeyFor(h);
+  const already = isFollowing(key);
+  if (already) {
+    btn.textContent = '★ Following';
+    btn.disabled = true;
+    btn.classList.add('lens-track-btn--active');
+    return;
+  }
+
+  btn.onclick = (e) => {
+    e.stopPropagation();
+    followStory(key);
+    btn.textContent = '★ Following';
+    btn.disabled = true;
+    btn.classList.add('lens-track-btn--active');
+    if (!elements.storyMapSection.classList.contains('hidden')) {
+      renderStoryMap();
+    }
+  };
+}
+
+async function wireupLensWars(card, h) {
+  const el = card.querySelector('.lens-wars');
+  if (!el) return;
+
+  const trigger = el.querySelector('.lens-wars-trigger');
+  const panel = el.querySelector('.lens-wars-panel');
+  const editionDate = data.editionDate;
+
+  const stored = localStorage.getItem(`velugo-lens-${h.id}`);
+  if (stored) {
+    panel.classList.remove('hidden');
+    trigger.classList.add('hidden');
+    applyLensVote(el, stored);
+    fetchAndDisplayCounts(el, h.id);
+    updateTrackPrompt(el, h);
+  }
+
+  trigger?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    panel.classList.remove('hidden');
+    trigger.classList.add('hidden');
+  });
+
+  el.querySelectorAll('.lens-btn').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const choice = btn.dataset.lens;
+      localStorage.setItem(`velugo-lens-${h.id}`, choice);
+      applyLensVote(el, choice);
+      updateTrackPrompt(el, h);
+      await submitVote(h.id, editionDate, choice);
+      fetchAndDisplayCounts(el, h.id);
+    });
+  });
+}
+
+// --- Story Map ---
+let storyMapRendered = false;
+
+const STORY_PHASE_CONFIG = {
+  escalating: { label: '↑ Escalating', cls: 'escalating' },
+  developing:  { label: '⟳ Developing',  cls: 'developing'  },
+  resolving:   { label: '↓ Resolving',   cls: 'resolving'   },
+  resolved:    { label: '✓ Resolved',    cls: 'resolved'    },
+};
+
+function renderStoryMap() {
+  const fmtDate = d => new Intl.DateTimeFormat('en-IN', {
+    day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata'
+  }).format(new Date(d + 'T00:00:00+05:30'));
+
+  // Deduplicate threaded stories by storyId, keep highest dayCount.
+  // Also build a reverse map: every headline id that belongs to each storyId,
+  // so a follow stored by h.id (before storyId was assigned) is still detected.
+  const storyMap = new Map();
+  const storyMemberIds = new Map(); // storyId → Set of headline ids in that story
+  data.headlines.forEach(h => {
+    if (!h.storyId || (h.storyDayCount || 0) < 2) return;
+    const ex = storyMap.get(h.storyId);
+    if (!ex || h.storyDayCount > ex.storyDayCount) storyMap.set(h.storyId, h);
+    if (!storyMemberIds.has(h.storyId)) storyMemberIds.set(h.storyId, new Set());
+    storyMemberIds.get(h.storyId).add(h.id);
+  });
+
+  const followedSet = getFollowedStories();
+  const isStoryFollowed = (h) => {
+    if (followedSet.has(h.storyId) || followedSet.has(h.id)) return true;
+    const members = storyMemberIds.get(h.storyId);
+    return members ? [...members].some(id => followedSet.has(id)) : false;
+  };
+
+  const stories = [...storyMap.values()].sort((a, b) => {
+    const af = isStoryFollowed(a) ? 1 : 0;
+    const bf = isStoryFollowed(b) ? 1 : 0;
+    if (bf !== af) return bf - af;
+    return (b.storyDayCount || 0) - (a.storyDayCount || 0);
+  });
+
+  if (elements.storyMapCount) elements.storyMapCount.textContent = stories.length;
+
+  if (stories.length === 0) {
+    elements.storyMapRows.innerHTML = '<p class="empty-state">No story threads yet — threads build as the same story appears across multiple days.</p>';
+    elements.storyMapDateAxis.innerHTML = '';
+    return;
+  }
+
+  // Collect + sort all dates across all stories
+  const today = data.editionDate;
+  const allDates = new Set([today]);
+  stories.forEach(h => (h.storyEditions || []).forEach(e => allDates.add(e.date)));
+  const sortedDates = [...allDates].sort();
+
+  // Position helper: % along the timeline
+  const minTime = new Date(sortedDates[0]).getTime();
+  const maxTime = new Date(today).getTime();
+  const range = maxTime - minTime || 1;
+  const pct = d => Math.round((new Date(d).getTime() - minTime) / range * 100);
+
+  // Date axis
+  elements.storyMapDateAxis.innerHTML = sortedDates.map(d => `
+    <span class="sm-axis-label ${d === today ? 'sm-axis-today' : ''}" style="left:${pct(d)}%">
+      ${d === today ? 'Today' : fmtDate(d)}
+    </span>
+  `).join('');
+
+  // Story rows
+  elements.storyMapRows.innerHTML = stories.map(h => {
+    const topic = (h.upscTags || [])[0] || 'General';
+    const emoji = TOPIC_EMOJI[topic] || '📰';
+    const editions = h.storyEditions || [];
+    const shortTitle = h.title.length > 58 ? h.title.slice(0, 58) + '…' : h.title;
+
+    const pastDots = editions.map(e => `
+      <div class="sm-dot" style="left:${pct(e.date)}%" title="${fmtDate(e.date)}: ${escapeHtml(e.title)}">
+        <a href="${e.url}" target="_blank" rel="noreferrer" class="sm-dot-link" aria-label="${fmtDate(e.date)}"></a>
+      </div>`).join('');
+
+    const todayDot = `<div class="sm-dot sm-dot--today" style="left:${pct(today)}%" title="Today: ${escapeHtml(h.title)}">
+      <a href="${h.url}" target="_blank" rel="noreferrer" class="sm-dot-link" aria-label="Today"></a>
+    </div>`;
+
+    const phase = h.enrichment?.storyPhase;
+    const phaseConf = STORY_PHASE_CONFIG[phase];
+    const phaseBadge = phaseConf
+      ? `<span class="sm-phase-badge sm-phase-badge--${phaseConf.cls}">${phaseConf.label}</span>`
+      : '';
+    const storyUpdate = h.enrichment?.storyUpdate;
+    const followed = isStoryFollowed(h);
+    const isResolved = phase === 'resolved';
+    const followBadge = followed
+      ? `<span class="sm-following-badge">${isResolved ? '✓ Story resolved' : '★ Following'}</span>`
+      : '';
+    const rowCls = followed ? (isResolved ? 'sm-row sm-row--resolved' : 'sm-row sm-row--following') : 'sm-row';
+
+    return `
+      <div class="${rowCls}">
+        <div class="sm-row-label">
+          <span class="sm-topic">${emoji} ${topic}</span>
+          <a href="${h.url}" target="_blank" rel="noreferrer" class="sm-title">${escapeHtml(shortTitle)}</a>
+          ${storyUpdate ? `<span class="sm-story-update">${escapeHtml(storyUpdate)}</span>` : ''}
+          <div class="sm-badges-row">
+            <span class="sm-day-badge">Day ${h.storyDayCount}</span>
+            ${phaseBadge}
+            ${followBadge}
+          </div>
+        </div>
+        <div class="sm-track">${pastDots}${todayDot}</div>
+      </div>`;
+  }).join('');
+}
+
+function toggleStoryMap() {
+  const isOpen = !elements.storyMapSection.classList.contains('hidden');
+  if (isOpen) {
+    elements.storyMapSection.classList.add('hidden');
+    elements.storyMapBtn.classList.remove('active');
+  } else {
+    elements.storyMapSection.classList.remove('hidden');
+    elements.storyMapBtn.classList.add('active');
+    if (!storyMapRendered) {
+      renderStoryMap();
+      storyMapRendered = true;
+    }
+  }
 }
 
 // --- State ---
 let activeTopicFilter = 'All';
+let mkLimit  = 9;   // Must-Know cards shown initially
+let allLimit = 12;  // All-Headlines cards shown initially
 
 // --- Rendering ---
 function renderHeaderAndSummary() {
@@ -295,13 +711,13 @@ function renderHeaderAndSummary() {
   const ongoingCount = data.headlines.filter(h => (h.storyDayCount || 0) > 1).length;
   const modeLabels = MODE_LABELS[currentMode] || MODE_LABELS.upsc;
   const tiles = [
-    { value: data.fetchStatus?.accepted ?? data.headlines.length, label: modeLabels[0], accent: false },
-    { value: data.studyWorthyCount, label: modeLabels[1], accent: true },
-    { value: ongoingCount, label: modeLabels[2], accent: false },
-    { value: data.sources.length, label: errCnt > 0 ? `Sources (${errCnt} failed)` : modeLabels[3], accent: false, warn: errCnt > 0 },
+    { value: data.fetchStatus?.accepted ?? data.headlines.length, label: modeLabels[0], accent: false, stat: 'total' },
+    { value: data.studyWorthyCount, label: modeLabels[1], accent: true, stat: 'mustknow' },
+    { value: ongoingCount, label: modeLabels[2], accent: false, stat: 'ongoing' },
+    { value: data.sources.length, label: errCnt > 0 ? `Sources (${errCnt} failed)` : modeLabels[3], accent: false, warn: errCnt > 0, stat: 'sources' },
   ];
   elements.dailyInsightSummary.innerHTML = tiles.map(t => `
-    <div class="stat-tile${t.accent ? ' stat-tile--accent' : ''}${t.warn ? ' stat-tile--warn' : ''}">
+    <div class="stat-tile${t.accent ? ' stat-tile--accent' : ''}${t.warn ? ' stat-tile--warn' : ''}" data-stat="${t.stat}">
       <span class="stat-value">${t.value}</span>
       <span class="stat-label">${t.label}</span>
     </div>
@@ -350,8 +766,12 @@ function renderFilters() {
     btn.textContent = displayLabel || label;
     btn.onclick = () => {
       activeTopicFilter = label;
-      renderFilters();
-      renderGrids();
+      mkLimit  = 9;
+      allLimit = 12;
+      transitionView(() => {
+        renderFilters();
+        renderGrids();
+      });
     };
     return btn;
   };
@@ -381,10 +801,11 @@ function renderGrids() {
   // Only show cluster leads (unclustered headlines have isClusterLead=undefined, treated as true)
   const filtered = data.headlines.filter(h => (h.isClusterLead ?? true) && matchFilter(h));
 
-  // Split into must-know and all
-  const mustKnow = filtered.filter(h => h.studyPriority !== 'General update');
+  // Split into must-know and general (no duplicates in All Headlines)
+  const mustKnow      = filtered.filter(h => h.studyPriority !== 'General update');
+  const generalOnly   = filtered.filter(h => h.studyPriority === 'General update');
   if (elements.mustKnowCount) elements.mustKnowCount.textContent = mustKnow.length;
-  if (elements.allHeadlinesCount) elements.allHeadlinesCount.textContent = filtered.length;
+  if (elements.allHeadlinesCount) elements.allHeadlinesCount.textContent = generalOnly.length;
 
   const renderClusterLinks = (peers) => {
     if (!peers.length) return '';
@@ -401,44 +822,122 @@ function renderGrids() {
     empty.textContent = (activeTopicFilter !== 'All' || q) ? `No must-know headlines match your filters.` : `No high-yield study items found yet. You can still scan all collected headlines below.`;
     elements.mustKnowGrid.append(empty);
   } else {
-    mustKnow.forEach(h => {
+    mustKnow.slice(0, mkLimit).forEach((h, idx) => {
       const card = document.createElement('article');
       card.className = 'card must-know-card';
       card.dataset.priority = h.studyPriority;
+      if (h.upscTags?.[0]) card.dataset.topic = h.upscTags[0];
+
+      // Unique view-transition-name for animation matching
+      const vtName = 'card_' + h.id.replace(/[^a-zA-Z0-9_-]/g, '_');
+      card.style.viewTransitionName = 'mk_' + vtName;
+
+      // Handle card click to open detail dialog (ignoring links/details/lens-wars clicks)
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a') || e.target.closest('details') || e.target.closest('summary') || e.target.closest('.lens-wars')) {
+          return;
+        }
+        e.preventDefault();
+        openArticleModal(h);
+      });
 
       const mkPeers = h.clusterId ? (data.clusterMap[h.clusterId] || []) : [];
-      card.innerHTML = `
-        <div class="card-meta">
-          ${createTagHTML(h.studyPriority, h.studyPriority)}
-          <span>${h.gsPapers.join(', ')}</span> ·
-          <span>${h.upscTags.join(' · ')}</span> ·
-          <span>${h.examUse.join(', ')}</span>
-          ${mkPeers.length > 0 ? `<span class="cluster-badge">${h.clusterSize} sources</span>` : ''}
-        </div>
-        ${h.enrichment?.topic ? `<div class="topic-path">${h.enrichment.topic}</div>` : ''}
-        <h3 class="card-title"><a href="${h.url}" target="_blank" rel="noreferrer">${applyGlossary(h.title)}</a></h3>
-        ${h.excerpt ? `<p class="card-excerpt">${applyGlossary(h.excerpt)}</p>` : ''}
-        ${h.enrichment?.examAngle ? `<p class="exam-angle">${h.enrichment.examAngle}</p>` : ''}
-        ${renderFacts(h.facts)}
-        ${renderStoryThread(h)}
-        <p class="why-matters"><b>Why it matters:</b> ${h.enrichment?.whyItMatters || h.whyStudy}</p>
-        <div class="card-source">${h.source} · <a href="${h.url}" target="_blank" rel="noreferrer">Open source &rarr;</a></div>
-        ${renderClusterLinks(mkPeers)}
-      `;
+
+      if (idx === 0) {
+        // ── Hero card: full-width two-column layout ──────────────────────────
+        card.classList.add('must-know-card--hero');
+        card.innerHTML = `
+          <div class="hero-col-left">
+            <div class="hero-lead-badge">★ Today's Lead</div>
+            <div class="card-meta">
+              ${createTagHTML(h.studyPriority, h.studyPriority)}
+              <span>${h.gsPapers.join(', ')}</span> ·
+              <span>${h.upscTags.join(' · ')}</span>
+              ${mkPeers.length > 0 ? `<span class="cluster-badge">${h.clusterSize} sources</span>` : ''}
+              ${h.storyId && h.storyDayCount > 1 ? `<span class="thread-indicator" title="Running ${h.storyDayCount} days">↺ Day ${h.storyDayCount}</span>` : ''}
+            </div>
+            ${h.enrichment?.topic ? `<div class="topic-path">${h.enrichment.topic}</div>` : ''}
+            <h3 class="card-title"><a href="${h.url}" target="_blank" rel="noreferrer">${applyGlossary(h.title)}</a></h3>
+            ${h.excerpt ? `<p class="card-excerpt">${applyGlossary(h.excerpt)}</p>` : ''}
+            <div class="card-source">${faviconHTML(h.source)}${h.source} · <a href="${h.url}" target="_blank" rel="noreferrer">Open source &rarr;</a></div>
+            ${renderClusterLinks(mkPeers)}
+          </div>
+          <div class="hero-col-right">
+            ${h.enrichment?.examAngle ? `<p class="exam-angle">${h.enrichment.examAngle}</p>` : ''}
+            ${renderFacts(h.facts)}
+            ${renderStoryThread(h)}
+            <p class="why-matters"><b>Why it matters:</b> ${h.enrichment?.whyItMatters || h.whyStudy}</p>
+            ${renderLensWars(h)}
+          </div>
+        `;
+      } else {
+        // ── Regular card ─────────────────────────────────────────────────────
+        card.innerHTML = `
+          <div class="card-meta">
+            ${createTagHTML(h.studyPriority, h.studyPriority)}
+            <span>${h.gsPapers.join(', ')}</span> ·
+            <span>${h.upscTags.join(' · ')}</span> ·
+            <span>${h.examUse.join(', ')}</span>
+            ${mkPeers.length > 0 ? `<span class="cluster-badge">${h.clusterSize} sources</span>` : ''}
+            ${h.storyId && h.storyDayCount > 1 ? `<span class="thread-indicator" title="This story has been running for ${h.storyDayCount} days">↺ Day ${h.storyDayCount}</span>` : ''}
+          </div>
+          ${h.enrichment?.topic ? `<div class="topic-path">${h.enrichment.topic}</div>` : ''}
+          <h3 class="card-title"><a href="${h.url}" target="_blank" rel="noreferrer">${applyGlossary(h.title)}</a></h3>
+          ${h.excerpt ? `<p class="card-excerpt">${applyGlossary(h.excerpt)}</p>` : ''}
+          ${h.enrichment?.examAngle ? `<p class="exam-angle">${h.enrichment.examAngle}</p>` : ''}
+          ${renderFacts(h.facts)}
+          ${renderStoryThread(h)}
+          <p class="why-matters"><b>Why it matters:</b> ${h.enrichment?.whyItMatters || h.whyStudy}</p>
+          <div class="card-source">${faviconHTML(h.source)}${h.source} · <a href="${h.url}" target="_blank" rel="noreferrer">Open source &rarr;</a></div>
+          ${renderClusterLinks(mkPeers)}
+          ${renderLensWars(h)}
+        `;
+      }
+
+      wireupLensWars(card, h);
       elements.mustKnowGrid.append(card);
     });
+
+    // Show-more button for Must-Know
+    if (mustKnow.length > mkLimit) {
+      const remaining = mustKnow.length - mkLimit;
+      const btn = document.createElement('button');
+      btn.className = 'show-more-btn';
+      btn.textContent = `Show ${remaining} more must-know articles`;
+      btn.addEventListener('click', () => {
+        mkLimit += 9;
+        renderGrids();
+      });
+      elements.mustKnowGrid.append(btn);
+    }
   }
 
   elements.headlineGrid.replaceChildren();
-  if (filtered.length === 0) {
-    const empty = document.createElement('div');
-    empty.className = 'empty-state';
-    empty.textContent = `No headlines match this search/filter.`;
-    elements.headlineGrid.append(empty);
-  } else {
-    filtered.forEach(h => {
+  const allVisible = generalOnly.slice(0, allLimit);
+
+  // Hide the whole section when there are no general-only articles
+  if (elements.allHeadlinesSection) {
+    elements.allHeadlinesSection.style.display = generalOnly.length === 0 ? 'none' : '';
+  }
+
+  if (allVisible.length > 0) {
+    allVisible.forEach(h => {
       const card = document.createElement('article');
       card.className = 'card all-headline-card';
+      if (h.upscTags?.[0]) card.dataset.topic = h.upscTags[0];
+
+      // Unique view-transition-name for animation matching
+      const vtName = 'card_' + h.id.replace(/[^a-zA-Z0-9_-]/g, '_');
+      card.style.viewTransitionName = 'all_' + vtName;
+
+      // Handle card click to open detail dialog (ignoring links/details element clicks)
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a') || e.target.closest('details') || e.target.closest('summary')) {
+          return;
+        }
+        e.preventDefault();
+        openArticleModal(h);
+      });
 
       const peers = h.clusterId ? (data.clusterMap[h.clusterId] || []) : [];
       card.innerHTML = `
@@ -451,11 +950,24 @@ function renderGrids() {
         ${h.excerpt ? `<p class="card-excerpt">${applyGlossary(h.excerpt)}</p>` : ''}
         ${renderFacts(h.facts)}
         ${renderStoryThread(h)}
-        <div class="card-source">${h.source} · ${formatDateTime(h.publishedAt)}</div>
+        <div class="card-source">${faviconHTML(h.source)}${h.source} · ${formatDateTime(h.publishedAt)}</div>
         ${renderClusterLinks(peers)}
       `;
       elements.headlineGrid.append(card);
     });
+
+    // Show-more button for All Headlines
+    if (generalOnly.length > allLimit) {
+      const remaining = generalOnly.length - allLimit;
+      const btn = document.createElement('button');
+      btn.className = 'show-more-btn';
+      btn.textContent = `Show ${remaining} more headlines`;
+      btn.addEventListener('click', () => {
+        allLimit += 12;
+        renderGrids();
+      });
+      elements.headlineGrid.append(btn);
+    }
   }
 }
 
@@ -498,11 +1010,22 @@ async function loadEdition(dateStr) {
   elements.editionSelect.value = dateStr;
   updateNavButtons();
   activeTopicFilter = 'All';
-  augmentData();
-  renderHeaderAndSummary();
-  renderSourceHealth();
-  renderFilters();
-  renderGrids();
+  mkLimit  = 9;
+  allLimit = 12;
+  storyMapRendered = false;
+
+  transitionView(() => {
+    augmentData();
+    renderHeaderAndSummary();
+    renderSourceHealth();
+    renderFilters();
+    renderGrids();
+    // Re-render story map if it's open
+    if (!elements.storyMapSection.classList.contains('hidden')) {
+      renderStoryMap();
+      storyMapRendered = true;
+    }
+  });
 }
 
 async function initArchiveNav() {
@@ -546,14 +1069,142 @@ async function initArchiveNav() {
 }
 
 // --- Initialization ---
-elements.searchInput.addEventListener('input', renderGrids);
+elements.searchInput.addEventListener('input', () => {
+  mkLimit  = 9;
+  allLimit = 12;
+  transitionView(() => renderGrids());
+});
 
 document.querySelectorAll('.mode-btn').forEach(btn => {
   btn.addEventListener('click', () => setMode(btn.dataset.mode));
 });
 
+elements.storyMapBtn?.addEventListener('click', toggleStoryMap);
+
+// --- Article Detail Modal Logic ---
+let lastFocusedElement = null;
+
+function openArticleModal(headline) {
+  const modal = document.getElementById("articleModal");
+  if (!modal) return;
+
+  lastFocusedElement = document.activeElement;
+
+  const topicPath = document.getElementById("modalTopicPath");
+  topicPath.textContent = headline.enrichment?.topic || headline.upscTags?.join(' · ') || 'General Update';
+  
+  const source = document.getElementById("modalSource");
+  source.textContent = headline.source;
+  
+  const date = document.getElementById("modalDate");
+  date.textContent = formatDateTime(headline.publishedAt);
+  
+  const title = document.getElementById("modalTitle");
+  title.innerHTML = applyGlossary(headline.title);
+
+  const badges = document.getElementById("modalBadges");
+  badges.replaceChildren();
+  if (headline.studyPriority && headline.studyPriority !== 'General update') {
+    badges.innerHTML += createTagHTML(headline.studyPriority, headline.studyPriority);
+  }
+  if (headline.gsPapers && headline.gsPapers.length) {
+    const gsSpan = document.createElement('span');
+    gsSpan.className = 'tag';
+    gsSpan.textContent = headline.gsPapers.join(', ');
+    badges.appendChild(gsSpan);
+  }
+  if (headline.upscTags && headline.upscTags.length) {
+    headline.upscTags.forEach(tag => {
+      const tagSpan = document.createElement('span');
+      tagSpan.className = 'tag';
+      tagSpan.textContent = tag;
+      badges.appendChild(tagSpan);
+    });
+  }
+
+  const excerpt = document.getElementById("modalExcerpt");
+  const contentText = headline.articleText || headline.excerpt || '';
+  excerpt.innerHTML = contentText ? applyGlossary(contentText) : 'No description available.';
+
+  const examAngleContainer = document.getElementById("modalExamAngleContainer");
+  const examAngle = document.getElementById("modalExamAngle");
+  const examAngleText = headline.enrichment?.examAngle || headline.examUse?.join(', ');
+  if (examAngleText) {
+    examAngle.textContent = examAngleText;
+    examAngleContainer.classList.remove("hidden");
+  } else {
+    examAngleContainer.classList.add("hidden");
+  }
+
+  const whyStudyContainer = document.getElementById("modalWhyStudyContainer");
+  const whyStudy = document.getElementById("modalWhyStudy");
+  const whyStudyText = headline.enrichment?.whyItMatters || headline.whyStudy;
+  if (whyStudyText) {
+    whyStudy.textContent = whyStudyText;
+    whyStudyContainer.classList.remove("hidden");
+  } else {
+    whyStudyContainer.classList.add("hidden");
+  }
+
+  const factsContainer = document.getElementById("modalFactsContainer");
+  const factsList = document.getElementById("modalFacts");
+  if (headline.facts && headline.facts.length) {
+    factsList.innerHTML = headline.facts
+      .map(f => `<span class="fact-chip fact-chip--${f.type}" title="${f.type}">${f.text}</span>`)
+      .join('');
+    factsContainer.classList.remove("hidden");
+  } else {
+    factsContainer.classList.add("hidden");
+  }
+
+  const storyContainer = document.getElementById("modalStoryThreadContainer");
+  const storyThread = document.getElementById("modalStoryThread");
+  if (headline.storyDayCount && headline.storyDayCount >= 2 && headline.storyEditions) {
+    const links = headline.storyEditions.map(e => {
+      const label = new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'short', timeZone: 'Asia/Kolkata' }).format(new Date(e.date));
+      return `<li><a href="${e.url}" target="_blank" rel="noreferrer">${label} — ${escapeHtml(e.title)}</a></li>`;
+    }).join('');
+    storyThread.innerHTML = `<ul class="story-thread-panel" style="border-left-width: 3px; padding-left: 12px; margin: 0;">${links}</ul>`;
+    storyContainer.classList.remove("hidden");
+  } else {
+    storyContainer.classList.add("hidden");
+  }
+
+  const sourceLink = document.getElementById("modalSourceLink");
+  sourceLink.href = headline.url;
+
+  modal.showModal();
+  title.focus();
+}
+
+function closeArticleModal() {
+  const modal = document.getElementById("articleModal");
+  if (!modal) return;
+  modal.close();
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+  }
+}
+
+function initModalEvents() {
+  const modal = document.getElementById("articleModal");
+  const closeBtn = document.getElementById("closeModalBtn");
+  const footerCloseBtn = document.getElementById("modalCloseBtn");
+
+  closeBtn?.addEventListener("click", closeArticleModal);
+  footerCloseBtn?.addEventListener("click", closeArticleModal);
+
+  modal?.addEventListener("click", (e) => {
+    const rect = modal.getBoundingClientRect();
+    const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+      rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+    if (!isInDialog) {
+      closeArticleModal();
+    }
+  });
+}
+
 (async () => {
-  // Check if a specific edition is requested via URL param
   const params = new URLSearchParams(location.search);
   const requestedEdition = params.get('edition');
   if (requestedEdition && requestedEdition !== data?.editionDate) {
@@ -564,6 +1215,8 @@ document.querySelectorAll('.mode-btn').forEach(btn => {
   }
 
   await loadGlossary();
+  initTheme();
+  initModalEvents();
   setMode(currentMode);
 
   augmentData();
@@ -572,6 +1225,5 @@ document.querySelectorAll('.mode-btn').forEach(btn => {
   renderFilters();
   renderGrids();
 
-  // Init archive nav after first render (non-blocking)
   initArchiveNav();
 })();

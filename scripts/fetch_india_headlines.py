@@ -995,9 +995,13 @@ For each headline provide:
 - upscRelevance: "High" (core syllabus, frequently tested), "Medium" (useful context), or "Low" (general awareness only)
 - examAngle: Key exam angles in one concise line (e.g. "Prelims: Article 148, CAG powers. Mains GS2: parliamentary oversight.")
 - whyItMatters: 1-2 sentences explaining the UPSC significance
+- storyPhase: the arc of this story — exactly one of: "escalating" (situation intensifying or worsening), "developing" (actively unfolding, more updates expected), "resolving" (moving toward a conclusion or solution), "resolved" (concluded, outcome is known)
+- storyUpdate: if previousTitles is provided, write one concise line (under 15 words) capturing what is new today compared to the earlier coverage. If no previousTitles, return empty string "".
+- lensA: a single plain English word a common person understands (e.g. "Progress", "Help", "Win", "Needed"). Neutral framing of a genuine trade-off — not partisan, no policy jargon.
+- lensB: a single plain English word that directly contrasts lensA (e.g. "Problem", "Harm", "Gamble", "Forced"). Must be immediately understood without explanation.
 
 Respond with ONLY a JSON array — no markdown, no code fences, no explanation:
-[{"id":"...","topic":"...","upscRelevance":"...","examAngle":"...","whyItMatters":"..."}, ...]
+[{"id":"...","topic":"...","upscRelevance":"...","examAngle":"...","whyItMatters":"...","storyPhase":"...","storyUpdate":"...","lensA":"...","lensB":"..."}, ...]
 
 Headlines:
 """
@@ -1008,21 +1012,23 @@ def _enrich_batch(batch: list[dict[str, Any]], api_key: str) -> None:
     if not to_enrich:
         return
 
-    items = [
-        {
+    items = []
+    for h in to_enrich:
+        item: dict[str, Any] = {
             "id": h["id"],
             "title": h["title"],
             "excerpt": h.get("excerpt") or "",
             "text": (h.get("articleText") or "")[:400],
         }
-        for h in to_enrich
-    ]
+        if h.get("storyEditions"):
+            item["previousTitles"] = [e["title"] for e in h["storyEditions"]]
+        items.append(item)
 
     prompt = _ENRICH_PROMPT_PREFIX + json.dumps(items, ensure_ascii=False)
 
     payload = json.dumps({
         "model": ENRICH_MODEL,
-        "max_tokens": 2048,
+        "max_tokens": 3072,
         "messages": [{"role": "user", "content": prompt}],
     }).encode()
 
@@ -1067,6 +1073,10 @@ def _enrich_batch(batch: list[dict[str, Any]], api_key: str) -> None:
                 "upscRelevance": str(e.get("upscRelevance", "")),
                 "examAngle": str(e.get("examAngle", "")),
                 "whyItMatters": str(e.get("whyItMatters", "")),
+                "storyPhase": str(e.get("storyPhase", "developing")),
+                "storyUpdate": str(e.get("storyUpdate", "")),
+                "lensA": str(e.get("lensA", "")),
+                "lensB": str(e.get("lensB", "")),
             }
 
 
@@ -1098,9 +1108,13 @@ Each enrichment must have:
 - upscRelevance: exactly "High", "Medium", or "Low"
 - examAngle: one line (e.g. "Prelims: Article 32, writ jurisdiction. Mains GS2: judicial review.")
 - whyItMatters: 1-2 sentences for a UPSC aspirant
+- storyPhase: the arc of this story — exactly one of: "escalating" (intensifying/worsening), "developing" (unfolding, more updates expected), "resolving" (moving toward conclusion), "resolved" (concluded, outcome known)
+- storyUpdate: if previousTitles is provided, write one concise line (under 15 words) on what is new today vs. earlier coverage. Otherwise return "".
+- lensA: a single plain English word a common person understands. Neutral, no jargon.
+- lensB: a single plain English word that directly contrasts lensA. Must be immediately understood.
 
 Example response format:
-{"enrichments": [{"id": "abc", "topic": "Polity > Judiciary", "upscRelevance": "High", "examAngle": "Prelims: Article 32. Mains GS2: judicial review.", "whyItMatters": "Landmark ruling on writs affects GS2 preparation."}]}
+{"enrichments": [{"id": "abc", "topic": "Polity > Judiciary", "upscRelevance": "High", "examAngle": "Prelims: Article 32. Mains GS2: judicial review.", "whyItMatters": "Landmark ruling on writs affects GS2 preparation.", "storyPhase": "developing", "storyUpdate": "Supreme Court issues stay on lower court order.", "lensA": "Judicial independence", "lensB": "Executive overreach"}]}
 
 Headlines to classify:
 """
@@ -1119,14 +1133,16 @@ def _enrich_batch_local(batch: list[dict[str, Any]], model: str) -> None:
     if not to_enrich:
         return
 
-    items = [
-        {
+    items = []
+    for h in to_enrich:
+        item: dict[str, Any] = {
             "id": h["id"],
             "title": h["title"],
             "excerpt": h.get("excerpt") or "",
         }
-        for h in to_enrich
-    ]
+        if h.get("storyEditions"):
+            item["previousTitles"] = [e["title"] for e in h["storyEditions"]]
+        items.append(item)
 
     prompt = _ENRICH_LOCAL_PROMPT_PREFIX + json.dumps(items, ensure_ascii=False)
 
@@ -1173,6 +1189,10 @@ def _enrich_batch_local(batch: list[dict[str, Any]], model: str) -> None:
                 "upscRelevance": str(e.get("upscRelevance", "")),
                 "examAngle": str(e.get("examAngle", "")),
                 "whyItMatters": str(e.get("whyItMatters", "")),
+                "storyPhase": str(e.get("storyPhase", "developing")),
+                "storyUpdate": str(e.get("storyUpdate", "")),
+                "lensA": str(e.get("lensA", "")),
+                "lensB": str(e.get("lensB", "")),
             }
 
 
@@ -1221,6 +1241,27 @@ def mock_enrich_headlines(headlines: list[dict[str, Any]]) -> None:
         subtopic = topic.split(" > ")[1] if " > " in topic else topic
         exam_angle = _EXAM_ANGLE_BY_TOPIC.get(gs_area, "General awareness — relevant to current affairs.")
         relevance = _RELEVANCE.get(h.get("priority", ""), "Medium")
+        _LENS_MOCK: dict[str, tuple[str, str]] = {
+            "Polity": ("Progress", "Problem"),
+            "Economy": ("Opportunity", "Risk"),
+            "International Relations": ("Win", "Gamble"),
+            "Environment": ("Needed", "Costly"),
+            "Science & Technology": ("Breakthrough", "Concern"),
+            "Social Issues": ("Help", "Harm"),
+            "Security": ("Safety", "Overreach"),
+            "History & Culture": ("Preserve", "Resist"),
+            "Current Events": ("Fix", "Flaw"),
+            "Disaster Management": ("Prepared", "Delayed"),
+        }
+        lens_pair = _LENS_MOCK.get(gs_area, ("Opportunity", "Risk"))
+        _PHASE_BY_PRIORITY = {"Lead": "escalating", "High": "developing"}
+        phase = _PHASE_BY_PRIORITY.get(h.get("priority", ""), "developing")
+        editions = h.get("storyEditions") or []
+        if editions:
+            first_title = editions[0].get("title", "")[:60]
+            story_update = f"Follow-up: situation updated since “{first_title}…”"
+        else:
+            story_update = ""
         h["enrichment"] = {
             "topic": topic,
             "upscRelevance": relevance,
@@ -1230,6 +1271,10 @@ def mock_enrich_headlines(headlines: list[dict[str, Any]]) -> None:
                 "a recurring theme in UPSC Prelims and Mains. "
                 "Track the policy/legal dimensions for exam preparation."
             ),
+            "storyPhase": phase,
+            "storyUpdate": story_update,
+            "lensA": lens_pair[0],
+            "lensB": lens_pair[1],
         }
 
 
@@ -1246,6 +1291,121 @@ def enrich_headlines(
 
 
 STORY_LOOKBACK_DAYS = 7
+MAX_ACTIVE_THREADS = 20   # platform cap: at most this many stories threaded simultaneously
+THREAD_QUIET_DAYS  = 4   # days without a new edition before a thread is marked closed
+
+
+def load_thread_registry(edition_dir: Path) -> dict[str, Any]:
+    """Load the platform thread registry. Returns empty registry if not found."""
+    path = edition_dir / "thread_registry.json"
+    if not path.exists():
+        return {"version": 1, "threads": {}}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, KeyError):
+        return {"version": 1, "threads": {}}
+
+
+def save_thread_registry(registry: dict[str, Any], edition_dir: Path) -> None:
+    path = edition_dir / "thread_registry.json"
+    path.write_text(json.dumps(registry, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+def expire_threads(registry: dict[str, Any], edition_date: date) -> int:
+    """Mark threads quiet for THREAD_QUIET_DAYS+ as closed. Returns count expired."""
+    cutoff = (edition_date - timedelta(days=THREAD_QUIET_DAYS)).isoformat()
+    expired = 0
+    for thread in registry.get("threads", {}).values():
+        if thread["status"] == "active" and thread["lastEditionDate"] < cutoff:
+            thread["status"] = "closed"
+            expired += 1
+    return expired
+
+
+def update_registry_from_headlines(
+    registry: dict[str, Any],
+    headlines: list[dict[str, Any]],
+    edition_date: date,
+) -> None:
+    """After threading: add new threads to registry and refresh lastEditionDate for continuing ones."""
+    threads = registry.setdefault("threads", {})
+    for h in headlines:
+        story_id = h.get("storyId")
+        if not story_id:
+            continue
+        if story_id in threads:
+            threads[story_id]["lastEditionDate"] = edition_date.isoformat()
+            threads[story_id]["dayCount"] = h.get("storyDayCount", 1)
+            threads[story_id]["status"] = "active"
+        else:
+            threads[story_id] = {
+                "storyId": story_id,
+                "title": h.get("title", ""),
+                "firstEditionDate": edition_date.isoformat(),
+                "lastEditionDate": edition_date.isoformat(),
+                "dayCount": 1,
+                "status": "active",
+            }
+
+
+def propagate_storyid_within_clusters(headlines: list[dict[str, Any]]) -> int:
+    """Spread storyId from any cluster member that has one to the entire cluster.
+
+    thread_stories() matches headlines individually by keyword overlap, which can
+    miss cluster members whose title wording diverges (e.g. 'LIVE:' prefixes,
+    spelling variants).  After threading, if any member of a cluster has a
+    storyId, all other members in that cluster should share it.
+    Uses the member with the highest storyDayCount as the source of truth.
+    """
+    # Build clusterId → best (storyId, editions, dayCount) from members that matched
+    best: dict[str, tuple[str, list, int]] = {}
+    for h in headlines:
+        cid = h.get("clusterId")
+        sid = h.get("storyId")
+        if not cid or not sid:
+            continue
+        day_count = h.get("storyDayCount", 1)
+        if cid not in best or day_count > best[cid][2]:
+            best[cid] = (sid, h.get("storyEditions", []), day_count)
+
+    filled = 0
+    for h in headlines:
+        cid = h.get("clusterId")
+        if cid and not h.get("storyId") and cid in best:
+            sid, editions, day_count = best[cid]
+            h["storyId"] = sid
+            h["storyEditions"] = editions
+            h["storyDayCount"] = day_count
+            filled += 1
+    return filled
+
+
+def carry_forward_enrichment(
+    headlines: list[dict[str, Any]],
+    past_editions: list[tuple[str, list[dict[str, Any]]]],
+) -> int:
+    """Copy enrichment from past editions for headlines that share the same storyId.
+
+    Iterates past editions most-recent-first so the freshest enrichment wins.
+    Only fills headlines that have no enrichment yet.  Returns the count carried.
+    """
+    story_enrichment: dict[str, dict[str, Any]] = {}
+    for _date_str, past_headlines in reversed(past_editions):  # most recent first
+        for h in past_headlines:
+            sid = h.get("storyId")
+            enrich = h.get("enrichment")
+            if sid and enrich and sid not in story_enrichment:
+                story_enrichment[sid] = enrich
+
+    carried = 0
+    for h in headlines:
+        if h.get("enrichment"):
+            continue
+        sid = h.get("storyId")
+        if sid and sid in story_enrichment:
+            h["enrichment"] = story_enrichment[sid]
+            carried += 1
+    return carried
 
 
 def load_past_editions(
@@ -1269,10 +1429,21 @@ def load_past_editions(
 def thread_stories(
     today_headlines: list[dict[str, Any]],
     past_editions: list[tuple[str, list[dict[str, Any]]]],
+    known_thread_ids: set[str] | None = None,
+    active_thread_count: int = 0,
 ) -> None:
-    """Match today's headlines to past editions by keyword overlap. Mutates in place."""
+    """Match today's headlines to past editions by keyword overlap. Mutates in place.
+
+    known_thread_ids: storyIds the platform has ever tracked (from registry).
+                      Continuations of these are always allowed.
+    active_thread_count: current number of active threads.
+                         Brand-new threads are blocked once this hits MAX_ACTIVE_THREADS.
+    """
     if not past_editions:
         return
+
+    known = known_thread_ids or set()
+    new_threads_added = 0   # tracks brand-new threads created this run
 
     # Flatten past headlines: (date_str, headline, word_set)
     past_items: list[tuple[str, dict[str, Any], frozenset[str]]] = []
@@ -1319,7 +1490,20 @@ def thread_stories(
         ]
 
         earliest = by_date[sorted_dates[0]][0]
-        h["storyId"] = (earliest.get("id") or slugify(earliest.get("title", "")))[:50]
+        story_id = (earliest.get("id") or slugify(earliest.get("title", "")))[:50]
+
+        is_known = story_id in known
+        at_cap = (active_thread_count + new_threads_added) >= MAX_ACTIVE_THREADS
+
+        # Continuations of known threads always allowed.
+        # Brand-new threads blocked when platform is at capacity.
+        if not is_known and at_cap:
+            continue
+
+        if not is_known:
+            new_threads_added += 1
+
+        h["storyId"] = story_id
         h["storyEditions"] = story_editions
         h["storyDayCount"] = len(story_editions) + 1
 
@@ -1422,6 +1606,42 @@ def main() -> int:
 
     headlines, statuses = collect(edition_date, extract_text=args.extract_text)
 
+    # Thread before enrichment so the LLM receives previousTitles context
+    edition_dir_path = Path(args.edition_dir)
+    past_editions = load_past_editions(edition_dir_path, edition_date)
+
+    registry = load_thread_registry(edition_dir_path)
+    expired_count = expire_threads(registry, edition_date)
+    known_ids = set(registry.get("threads", {}).keys())
+    active_count = sum(1 for t in registry.get("threads", {}).values() if t["status"] == "active")
+
+    thread_stories(headlines, past_editions, known_ids, active_count)
+
+    # Spread storyId to all cluster members when only some matched via keywords.
+    cluster_filled = propagate_storyid_within_clusters(headlines)
+    if cluster_filled:
+        print(f"cluster propagation: {cluster_filled} headline(s) inherited storyId from cluster sibling.", file=sys.stderr)
+
+    update_registry_from_headlines(registry, headlines, edition_date)
+    save_thread_registry(registry, edition_dir_path)
+
+    threaded = sum(1 for h in headlines if h.get("storyId"))
+    new_active = sum(1 for t in registry.get("threads", {}).values() if t["status"] == "active")
+    if expired_count:
+        print(f"thread registry: {expired_count} thread(s) closed (quiet ≥{THREAD_QUIET_DAYS} days).", file=sys.stderr)
+    print(f"thread registry: {new_active}/{MAX_ACTIVE_THREADS} active threads.", file=sys.stderr)
+
+    # Phase 1: write baseline immediately so the UI is never stale while enrichment runs.
+    baseline_payload = build_payload(edition_date, headlines, statuses, args.limit)
+    write_payload(baseline_payload, Path(args.output), Path(args.edition_dir))
+
+    # Carry forward enrichment from past editions for continuing story threads.
+    # This runs before any API call so threaded stories reuse previous enrichment
+    # (including lensA/lensB) even when today's enrichment fails.
+    carried = carry_forward_enrichment(headlines, past_editions)
+    if carried:
+        print(f"enrichment carry-forward: {carried} headline(s) reused from past editions.", file=sys.stderr)
+
     if args.enrich_mock:
         mock_enrich_headlines(headlines)
         print(f"mock enrichment applied to {len(headlines)} headlines (UI test mode).", file=sys.stderr)
@@ -1451,11 +1671,6 @@ def main() -> int:
             enrich_headlines(headlines, api_key)
             enriched = sum(1 for h in headlines if h.get("enrichment"))
             print(f"enriched {enriched}/{len(headlines)} headlines.", file=sys.stderr)
-
-    edition_dir_path = Path(args.edition_dir)
-    past_editions = load_past_editions(edition_dir_path, edition_date)
-    thread_stories(headlines, past_editions)
-    threaded = sum(1 for h in headlines if h.get("storyId"))
     if threaded:
         print(f"threaded {threaded} headlines across {len(past_editions)} past edition(s).", file=sys.stderr)
 
