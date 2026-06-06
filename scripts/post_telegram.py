@@ -251,7 +251,7 @@ def build_telegram_parts(data: dict) -> list[str]:
 
     p2.append(health)
     p2.append("")
-    p2.append("<i>Source-linked India current affairs for UPSC prep · #Velugo</i>")
+    p2.append("<i>Source-linked India current affairs for UPSC prep · #Velugo · Powered by J33.AI</i>")
 
     parts = ["\n".join(p1), "\n".join(p2)]
     # Trim any part that exceeds Telegram's limit

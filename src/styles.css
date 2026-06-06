@@ -1537,6 +1537,26 @@ body.dark .sm-dot--today {
   .sm-track { width: 100%; }
 }
 
+/* Site Footer */
+.site-footer {
+  text-align: center;
+  padding: 20px 16px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  margin-top: 32px;
+}
+
+.site-footer a {
+  color: var(--mode-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
 /* Utilities */
 .hidden {
   display: none !important;
